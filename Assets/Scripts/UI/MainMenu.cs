@@ -36,11 +36,11 @@ public class MainMenu : MonoBehaviour
         Debug.Log("▶️ Iniciando juego...");
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.ChangeScene(GameManager.Instance.gameScene);
+            GameManager.Instance.ChangeScene(GameManager.Instance.characterSelectionScene);
         }
         else
         {
-            SceneManager.LoadScene(GameManager.Instance.gameScene);
+            SceneManager.LoadScene(GameManager.Instance.characterSelectionScene);
         }
     }
 

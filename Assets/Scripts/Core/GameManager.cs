@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [Header("Scene Names")]
     public string mainMenuScene = "MainMenu";
     public string gameScene = "OniricForest";
+    public string characterSelectionScene = "CharacterSelection";
 
     private string lastScene;
     private string lastPlayScene;
