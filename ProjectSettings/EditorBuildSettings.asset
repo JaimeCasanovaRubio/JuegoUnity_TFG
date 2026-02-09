@@ -9,16 +9,25 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menu/MainMenu.unity
     guid: b583130f8a8c13d4a9d3079aa4115ea7
   - enabled: 1
-    path: Assets/Scenes/CharacterSelection.unity
+    path: Assets/Scenes/Menu/Settings/SettingsMenu.unity
+    guid: 85f32f6cce5c15c42ae9cfa7fc147a31
+  - enabled: 1
+    path: Assets/Scenes/Menu/Settings/ControlsConfig.unity
+    guid: 78a884665924e1544aa9e7b117b4f850
+  - enabled: 1
+    path: Assets/Scenes/Menu/CharacterSelection.unity
     guid: a50514e1a5c807f4db250688a049fb4e
   - enabled: 1
-    path: Assets/Scenes/OniricForest.unity
+    path: Assets/Scenes/Playable/Base.unity
     guid: 64449757a6bae10469a3cda9d5c70e2f
   - enabled: 1
-    path: Assets/Scenes/DeadScreen.unity
+    path: Assets/Scenes/Playable/OniricForest.unity
+    guid: 4cd2d9dec99c85045a89be9fbce3fa03
+  - enabled: 1
+    path: Assets/Scenes/Menu/DeadScreen.unity
     guid: 1dc91ee3a4b38984aad34227073d7cc5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

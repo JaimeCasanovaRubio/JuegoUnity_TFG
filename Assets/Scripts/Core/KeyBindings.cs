@@ -7,7 +7,31 @@ using UnityEngine;
 /// </summary>
 public class KeyBindings : MonoBehaviour
 {
-    public static KeyBindings Instance { get; private set; }
+    private static KeyBindings _instance;
+    public static KeyBindings Instance
+    {
+        get
+        {
+            // Si no existe, crearlo automáticamente
+            if (_instance == null)
+            {
+                // Buscar si ya existe uno en la escena
+                _instance = FindObjectOfType<KeyBindings>();
+                
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject("KeyBindings");
+                    _instance = obj.AddComponent<KeyBindings>();
+                    // Cargar bindings inmediatamente al crear desde el getter
+                    _instance.LoadBindingsInternal();
+                }
+                DontDestroyOnLoad(_instance.gameObject);
+            }
+            return _instance;
+        }
+    }
+    
+
 
     // Claves para PlayerPrefs
     private const string KEY_MOVE_LEFT = "key_move_left";
@@ -36,26 +60,46 @@ public class KeyBindings : MonoBehaviour
     public KeyCode Ability { get; private set; }
     public KeyCode Pause { get; private set; }
 
+    private bool isInitialized = false;
+
     private void Awake()
     {
-        // Singleton pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            LoadBindings();
-        }
-        else
+        // Singleton pattern mejorado
+        if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
+            return;
+        }
+        
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+        
+        if (!isInitialized)
+        {
+            LoadBindingsInternal();
+            isInitialized = true;
+        }
+    }
+
+    private void OnEnable()
+    {
+        // Asegurar que siempre tenga los bindings cargados
+        if (!isInitialized)
+        {
+            LoadBindingsInternal();
+            isInitialized = true;
         }
     }
 
     /// <summary>
     /// Carga los controles desde PlayerPrefs.
     /// </summary>
-    private void LoadBindings()
+    private void LoadBindingsInternal()
     {
+        // DEBUG: Borrar PlayerPrefs corruptos para forzar valores por defecto
+        // NOTA: Eliminar esta línea después de probar
+        PlayerPrefs.DeleteAll();
+        
         MoveLeft = (KeyCode)PlayerPrefs.GetInt(KEY_MOVE_LEFT, (int)DEFAULT_MOVE_LEFT);
         MoveRight = (KeyCode)PlayerPrefs.GetInt(KEY_MOVE_RIGHT, (int)DEFAULT_MOVE_RIGHT);
         MoveUp = (KeyCode)PlayerPrefs.GetInt(KEY_MOVE_UP, (int)DEFAULT_MOVE_UP);
@@ -63,6 +107,9 @@ public class KeyBindings : MonoBehaviour
         Attack = (KeyCode)PlayerPrefs.GetInt(KEY_ATTACK, (int)DEFAULT_ATTACK);
         Ability = (KeyCode)PlayerPrefs.GetInt(KEY_ABILITY, (int)DEFAULT_ABILITY);
         Pause = (KeyCode)PlayerPrefs.GetInt(KEY_PAUSE, (int)DEFAULT_PAUSE);
+        
+        Debug.Log($"[KeyBindings] Loaded - Pause key: {Pause}");
+        isInitialized = true;
     }
 
     /// <summary>

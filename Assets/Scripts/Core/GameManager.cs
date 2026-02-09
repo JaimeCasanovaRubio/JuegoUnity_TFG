@@ -14,11 +14,18 @@ public class GameManager : MonoBehaviour
 
     [Header("Scene Names")]
     public string mainMenuScene = "MainMenu";
+    public string controlsScene = "ControlsConfig";
+    public string settingsScene = "SettingsMenu";
+    public string baseScene = "Base";
     public string gameScene = "OniricForest";
     public string characterSelectionScene = "CharacterSelection";
 
-    private string lastScene;
-    private string lastPlayScene;
+    public string currentScene;
+    public string lastScene;
+    public string lastPlayScene;
+
+    // Escenas donde se puede pausar (escenas de juego)
+    private string[] playableScenes;
 
     private void Awake()
     {
@@ -27,11 +34,61 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            
+            // Definir las escenas donde se puede pausar
+            playableScenes = new string[] { gameScene, baseScene, "OniricForest" };
+            
+            // Asegurar que los singletons de input existan
+            _ = KeyBindings.Instance;
+            _ = InputHandler.Instance;
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Update()
+    {
+        HandlePauseInput();
+    }
+
+    /// <summary>
+    /// Maneja el input de pausa globalmente.
+    /// Solo funciona en escenas de juego.
+    /// </summary>
+    private void HandlePauseInput()
+    {
+        // Verificar que estamos en una escena jugable
+        if (!IsInPlayableScene()) return;
+
+        // Verificar si se presionó la tecla de pausa
+        if (InputHandler.Instance != null && InputHandler.Instance.PausePressed)
+        {
+            TogglePause();
+        }
+    }
+
+    /// <summary>
+    /// Comprueba si estamos en una escena donde se puede pausar.
+    /// </summary>
+    private bool IsInPlayableScene()
+    {
+        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        foreach (string scene in playableScenes)
+        {
+            if (currentScene == scene) return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Activa/desactiva la pausa.
+    /// </summary>
+    public void TogglePause()
+    {
+        // Ir a la escena de settings (menú de pausa)
+        ChangeScene(settingsScene);
     }
 
     /// <summary>
@@ -53,6 +110,8 @@ public class GameManager : MonoBehaviour
         {
             SetupPlayer();
         }
+        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
 
         SceneManager.LoadScene(sceneName);
     }
@@ -109,7 +168,7 @@ public class GameManager : MonoBehaviour
         // Instanciar el personaje correcto basado en el tipo
         // Esto se manejará cuando cargue la escena de juego
         PlayerPrefs.SetString("SelectedCharacter", characterType);
-        ChangeScene(gameScene);
+        ChangeScene(baseScene);
     }
 
     /// <summary>

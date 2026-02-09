@@ -26,6 +26,8 @@ public class Entity : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
 
+    protected bool tp = false;
+
     // Properties públicas
     public int MaxHealth => maxHealth;
     public int Health
@@ -171,6 +173,40 @@ public class Entity : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Die");
+        }
+    }
+
+    /// <summary>
+    /// Detecta colisiones con objetos del mundo (Colliders sin "Is Trigger").
+    /// </summary>
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        HandleTeleport(collision.gameObject);
+    }
+
+    /// <summary>
+    /// Detecta colisiones con triggers (Colliders con "Is Trigger" activado).
+    /// </summary>
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        HandleTeleport(other.gameObject);
+    }
+
+    /// <summary>
+    /// Maneja la lógica de teletransporte.
+    /// </summary>
+    private void HandleTeleport(GameObject other)
+    {
+        if (other.CompareTag("TP"))
+        {
+            Debug.Log("TP detectado!");
+            TeleportZone teleport = other.GetComponent<TeleportZone>();
+            string targetScene = teleport != null ? teleport.TargetScene : "OniricForest";
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ChangeScene(targetScene);
+            }
         }
     }
 }

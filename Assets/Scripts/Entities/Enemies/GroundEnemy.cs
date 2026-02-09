@@ -167,13 +167,29 @@ public class GroundEnemy : Entity
     }
 
     /// <summary>
-    /// Llamado cuando colisiona con otro objeto.
+    /// Llamado cuando colisiona con otro objeto (Collider sin "Is Trigger").
     /// </summary>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        HandlePlayerCollision(collision.gameObject);
+    }
+
+    /// <summary>
+    /// Llamado cuando entra en un trigger (Collider con "Is Trigger" activado).
+    /// </summary>
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        HandlePlayerCollision(other.gameObject);
+    }
+
+    /// <summary>
+    /// Maneja la colisión con el jugador.
+    /// </summary>
+    private void HandlePlayerCollision(GameObject other)
+    {
+        if (other.CompareTag("Player"))
         {
-            Player player = collision.gameObject.GetComponent<Player>();
+            Player player = other.GetComponent<Player>();
             if (player != null && !player.IsInvincible)
             {
                 // Si el jugador está atacando, el enemigo recibe daño

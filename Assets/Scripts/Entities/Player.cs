@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 /// Clase base para el jugador.
 /// Equivalente a Player.java de LibGDX.
-/// Usa el nuevo Input System de Unity.
+/// Usa InputHandler para gestionar el input.
 /// </summary>
 public class Player : Entity
 {
@@ -61,57 +60,28 @@ public class Player : Entity
     }
 
     /// <summary>
-    /// Procesa la entrada del jugador usando el nuevo Input System.
+    /// Procesa la entrada del jugador usando InputHandler.
     /// </summary>
     protected virtual void HandleInput()
     {
-        // Usar Keyboard.current del nuevo Input System
-        Keyboard keyboard = Keyboard.current;
-        if (keyboard == null) return;
+        // Verificar que InputHandler esté disponible
+        if (InputHandler.Instance == null) return;
 
-        movement.x = 0;
-        movement.y = 0;
+        // Obtener movimiento desde InputHandler
+        movement = InputHandler.Instance.Movement;
+        facingRight = InputHandler.Instance.FacingRight;
+        lastDirection = InputHandler.Instance.LastDirection;
 
-        // WASD o flechas
-        if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
-        {
-            movement.x = -1;
-            lastDirection = "left";
-            facingRight = false;
-        }
-        if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
-        {
-            movement.x = 1;
-            lastDirection = "right";
-            facingRight = true;
-        }
-        if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed)
-        {
-            movement.y = 1;
-            lastDirection = "up";
-        }
-        if (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed)
-        {
-            movement.y = -1;
-            lastDirection = "down";
-        }
-
-        // Ataque (J o clic izquierdo)
-        if (keyboard.jKey.wasPressedThisFrame)
+        // Ataque
+        if (InputHandler.Instance.AttackPressed)
         {
             Attack();
         }
 
-        // Habilidad (K o Espacio)
-        if (keyboard.kKey.wasPressedThisFrame || keyboard.spaceKey.wasPressedThisFrame)
+        // Habilidad
+        if (InputHandler.Instance.AbilityPressed)
         {
             ActivateAbility();
-        }
-
-        // Normalizar para evitar movimiento diagonal más rápido
-        if (movement.magnitude > 1)
-        {
-            movement.Normalize();
         }
     }
 

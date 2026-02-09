@@ -15,8 +15,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button quitButton;
 
     [Header("Scene Names")]
-    [SerializeField] private string settingsScene = "Settings";
-    [SerializeField] private string controlsScene = "Controls";
+    [SerializeField] private string settingsScene = "SettingsMenu";
+    [SerializeField] private string controlsScene = "ControlsConfig";
 
     private void Start()
     {
