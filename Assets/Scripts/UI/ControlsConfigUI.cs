@@ -45,7 +45,7 @@ public class ControlsConfigUI : MonoBehaviour
         moveRightButton = FindButtonByName("RightMovButton");
         moveUpButton = FindButtonByName("UpMovButton");
         moveDownButton = FindButtonByName("DownMovButton");
-        attackButton = FindButtonByName("AtkButton");
+        attackButton = FindButtonByName("AttackButton");
         abilityButton = FindButtonByName("AbilityButton");
         
         
@@ -83,7 +83,6 @@ public class ControlsConfigUI : MonoBehaviour
         pauseButton?.onClick.AddListener(() => StartRebind(pauseButton, "key_pause"));
 
         resetButton?.onClick.AddListener(ResetToDefaults);
-        backButton?.onClick.AddListener(GoBack);
     }
 
     private void Update()
@@ -193,10 +192,5 @@ public class ControlsConfigUI : MonoBehaviour
     {
         KeyBindings.Instance?.ResetToDefaults();
         RefreshUI();
-    }
-
-    private void GoBack()
-    {
-        GameManager.Instance?.ChangeScene("SettingsMenu");
     }
 }

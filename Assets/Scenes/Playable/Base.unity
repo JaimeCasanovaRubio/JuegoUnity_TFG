@@ -285,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400000002}
-  - component: {fileID: 1140000001}
+  - component: {fileID: 400000004}
   m_Layer: 0
   m_Name: PlayerSpawner
   m_TagString: Untagged
@@ -487,7 +487,7 @@ Transform:
   m_GameObject: {fileID: 200000002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.67, y: 2.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -508,6 +508,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &400000004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200000002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5991b2da4206941b4137ec554eee46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner
+  hurtadillaPrefab: {fileID: 1234567890123456, guid: a1b2c3d4e5f67890a1b2c3d4e5f67890, type: 3}
+  spawnPoint: {fileID: 0}
+  spawnOnStart: 1
 --- !u!1 &430854485
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,21 +926,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1140000001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200000002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf08dba670703e44c9079f809559e557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtadillaPrefab: {fileID: 1234567890123456, guid: a1b2c3d4e5f67890a1b2c3d4e5f67890, type: 3}
-  spawnPoint: {fileID: 0}
-  spawnOnStart: 1
 --- !u!114 &1140000002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,8 +940,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 0}
   mainMenuScene: MainMenu
+  controlsScene: ControlsConfig
+  settingsScene: SettingsMenu
+  baseScene: Base
   gameScene: OniricForest
   characterSelectionScene: CharacterSelection
+  currentScene: 
+  lastScene: 
+  lastPlayScene: 
 --- !u!114 &1140000003
 MonoBehaviour:
   m_ObjectHideFlags: 0

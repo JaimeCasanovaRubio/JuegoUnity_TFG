@@ -96,9 +96,6 @@ public class KeyBindings : MonoBehaviour
     /// </summary>
     private void LoadBindingsInternal()
     {
-        // DEBUG: Borrar PlayerPrefs corruptos para forzar valores por defecto
-        // NOTA: Eliminar esta línea después de probar
-        PlayerPrefs.DeleteAll();
         
         MoveLeft = (KeyCode)PlayerPrefs.GetInt(KEY_MOVE_LEFT, (int)DEFAULT_MOVE_LEFT);
         MoveRight = (KeyCode)PlayerPrefs.GetInt(KEY_MOVE_RIGHT, (int)DEFAULT_MOVE_RIGHT);
