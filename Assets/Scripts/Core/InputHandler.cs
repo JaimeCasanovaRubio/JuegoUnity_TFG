@@ -63,6 +63,13 @@ public class InputHandler : MonoBehaviour
     }
 
     /// <summary>
+    /// Devuelve verdadero si se ha pulsado la tecla de pausa en este frame.
+    /// </summary>
+    public bool IsPausePressed()
+    {
+        return pausePressed;
+    }
+    /// <summary>
     /// Procesa toda la entrada del jugador usando KeyBindings configurables.
     /// Compatible con el nuevo Input System.
     /// </summary>

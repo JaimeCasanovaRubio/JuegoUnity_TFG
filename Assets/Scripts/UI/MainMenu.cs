@@ -8,27 +8,44 @@ using UnityEngine.UI;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
-    [Header("Buttons")]
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button settingsButton;
-    [SerializeField] private Button controlsButton;
-    [SerializeField] private Button quitButton;
-
-    [Header("Scene Names")]
-    [SerializeField] private string settingsScene = "SettingsMenu";
-    [SerializeField] private string controlsScene = "ControlsConfig";
+    [SerializeField] private GameObject mainMenuUI;
 
     private void Start()
     {
-        // Configurar listeners de los botones
-        if (playButton != null)
-            playButton.onClick.AddListener(OnPlayClicked);
-        if (settingsButton != null)
-            settingsButton.onClick.AddListener(OnSettingsClicked);
-        if (controlsButton != null)
-            controlsButton.onClick.AddListener(OnControlsClicked);
-        if (quitButton != null)
-            quitButton.onClick.AddListener(OnQuitClicked);
+        Debug.Log("[MainMenu] Start - Buscando UI persistente...");
+        // Configurar los eventos de "Atrás" de los menús persistentes
+        if (GameManager.Instance != null)
+        {
+            // Usar GetComponentInChildren por si el script no está en la raíz del prefab
+            var controlsUI = GameManager.Instance.ControlsCanvas?.GetComponentInChildren<ControlsConfigUI>(true);
+            if (controlsUI != null)
+            {
+                Debug.Log("[MainMenu] Vinculando Back de Controles");
+                // Importante: Eliminar listeners previos para evitar duplicados si se recarga la escena
+                controlsUI.onBackEvent.RemoveListener(OnBackFromMenu);
+                controlsUI.onBackEvent.AddListener(OnBackFromMenu);
+            }
+            else
+            {
+                Debug.LogWarning("[MainMenu] No se encontró ControlsConfigUI en el canvas persistente (o sus hijos).");
+            }
+
+            var settingsUI = GameManager.Instance.SettingsCanvas?.GetComponentInChildren<SettingsConfigUI>(true);
+            if (settingsUI != null)
+            {
+                Debug.Log("[MainMenu] Vinculando Back de Ajustes");
+                settingsUI.onBackEvent.RemoveListener(OnBackFromMenu);
+                settingsUI.onBackEvent.AddListener(OnBackFromMenu);
+            }
+            else
+            {
+                Debug.LogWarning("[MainMenu] No se encontró SettingsConfigUI en el canvas persistente (o sus hijos).");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("[MainMenu] GameManager.Instance es null en Start.");
+        }
     }
 
     public void OnPlayClicked()
@@ -40,50 +57,47 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(GameManager.Instance.characterSelectionScene);
+            SceneManager.LoadScene("CharacterSelection");
         }
     }
 
     public void OnSettingsClicked()
     {
-        Debug.Log("⚙️ Abriendo configuración...");
-        if (GameManager.Instance != null)
+        if (GameManager.Instance != null && GameManager.Instance.SettingsCanvas != null)
         {
-            GameManager.Instance.ChangeScene(settingsScene);
+            mainMenuUI.SetActive(false);
+            GameManager.Instance.SettingsCanvas.SetActive(true);
         }
         else
         {
-            SceneManager.LoadScene(settingsScene);
+            Debug.LogError("[MainMenu] No se pudo encontrar el canvas de Ajustes persistente.");
         }
     }
 
     public void OnControlsClicked()
     {
-        Debug.Log("🎮 Abriendo controles...");
-        if (GameManager.Instance != null)
+        if (GameManager.Instance != null && GameManager.Instance.ControlsCanvas != null)
         {
-            GameManager.Instance.ChangeScene(controlsScene);
+            mainMenuUI.SetActive(false);
+            GameManager.Instance.ControlsCanvas.SetActive(true);
         }
         else
         {
-            SceneManager.LoadScene(controlsScene);
+            Debug.LogError("[MainMenu] No se pudo encontrar el canvas de Controles persistente.");
         }
     }
 
-    public void OnQuitClicked()
+    private void OnBackFromMenu()
     {
-        Debug.Log("🚪 Saliendo del juego...");
+        Debug.Log("[MainMenu] Regresando al menú principal...");
+        
+        // Desactivar explícitamente los canvas persistentes
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.QuitGame();
+            if (GameManager.Instance.ControlsCanvas != null) GameManager.Instance.ControlsCanvas.SetActive(false);
+            if (GameManager.Instance.SettingsCanvas != null) GameManager.Instance.SettingsCanvas.SetActive(false);
         }
-        else
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
-        }
+        
+        mainMenuUI.SetActive(true);
     }
 }

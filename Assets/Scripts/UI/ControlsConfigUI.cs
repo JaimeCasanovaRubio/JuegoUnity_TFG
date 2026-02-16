@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 /// <summary>
 /// UI para configurar los controles del juego.
@@ -8,16 +9,19 @@ using TMPro;
 /// </summary>
 public class ControlsConfigUI : MonoBehaviour
 {
-    // Botones - se buscan automáticamente
-    private Button moveLeftButton;
-    private Button moveRightButton;
-    private Button moveUpButton;
-    private Button moveDownButton;
-    private Button attackButton;
-    private Button abilityButton;
-    private Button pauseButton;
-    private Button resetButton;
-    private Button backButton;
+    [Header("Buttons")]
+    [SerializeField] private Button moveLeftButton;
+    [SerializeField] private Button moveRightButton;
+    [SerializeField] private Button moveUpButton;
+    [SerializeField] private Button moveDownButton;
+    [SerializeField] private Button attackButton;
+    [SerializeField] private Button abilityButton;
+    [SerializeField] private Button pauseButton;
+    [SerializeField] private Button resetButton;
+    [SerializeField] private Button backButton;
+
+    [Header("Navigation")]
+    public UnityEvent onBackEvent = new UnityEvent();
 
     private Button currentRebindButton;
     private string currentAction;
@@ -25,9 +29,16 @@ public class ControlsConfigUI : MonoBehaviour
 
     private void Start()
     {
-        // Buscar botones por nombre en la escena
-        FindButtons();
-        
+        // Intentar encontrar el botón de atrás si no está asignado
+        if (backButton == null)
+        {
+            backButton = transform.Find("BackButton")?.GetComponent<Button>();
+            if (backButton == null) backButton = transform.Find("Back")?.GetComponent<Button>();
+            
+            if (backButton != null) Debug.Log($"[ControlsUI] Botón 'Back' encontrado automáticamente: {backButton.name}");
+            else Debug.LogWarning("[ControlsUI] No se pudo encontrar el botón 'Back' automáticamente. Por favor, asígnalo en el inspector.");
+        }
+
         // Asignar listeners
         SetupListeners();
         
@@ -35,39 +46,6 @@ public class ControlsConfigUI : MonoBehaviour
         RefreshUI();
     }
 
-    /// <summary>
-    /// Busca los botones automáticamente por nombre.
-    /// </summary>
-    private void FindButtons()
-    {
-        // Buscar todos los botones con estos nombres posibles
-        moveLeftButton = FindButtonByName("LeftMovButton");
-        moveRightButton = FindButtonByName("RightMovButton");
-        moveUpButton = FindButtonByName("UpMovButton");
-        moveDownButton = FindButtonByName("DownMovButton");
-        attackButton = FindButtonByName("AttackButton");
-        abilityButton = FindButtonByName("AbilityButton");
-        
-        
-        Debug.Log($"Botones encontrados: MoveLeft={moveLeftButton != null}, Attack={attackButton != null}, Reset={resetButton != null}");
-    }
-
-    /// <summary>
-    /// Busca un botón por varios nombres posibles.
-    /// </summary>
-    private Button FindButtonByName(params string[] possibleNames)
-    {
-        foreach (string name in possibleNames)
-        {
-            GameObject obj = GameObject.Find(name);
-            if (obj != null)
-            {
-                Button btn = obj.GetComponent<Button>();
-                if (btn != null) return btn;
-            }
-        }
-        return null;
-    }
 
     /// <summary>
     /// Configura los listeners de los botones.
@@ -83,6 +61,7 @@ public class ControlsConfigUI : MonoBehaviour
         pauseButton?.onClick.AddListener(() => StartRebind(pauseButton, "key_pause"));
 
         resetButton?.onClick.AddListener(ResetToDefaults);
+        backButton?.onClick.AddListener(OnControlsBackClicked);
     }
 
     private void Update()
@@ -108,6 +87,7 @@ public class ControlsConfigUI : MonoBehaviour
             }
         }
     }
+    
 
     /// <summary>
     /// Convierte una tecla del nuevo Input System a KeyCode.
@@ -181,16 +161,37 @@ public class ControlsConfigUI : MonoBehaviour
     {
         if (button == null) return;
 
+        // Intentar con TextMeshPro
         var tmpText = button.GetComponentInChildren<TMP_Text>();
-        if (tmpText != null) { tmpText.text = text; return; }
+        if (tmpText != null) 
+        { 
+            tmpText.text = text; 
+            return; 
+        }
 
+        // Intentar con el texto normal de Unity
         var normalText = button.GetComponentInChildren<Text>();
-        if (normalText != null) normalText.text = text;
+        if (normalText != null) 
+        {
+            normalText.text = text;
+            return;
+        }
+        
+        Debug.LogWarning($"[ControlsUI] No se encontró componente de texto en el botón: {button.name}");
     }
 
     private void ResetToDefaults()
     {
         KeyBindings.Instance?.ResetToDefaults();
         RefreshUI();
+    }
+
+    /// <summary>
+    /// Maneja el cierre del menú de controles y avisa a los interesados.
+    /// </summary>
+    public void OnControlsBackClicked()
+    {
+        Debug.Log("[ControlsUI] Back clicked!");
+        onBackEvent?.Invoke();
     }
 }

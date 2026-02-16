@@ -17,7 +17,7 @@ public class CharacterSelection : MonoBehaviour
     // Añadir más prefabs para otros personajes aquí
 
     [Header("Scene to Load")]
-    [SerializeField] private string gameSceneName = "OniricForest";
+    [SerializeField] private string gameSceneName = "Base";
 
     [Header("Character Preview")]
     [SerializeField] private Image characterPreviewImage;
@@ -80,8 +80,9 @@ public class CharacterSelection : MonoBehaviour
             GameManager.Instance.StartGameWithCharacter(characterName);
         }
         else
-        {
-            SceneManager.LoadScene(gameSceneName);
+        {   
+            Debug.LogWarning("⚠️ GameManager no encontrado. Cargando escena 'Base' directamente.");
+            SceneManager.LoadScene("Base");
         }
     }
 
@@ -92,11 +93,11 @@ public class CharacterSelection : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.ChangeScene("MainMenu");
+            GameManager.Instance.ChangeScene("MenuScene");
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MenuScene");
         }
     }
 }

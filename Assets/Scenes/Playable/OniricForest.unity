@@ -399,11 +399,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 0}
   mainMenuScene: MainMenu
-  controlsScene: ControlsConfig
   settingsScene: SettingsMenu
   baseScene: Base
   gameScene: OniricForest
   characterSelectionScene: CharacterSelection
+  settingsCanvas: {fileID: 0}
+  controlCanvas: {fileID: 0}
   currentScene: 
   lastScene: 
   lastPlayScene: 
