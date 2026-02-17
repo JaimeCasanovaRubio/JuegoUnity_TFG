@@ -930,6 +930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsConfigUI
   backButton: {fileID: 876426952555611994}
+  controlsButton: {fileID: 3992356388500916858}
+  volverBaseButton: {fileID: 4240062967214502403}
   onBackEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1054,9 +1056,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8534644383182368706}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 8421759270175279118}
+        m_TargetAssemblyTypeName: SettingsConfigUI, Assembly-CSharp
+        m_MethodName: OnControlsClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

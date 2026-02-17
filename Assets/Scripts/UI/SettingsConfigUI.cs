@@ -7,9 +7,8 @@ public class SettingsConfigUI : MonoBehaviour
 {
     [Header("Buttons")]
     [SerializeField] private Button backButton;
-
-    [Header("Navigation")]
-    public UnityEvent onBackEvent = new UnityEvent();
+    [SerializeField] private Button controlsButton;
+    [SerializeField] private Button volverBaseButton;
 
     private void Start()
     {
@@ -25,27 +24,39 @@ public class SettingsConfigUI : MonoBehaviour
         SetupListeners();
     }
 
-    private void OnControlsClicked()
-    {
-          if (GameManager.Instance != null && GameManager.Instance.ControlsCanvas != null)
-        {
-            GameManager.Instance.SettingsCanvas.SetActive(false);
-            GameManager.Instance.ControlsCanvas.SetActive(true);
-        }
-        else    
-        {
-            Debug.LogError("[MainMenu] No se pudo encontrar el canvas de Controles persistente.");
-        }
-    }
-
     private void SetupListeners()
     {
         backButton?.onClick.AddListener(OnBackClicked);
+        controlsButton?.onClick.AddListener(OnControlsClicked);
+        volverBaseButton?.onClick.AddListener(OnVolverBaseClicked);
     }
 
     private void OnBackClicked()
     {
-        Debug.Log("[SettingsUI] Back clicked!");
-        onBackEvent?.Invoke();
+        GameManager.Instance.ChangeView();
+        GameManager.Instance.SettingsCanvas.SetActive(false);
+    }
+
+    private void OnControlsClicked()
+    {
+        var controlsUI = GameManager.Instance.ControlsCanvas?.GetComponentInChildren<ControlsConfigUI>(true);
+        controlsUI.onBackEvent.RemoveAllListeners();
+        controlsUI.onBackEvent.AddListener(OnControlsBackClicked);
+
+
+        GameManager.Instance.SettingsCanvas.SetActive(false);
+        GameManager.Instance.ControlsCanvas.SetActive(true);
+    }
+    private void OnControlsBackClicked()
+    {
+        GameManager.Instance.ControlsCanvas.SetActive(false);
+        GameManager.Instance.SettingsCanvas.SetActive(true);
+    }
+
+    public void OnVolverBaseClicked()
+    {
+        GameManager.Instance.SettingsCanvas.SetActive(false);
+        GameManager.Instance.ChangeView();
+        GameManager.Instance.ChangeScene(GameManager.Instance.baseScene);
     }
 }

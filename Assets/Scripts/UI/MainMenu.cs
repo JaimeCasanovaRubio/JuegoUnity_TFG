@@ -29,18 +29,6 @@ public class MainMenu : MonoBehaviour
             {
                 Debug.LogWarning("[MainMenu] No se encontró ControlsConfigUI en el canvas persistente (o sus hijos).");
             }
-
-            var settingsUI = GameManager.Instance.SettingsCanvas?.GetComponentInChildren<SettingsConfigUI>(true);
-            if (settingsUI != null)
-            {
-                Debug.Log("[MainMenu] Vinculando Back de Ajustes");
-                settingsUI.onBackEvent.RemoveListener(OnBackFromMenu);
-                settingsUI.onBackEvent.AddListener(OnBackFromMenu);
-            }
-            else
-            {
-                Debug.LogWarning("[MainMenu] No se encontró SettingsConfigUI en el canvas persistente (o sus hijos).");
-            }
         }
         else
         {
@@ -58,19 +46,6 @@ public class MainMenu : MonoBehaviour
         else
         {
             SceneManager.LoadScene("CharacterSelection");
-        }
-    }
-
-    public void OnSettingsClicked()
-    {
-        if (GameManager.Instance != null && GameManager.Instance.SettingsCanvas != null)
-        {
-            mainMenuUI.SetActive(false);
-            GameManager.Instance.SettingsCanvas.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("[MainMenu] No se pudo encontrar el canvas de Ajustes persistente.");
         }
     }
 
@@ -95,7 +70,6 @@ public class MainMenu : MonoBehaviour
         if (GameManager.Instance != null)
         {
             if (GameManager.Instance.ControlsCanvas != null) GameManager.Instance.ControlsCanvas.SetActive(false);
-            if (GameManager.Instance.SettingsCanvas != null) GameManager.Instance.SettingsCanvas.SetActive(false);
         }
         
         mainMenuUI.SetActive(true);

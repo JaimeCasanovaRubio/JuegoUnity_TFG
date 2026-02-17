@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Scene Names")]
     public string mainMenuScene = "MainMenu";
-    public string settingsScene = "SettingsMenu";
     public string baseScene = "Base";
     public string gameScene = "OniricForest";
     public string characterSelectionScene = "CharacterSelection";
@@ -30,10 +29,9 @@ public class GameManager : MonoBehaviour
     public GameObject ControlsCanvas { get; private set; }
 
     public string currentScene;
-    public string lastScene;
     public string lastPlayScene;
 
-    private bool isPaused = false;
+    public bool isPaused  = false;
     // Escenas donde se puede pausar (escenas de juego)
     private string[] playableScenes;
 
@@ -142,9 +140,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ChangeScene(string sceneName)
     {
-        // Guardar la escena anterior
-        lastScene = SceneManager.GetActiveScene().name;
-
         // Si es una escena de juego, guardarla
         if (sceneName == gameScene || sceneName == "Base")
         {
@@ -156,32 +151,8 @@ public class GameManager : MonoBehaviour
         {
             SetupPlayer();
         }
-        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-
 
         SceneManager.LoadScene(sceneName);
-    }
-
-    /// <summary>
-    /// Regresa a la última escena visitada.
-    /// </summary>
-    public void GoToLastScene()
-    {
-        if (!string.IsNullOrEmpty(lastScene))
-        {
-            ChangeScene(lastScene);
-        }
-    }
-
-    /// <summary>
-    /// Regresa a la última escena de juego.
-    /// </summary>
-    public void GoToLastPlayScene()
-    {
-        if (!string.IsNullOrEmpty(lastPlayScene))
-        {
-            ChangeScene(lastPlayScene);
-        }
     }
 
     /// <summary>
