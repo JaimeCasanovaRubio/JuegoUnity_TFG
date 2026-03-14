@@ -26,16 +26,16 @@ public class SettingsConfigUI : MonoBehaviour
 
     private void SetupListeners()
     {
-        backButton?.onClick.AddListener(OnBackClicked);
+        //backButton?.onClick.AddListener(OnBackClicked);
         controlsButton?.onClick.AddListener(OnControlsClicked);
         volverBaseButton?.onClick.AddListener(OnVolverBaseClicked);
     }
 
-    private void OnBackClicked()
-    {
-        GameManager.Instance.ChangeView();
-        GameManager.Instance.SettingsCanvas.SetActive(false);
-    }
+    // private void OnBackClicked()
+    // {
+    //     GameManager.Instance.ChangeView();
+    //     GameManager.Instance.SettingsCanvas.SetActive(false);
+    // }
 
     private void OnControlsClicked()
     {
@@ -56,7 +56,7 @@ public class SettingsConfigUI : MonoBehaviour
     public void OnVolverBaseClicked()
     {
         GameManager.Instance.SettingsCanvas.SetActive(false);
-        GameManager.Instance.ChangeView();
+        //GameManager.Instance.ChangeView();
         GameManager.Instance.ChangeScene(GameManager.Instance.baseScene);
     }
 }

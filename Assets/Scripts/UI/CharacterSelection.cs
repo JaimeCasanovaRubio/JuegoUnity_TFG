@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+
 
 /// <summary>
 /// Pantalla de selección de personaje.
@@ -23,6 +25,9 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private Image characterPreviewImage;
     [SerializeField] private TMPro.TextMeshProUGUI characterNameText;
     [SerializeField] private TMPro.TextMeshProUGUI characterDescriptionText;
+
+    [Header("Navigation")]
+    public UnityEvent onBackEvent = new UnityEvent();
 
     private string selectedCharacter = "";
 
@@ -91,13 +96,6 @@ public class CharacterSelection : MonoBehaviour
     /// </summary>
     public void GoBack()
     {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.ChangeScene("MenuScene");
-        }
-        else
-        {
-            SceneManager.LoadScene("MenuScene");
-        }
+        onBackEvent?.Invoke();
     }
 }

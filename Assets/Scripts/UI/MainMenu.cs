@@ -29,6 +29,15 @@ public class MainMenu : MonoBehaviour
             {
                 Debug.LogWarning("[MainMenu] No se encontró ControlsConfigUI en el canvas persistente (o sus hijos).");
             }
+
+            var selectCharUI = GameManager.Instance.SelectCharCanvas?.GetComponentInChildren<CharacterSelection>(true);
+            if (selectCharUI != null)
+            {
+                selectCharUI.onBackEvent.RemoveListener(OnBackFromMenu);
+                selectCharUI.onBackEvent.AddListener(OnBackFromMenu);
+
+            }
+        
         }
         else
         {
@@ -39,14 +48,16 @@ public class MainMenu : MonoBehaviour
     public void OnPlayClicked()
     {
         Debug.Log("▶️ Iniciando juego...");
-        if (GameManager.Instance != null)
+        if (GameManager.Instance != null && GameManager.Instance.SelectCharCanvas != null)
         {
-            GameManager.Instance.ChangeScene(GameManager.Instance.characterSelectionScene);
+            mainMenuUI.SetActive(false);
+            GameManager.Instance.SelectCharCanvas.SetActive(true);
         }
         else
         {
-            SceneManager.LoadScene("CharacterSelection");
+            Debug.LogError("[MainMenu] No se pudo encontrar el canvas de Controles persistente.");
         }
+        
     }
 
     public void OnControlsClicked()
@@ -70,6 +81,7 @@ public class MainMenu : MonoBehaviour
         if (GameManager.Instance != null)
         {
             if (GameManager.Instance.ControlsCanvas != null) GameManager.Instance.ControlsCanvas.SetActive(false);
+            if (GameManager.Instance.SelectCharCanvas != null) GameManager.Instance.SelectCharCanvas.SetActive(false);
         }
         
         mainMenuUI.SetActive(true);
