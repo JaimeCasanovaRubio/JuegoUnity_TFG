@@ -9,16 +9,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [Header("Scene Names")]
-    public string mainMenuScene = "MenuScene";
-    public string baseScene = "Base";
-    public string gameScene = "OniricForest";
-    public string characterSelectionScene = "CharacterSelection";
+    [Header("Player")]
+    [SerializeField] private GameObject [] characterPrefabs;
 
     [Header("UI Prefabs")]
     [SerializeField] private GameObject settingsPrefab;
     [SerializeField] private GameObject controlsPrefab;
     [SerializeField] private GameObject selectCharPrefab;
+
+    [Header("Escenas")]
+    [SerializeField] public string baseScene = "base";
 
     public GameObject SettingsCanvas { get; private set; }
     public GameObject ControlsCanvas { get; private set; }
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
             _ = KeyBindings.Instance;
             _ = InputHandler.Instance;
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -102,6 +103,29 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetString("SelectedCharacter", characterType);
         ChangeScene(baseScene);
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == baseScene)
+        {
+            SpawnPlayer();
+        }
+    }
+    public void SpawnPlayer()
+    {
+        string selectedCharacter = PlayerPrefs.GetString("SelectedCharacter", "Hurtadilla");
+    
+        foreach (GameObject prefab in characterPrefabs)
+        {
+            if (prefab.name == selectedCharacter)
+            {
+                Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                return;
+            }
+        }
+    
+        Debug.LogWarning($"No se encontró prefab para: {selectedCharacter}");
+    }      
 
     public void QuitGame()
     {

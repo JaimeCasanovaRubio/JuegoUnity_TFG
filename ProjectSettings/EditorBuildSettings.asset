@@ -9,18 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MenuScene.unity
     guid: b583130f8a8c13d4a9d3079aa4115ea7
   - enabled: 1
-    path: Assets/Scenes/Menu/Settings/SettingsMenu.unity
-    guid: 85f32f6cce5c15c42ae9cfa7fc147a31
-  - enabled: 1
-    path: Assets/Scenes/Menu/CharacterSelection.unity
-    guid: a50514e1a5c807f4db250688a049fb4e
-  - enabled: 1
-    path: Assets/Scenes/Playable/Base.unity
-    guid: 64449757a6bae10469a3cda9d5c70e2f
-  - enabled: 1
-    path: Assets/Scenes/Playable/OniricForest.unity
-    guid: 4cd2d9dec99c85045a89be9fbce3fa03
-  - enabled: 1
+    path: Assets/Scenes/PlayeableScene/Base.unity
+    guid: 26323b25e4f0e116bb5c0372c60fea24
+  - enabled: 0
     path: Assets/Scenes/Menu/DeadScreen.unity
     guid: 1dc91ee3a4b38984aad34227073d7cc5
   m_configObjects:

@@ -5,18 +5,15 @@ using UnityEngine;
 /// </summary>
 public static class GameConstants
 {
-    // SCALE - En Unity normalmente no necesitamos escala manual,
-    // pero lo mantenemos por compatibilidad con la lógica original
-    public const float SCALE = 2.0f;
 
-    // TILED
-    public const int TILE_DEFAULT_SIZE = 32;
-    public const int TILE_SIZE = (int)(TILE_DEFAULT_SIZE * SCALE);
+    
 
     // PLAYER
     public const float PLAYER_SPEED = 5f;
+    public const float PLAYER_DAMAGE = 1;
     public const int PLAYER_WIDTH = 32;
     public const int PLAYER_HEIGHT = 32;
+
 
     // MONSTERS
     public const float MONSTER_SPEED = 2f;

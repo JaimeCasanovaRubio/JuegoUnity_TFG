@@ -14,10 +14,6 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private Button hurtadillaButton;
     // Añadir más botones para otros personajes aquí
 
-    [Header("Character Prefabs")]
-    [SerializeField] private GameObject hurtadillaPrefab;
-    // Añadir más prefabs para otros personajes aquí
-
     [Header("Scene to Load")]
     [SerializeField] private string gameSceneName = "Base";
 
@@ -48,25 +44,6 @@ public class CharacterSelection : MonoBehaviour
         selectedCharacter = characterName;
         Debug.Log($"🎭 Personaje seleccionado: {characterName}");
 
-        // Actualizar preview
-        if (characterNameText != null)
-        {
-            characterNameText.text = characterName;
-        }
-
-        if (characterDescriptionText != null)
-        {
-            switch (characterName)
-            {
-                case "Hurtadilla":
-                    characterDescriptionText.text = "Habilidad: DASH\nSe mueve rápidamente en una dirección.";
-                    break;
-                default:
-                    characterDescriptionText.text = "Selecciona un personaje para ver su descripción.";
-                    break;
-            }
-        }
-
         // Iniciar el juego con este personaje
         StartGameWithCharacter(characterName);
     }
@@ -79,10 +56,12 @@ public class CharacterSelection : MonoBehaviour
         // Guardar el personaje seleccionado en PlayerPrefs
         PlayerPrefs.SetString("SelectedCharacter", characterName);
         PlayerPrefs.Save();
-
         if (GameManager.Instance != null)
         {
             GameManager.Instance.StartGameWithCharacter(characterName);
+            if (GameManager.Instance.SelectCharCanvas != null) {
+                GameManager.Instance.SelectCharCanvas.SetActive(false);
+            }
         }
         else
         {   
