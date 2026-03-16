@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Escenas")]
     [SerializeField] public string baseScene = "base";
+    [SerializeField] public string mapaPrueba = "MapaPrueba";
+
+    [Header("TP")]
+    [SerializeField] private GameObject [] tp;
 
     public GameObject SettingsCanvas { get; private set; }
     public GameObject ControlsCanvas { get; private set; }
@@ -106,9 +110,12 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == baseScene)
+        if (scene.name == baseScene || scene.name == mapaPrueba)
         {
-            SpawnPlayer();
+            if (FindObjectOfType<Player>() == null)
+            {
+                SpawnPlayer();
+            }
         }
     }
     public void SpawnPlayer()
