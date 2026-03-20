@@ -58,7 +58,7 @@ public abstract class Enemie:Entity
                 Chase();
                 break;
             case EnemyState.Attack:
-                Attack();
+                Attack(player);
                 break;
         }
     }
@@ -74,8 +74,18 @@ public abstract class Enemie:Entity
         Vector2 direction = (player.transform.position - transform.position).normalized;
         rb.linearVelocity = direction * chaseSpeed;
     }
-    protected virtual void Attack()
+    protected virtual void Attack(Player target)
     {
-        
+        if (target != null)
+        {
+            target.TakeDamage(damage);
+        }
+    }
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Attack(collision.gameObject.GetComponent<Player>());
+        }
     }
 }

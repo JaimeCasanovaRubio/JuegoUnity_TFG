@@ -15,9 +15,7 @@ public static class GameConstants
     public const int PLAYER_HEIGHT = 32;
 
 
-    // MONSTERS
-    public const float MONSTER_SPEED = 2f;
-
+    
     // GAME WINDOW
     public const int GAME_WIDTH = 1280;
     public const int GAME_HEIGHT = 720;

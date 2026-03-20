@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4709254514194624916}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,9 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a23953bcc23801679acc740f594c554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hurtadilla
-  maxHealth: 5
+  MaxHealth: 5
   moveSpeed: 5
   invulnerabilityTime: 0.5
+  abilityCooldownDuration: 2
+  abilitySpeed: 100
 --- !u!50 &6989104551409368340
 Rigidbody2D:
   serializedVersion: 5

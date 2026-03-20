@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Hurtadilla:Player
 {
-    private float abilitySpeed = 100;
+    [SerializeField] private float abilitySpeed = 100;
+    
     protected override void ExecAbility()
     {
-        if(InputHandler.Instance != null && InputHandler.Instance.AbilityPressed)
+        if (CanUseAbility() && InputHandler.Instance != null && InputHandler.Instance.AbilityPressed)
         {
             Vector2 dashDir = InputHandler.Instance.LastDirection switch
             {
@@ -16,6 +17,7 @@ public class Hurtadilla:Player
                 _ => Vector2.right
             };
             rb.linearVelocity = dashDir * abilitySpeed;
+            StartAbilityCooldown();
         }
     }
 

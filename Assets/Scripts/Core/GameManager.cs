@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject settingsPrefab;
     [SerializeField] private GameObject controlsPrefab;
     [SerializeField] private GameObject selectCharPrefab;
+    [SerializeField] private GameObject hudPrefab;
+
+    private HUDController hudController;
+    private bool hudSpawned = false;
 
     [Header("EscenasJugables")]
     [SerializeField] public string baseScene = "base";
@@ -110,14 +114,40 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == baseScene || scene.name == mapaPrueba)
+        if (scene.name == mapaPrueba)
         {
+            SpawnHUD();
             if (FindObjectOfType<Player>() == null)
             {
                 SpawnPlayer();
             }
             EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
-            spawner?.SpawnEnemies();
+            if(spawner != null) spawner.SpawnEnemies();
+        }
+        else if (scene.name == baseScene)
+        {
+            hudSpawned = false;
+            if (FindObjectOfType<Player>() == null)
+            {
+                SpawnPlayer();
+            }
+            EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
+            if(spawner != null) spawner.SpawnEnemies();
+        }
+        else
+        {
+            hudSpawned = false;
+        }
+    }
+    
+    private void SpawnHUD()
+    {   
+        if (hudPrefab != null && !hudSpawned)
+        {
+            GameObject hudInstance = Instantiate(hudPrefab, transform);
+            hudInstance.name = "HUD";
+            hudController = hudInstance.GetComponent<HUDController>();
+            hudSpawned = true;
         }
     }
     public void SpawnPlayer()

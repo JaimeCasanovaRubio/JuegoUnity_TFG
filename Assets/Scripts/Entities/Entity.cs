@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Entity: MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] protected float maxHealth = 5;
+    [SerializeField] public float MaxHealth = 5;
     [SerializeField] protected float moveSpeed = PLAYER_SPEED;
     
 
@@ -12,21 +12,42 @@ public abstract class Entity: MonoBehaviour
     [SerializeField] protected float invulnerabilityTime = 0.5f;
     
 
-    protected float currentHealth {get; private set;} 
+    public float CurrentHealth {get; private set;}
+      
+
     protected float damage {get; private set;}
     protected bool isInvencible {get; private set;} 
     protected bool isDead {get; private set;} 
 
     protected virtual void Awake()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
         isInvencible = false;
         isDead = false;
         damage = PLAYER_DAMAGE;
     }
 
     public virtual void TakeDamage(float amount){
-        currentHealth -= amount;
+        if (isInvencible || isDead) return;
+    
+        CurrentHealth -= amount;
+    
+        if (CurrentHealth <= 0)
+        {
+            CurrentHealth = 0;
+            isDead = true;
+            OnDeath();
+        }   
+        else
+        {
+            StartCoroutine(ApplyInvulnerability());
+        }   
+    }      
+    private System.Collections.IEnumerator ApplyInvulnerability()
+    {
+        isInvencible = true;
+        yield return new WaitForSeconds(invulnerabilityTime);
+        isInvencible = false;
     }
     
     public virtual void Heal(float amount){}
