@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject controlsPrefab;
     [SerializeField] private GameObject selectCharPrefab;
 
-    [Header("Escenas")]
+    [Header("EscenasJugables")]
     [SerializeField] public string baseScene = "base";
     [SerializeField] public string mapaPrueba = "MapaPrueba";
 
@@ -116,6 +116,8 @@ public class GameManager : MonoBehaviour
             {
                 SpawnPlayer();
             }
+            EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
+            spawner?.SpawnEnemies();
         }
     }
     public void SpawnPlayer()

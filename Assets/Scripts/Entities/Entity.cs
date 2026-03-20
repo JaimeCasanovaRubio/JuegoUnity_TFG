@@ -25,7 +25,9 @@ public abstract class Entity: MonoBehaviour
         damage = PLAYER_DAMAGE;
     }
 
-    public virtual void TakeDamage(float amount){}
+    public virtual void TakeDamage(float amount){
+        currentHealth -= amount;
+    }
     
     public virtual void Heal(float amount){}
     

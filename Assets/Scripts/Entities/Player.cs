@@ -14,13 +14,6 @@ public abstract class Player:Entity
         HandleMovement();
         ExecAbility();
     }
-    protected virtual void HandleMovement()
-    {
-        Vector2 input = InputHandler.Instance.Movement;
-        rb.linearVelocity = input * moveSpeed;
-    }
-    protected virtual void ExecAbility(){}
-
     protected void OnTriggerEnter2D(Collider2D collision)
     {
         Teleport tp = collision.GetComponent<Teleport>();
@@ -29,4 +22,12 @@ public abstract class Player:Entity
             GameManager.Instance.ChangeScene(tp.sceneName);
         }
     }
+    protected virtual void HandleMovement()
+    {
+        Vector2 input = InputHandler.Instance.Movement;
+        rb.linearVelocity = input * moveSpeed;
+    }
+    protected virtual void ExecAbility(){}
+
+    
 }
