@@ -39,6 +39,10 @@ public abstract class Enemie:Entity
     }
     protected virtual void Update()
     {
+        if(CurrentHealth <= 0)
+        {
+            OnDeath();
+        }
         HandleMovement();
     }
     protected virtual void HandleMovement()
@@ -77,8 +81,11 @@ public abstract class Enemie:Entity
     protected virtual void Attack(Player target)
     {
         if (target != null)
-        {
-            target.TakeDamage(damage);
+        {   
+            if(!target.isInvencible)
+            {
+                target.TakeDamage(damage);
+            }
         }
     }
     protected virtual void OnCollisionEnter2D(Collision2D collision)
@@ -87,5 +94,9 @@ public abstract class Enemie:Entity
         {
             Attack(collision.gameObject.GetComponent<Player>());
         }
+    }
+    protected override void OnDeath()
+    {
+        Destroy(gameObject);
     }
 }

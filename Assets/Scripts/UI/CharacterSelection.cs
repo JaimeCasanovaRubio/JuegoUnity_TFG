@@ -14,9 +14,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private Button hurtadillaButton;
     // Añadir más botones para otros personajes aquí
 
-    [Header("Scene to Load")]
-    [SerializeField] private string gameSceneName = "Base";
-
+    
     [Header("Character Preview")]
     [SerializeField] private Image characterPreviewImage;
     [SerializeField] private TMPro.TextMeshProUGUI characterNameText;

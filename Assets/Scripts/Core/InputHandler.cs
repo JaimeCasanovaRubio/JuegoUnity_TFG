@@ -30,6 +30,7 @@ public class InputHandler : MonoBehaviour
     // Estado del input
     private Vector2 movement;
     private bool attackPressed;
+    private bool attackBuffered = false;
     private bool abilityPressed;
     private bool pausePressed;
     
@@ -40,6 +41,7 @@ public class InputHandler : MonoBehaviour
     // Properties públicas para acceder al estado del input
     public Vector2 Movement => movement;
     public bool AttackPressed => attackPressed;
+    public bool AttackBuffered => attackBuffered;
     public bool AbilityPressed => abilityPressed;
     public bool PausePressed => pausePressed;
     public bool FacingRight => facingRight;
@@ -61,6 +63,13 @@ public class InputHandler : MonoBehaviour
     {
         ProcessInput();
     }
+
+    public bool ConsumeAttackInput()
+    {
+        bool result = attackBuffered;
+        attackBuffered = false;
+        return result;
+    }   
 
     /// <summary>
     /// Devuelve verdadero si se ha pulsado la tecla de pausa en este frame.
@@ -114,11 +123,11 @@ public class InputHandler : MonoBehaviour
             lastDirection = "down";
         }
 
-        // Ataque usando KeyBindings
         if (WasKeyPressedThisFrame(keyboard, KeyBindings.Instance.Attack))
-        {
-            attackPressed = true;
-        }
+    {
+        attackPressed = true;
+        attackBuffered = true;
+    }
 
         // Habilidad usando KeyBindings
         if (WasKeyPressedThisFrame(keyboard, KeyBindings.Instance.Ability))

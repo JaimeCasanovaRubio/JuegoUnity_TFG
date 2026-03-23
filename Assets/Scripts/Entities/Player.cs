@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public abstract class Player:Entity
 {
@@ -18,7 +19,7 @@ public abstract class Player:Entity
         rb = GetComponent<Rigidbody2D>();
     }
     protected virtual void Update()
-    {
+    {   
         HandleMovement();
         UpdateAbilityCooldown();
         ExecAbility();
@@ -54,7 +55,32 @@ public abstract class Player:Entity
         Vector2 input = InputHandler.Instance.Movement;
         rb.linearVelocity = input * moveSpeed;
     }
+    protected virtual void ExecAttack(Enemie target)
+    {
+        isInvencible = true;
+        if (target != null)
+        {
+            target.TakeDamage(damage);
+        }
+        StartCoroutine(EndInvencibility(invulnerabilityTime));
+    }
     protected virtual void ExecAbility(){}
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemie"))
+        {
+            if(InputHandler.Instance.ConsumeAttackInput())
+            {   
+                ExecAttack(collision.gameObject.GetComponent<Enemie>());
+            }
+            
+        }
+    }
+    private IEnumerator EndInvencibility(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isInvencible = false;
+    }
 
     
 }

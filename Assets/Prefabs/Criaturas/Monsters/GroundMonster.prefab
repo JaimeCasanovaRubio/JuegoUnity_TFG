@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4442120275860992693}
   m_Layer: 0
   m_Name: GroundMonster
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4049847355545304743}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0582c8607091d0e5988b27ee79cdc655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundEnemy
-  maxHealth: 5
+  MaxHealth: 5
   moveSpeed: 5
   invulnerabilityTime: 0.5
   rangeOfPatrol: 5

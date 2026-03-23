@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TP
   - Colision
+  - Enemie
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
+
 
 /// <summary>
 /// Controlador principal del juego.
@@ -22,8 +24,8 @@ public class GameManager : MonoBehaviour
     private bool hudSpawned = false;
 
     [Header("EscenasJugables")]
-    [SerializeField] public string baseScene = "base";
-    [SerializeField] public string mapaPrueba = "MapaPrueba";
+    [SerializeField] public static string baseScene = "Base";
+    [SerializeField] public static string mapaPrueba = "MapaPrueba";
 
     [Header("TP")]
     [SerializeField] private GameObject [] tp;
@@ -102,8 +104,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
+    {   
+        SceneGestor.ChangeScene(sceneName);
     }
 
     public void StartGameWithCharacter(string characterType)
@@ -127,6 +129,14 @@ public class GameManager : MonoBehaviour
         else if (scene.name == baseScene)
         {
             hudSpawned = false;
+            if (FindObjectOfType<Player>() == null)
+            {
+                SpawnPlayer();
+            }
+        }
+        else if (SceneGestor.mp.Contains(scene.name))
+        {
+            SpawnHUD();
             if (FindObjectOfType<Player>() == null)
             {
                 SpawnPlayer();

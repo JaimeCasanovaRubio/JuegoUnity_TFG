@@ -25,7 +25,7 @@ public class SettingsConfigUI : MonoBehaviour
     {
         GameManager.Instance.SettingsCanvas.SetActive(false);
         //GameManager.Instance.ChangeView();
-        GameManager.Instance.ChangeScene(GameManager.Instance.baseScene);
+        GameManager.Instance.ChangeScene(GameManager.baseScene);
     }
 
     public void OnVolverClicker()

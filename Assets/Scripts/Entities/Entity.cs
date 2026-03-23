@@ -6,17 +6,18 @@ public abstract class Entity: MonoBehaviour
     [Header("Stats")]
     [SerializeField] public float MaxHealth = 5;
     [SerializeField] protected float moveSpeed = PLAYER_SPEED;
+    [SerializeField] public float CurrentHealth;
+
     
 
     [Header("Combat")]
-    [SerializeField] protected float invulnerabilityTime = 0.5f;
+    [SerializeField] protected float invulnerabilityTime = 0.2f;
     
 
-    public float CurrentHealth {get; private set;}
       
 
     protected float damage {get; private set;}
-    protected bool isInvencible {get; private set;} 
+    public bool isInvencible {get; protected set;} 
     protected bool isDead {get; private set;} 
 
     protected virtual void Awake()
