@@ -103,9 +103,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeScene(string sceneName)
+    public void ChangeScene(string sceneName, int index = 6)
     {   
-        SceneGestor.ChangeScene(sceneName);
+        SceneGestor.ChangeScene(sceneName, index);
     }
 
     public void StartGameWithCharacter(string characterType)
@@ -143,10 +143,16 @@ public class GameManager : MonoBehaviour
             }
             EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
             if(spawner != null) spawner.SpawnEnemies();
+            if(SceneGestor.doorIndex == 0|| SceneGestor.doorIndex == 1 
+            || SceneGestor.doorIndex == 2 || SceneGestor.doorIndex == 3)
+            {
+                SceneGestor.SetLastScene(SceneGestor.doorIndex);
+            }
         }
         else
         {
             hudSpawned = false;
+            
         }
     }
     
