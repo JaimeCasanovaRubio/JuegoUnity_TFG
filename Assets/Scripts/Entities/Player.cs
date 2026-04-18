@@ -44,7 +44,10 @@ public abstract class Player:Entity
     }
     protected void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log($"Trigger: {collision.gameObject.name}, HasTeleport: {collision.GetComponent<Teleport>() != null}, ColliderEnabled: {collision.enabled}");
         Teleport tp = collision.GetComponent<Teleport>();
+        Debug.Log($"TP sceneName: {tp.sceneName}, TP index: {tp.index}");
+
         if(tp!=null)
         {
             GameManager.Instance.ChangeScene(tp.sceneName, tp.index);

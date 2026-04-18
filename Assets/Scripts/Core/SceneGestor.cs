@@ -19,6 +19,7 @@ public class SceneGestor
     //ARRAY DE MAPAS
     public static List<string>  spawns = new List<string>{GameManager.baseScene, GameManager.mapaPrueba};
     public static List<string> mp = new List<string>{mp1, mp2, mp3, mp4, mp5};
+    public static List<string> mpVisited = new List<string>{};
 
 
 
@@ -33,7 +34,11 @@ public class SceneGestor
         {   
             string sceneToChange = mp[random];
             //mp.RemoveAt(random);
+            mpVisited.Add(sceneToChange);
             LoadScene(sceneToChange, index);
+        }else if(mp.Contains(sceneName))
+        {
+            LoadScene(sceneName,index);
         }
     }
     public static void SetLastScene(int index)
