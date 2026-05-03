@@ -23,14 +23,20 @@ public class SettingsConfigUI : MonoBehaviour
 
     public void OnVolverBaseClicked()
     {
+        Player player = FindObjectOfType<Player>();
+        if (player != null)
+        {
+            Destroy(player.gameObject);
+        }
+
         GameManager.Instance.SettingsCanvas.SetActive(false);
-        //GameManager.Instance.ChangeView();
-        GameManager.Instance.ChangeScene(GameManager.baseScene);
+        GameManager.Instance.TogglePause();
+        SceneGestor.ChangeScene(GameManager.baseScene);
     }
 
     public void OnVolverClicker()
     {
         GameManager.Instance.SettingsCanvas.SetActive(false);
-        //GameManager.Instance.ChangeView();
+        GameManager.Instance.TogglePause();
     }
 }

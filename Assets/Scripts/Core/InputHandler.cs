@@ -126,7 +126,7 @@ public class InputHandler : MonoBehaviour
         }
 
         // Pausa usando KeyBindings
-        if (IsKeyPressed(keyboard, KeyBindings.Instance.Pause))
+        if (WasKeyPressedThisFrame(keyboard, KeyBindings.Instance.Pause))
         {
             Debug.Log("Pause pressed");
             pausePressed = true;

@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     private HUDController hudController;
     private bool hudSpawned = false;
+    
+    [Header("Escenas")]
+    [SerializeField] public static string menuPrincipal = "MenuScene";
 
     [Header("EscenasJugables")]
     [SerializeField] public static string baseScene = "Base";
@@ -34,7 +37,6 @@ public class GameManager : MonoBehaviour
     public GameObject ControlsCanvas { get; private set; }
     public GameObject SelectCharCanvas { get; private set; }
 
-    public string currentScene;
     public bool isPaused = false;
 
     private void Awake()
@@ -94,12 +96,18 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause()
     {
-        isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0f : 1f;
-
-        if (SettingsCanvas != null)
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name != menuPrincipal)
         {
-            SettingsCanvas.SetActive(isPaused);
+            if (SettingsCanvas != null && ControlsCanvas != null)
+            {
+                if(!ControlsCanvas.activeSelf)
+                {
+                    isPaused = !isPaused;
+                    Time.timeScale = isPaused ? 0f : 1f;
+                    SettingsCanvas.SetActive(isPaused);
+                }
+            }
         }
     }
 
