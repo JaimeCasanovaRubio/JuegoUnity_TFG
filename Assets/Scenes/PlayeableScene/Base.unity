@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
+  Index: 6
   targetScene: MapaPrueba
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -9,6 +9,7 @@ public class SceneGestor
     private static System.Random rnm = new System.Random();
     private static string lastMap;
     public static int doorIndex;
+    public static int indexToTP;
     //NOMBRES ESCENAS DE MAPA
     private static string mp1 = "MP1";
     private static string mp2 = "MP2";
@@ -50,13 +51,15 @@ public class SceneGestor
             {
                 if(tp.index == 2)
                 {
+                    indexToTP = 2;
                     tp.sceneName = lastMap;
                 }
             }
             else if(index == 1)
             {
                 if(tp.index == 3)
-                {
+                {   
+                    indexToTP = 3;
                     tp.sceneName = lastMap;
                 }
             }   
@@ -64,6 +67,7 @@ public class SceneGestor
             {
                 if(tp.index == 0)
                 {
+                    indexToTP = 0;
                     tp.sceneName = lastMap;
                 }
             }
@@ -71,6 +75,7 @@ public class SceneGestor
             {   
                 if(tp.index == 1)
                 {
+                    indexToTP = 1;
                     tp.sceneName = lastMap;
                 }
             }

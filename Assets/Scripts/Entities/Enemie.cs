@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public abstract class Enemie:Entity
 {
@@ -11,7 +12,9 @@ public abstract class Enemie:Entity
     [SerializeField] protected float rangeOfDetection;
     [SerializeField] protected float patrolSpeed = 2f;
     [SerializeField] protected float chaseSpeed = 3f;
+    [SerializeField] protected float knockback = 1f;
 
+    private bool knocked = false;
     protected Vector2 startPosition;
     protected Vector2 moveDirection = Vector2.right;
 
@@ -43,6 +46,7 @@ public abstract class Enemie:Entity
         {
             OnDeath();
         }
+        if(knocked) return;
         HandleMovement();
     }
     protected virtual void HandleMovement()
@@ -91,9 +95,29 @@ public abstract class Enemie:Entity
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
-            Attack(collision.gameObject.GetComponent<Player>());
+        {   Player player = collision.gameObject.GetComponent<Player>();
+            if(player.isInvencible) {
+                return;
+            }
+            Attack(player);
         }
+    }
+    public override void TakeDamage(float amount)
+    {
+        base.TakeDamage(amount);
+
+        rb.linearVelocity = Vector2.zero;
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        rb.AddForce(-direction * knockback, ForceMode2D.Impulse);
+
+        StartCoroutine(ApplyKnockback());
+    }
+    private IEnumerator ApplyKnockback()
+    {
+        knocked = true;
+        yield return new WaitForSeconds(0.1f);
+        rb.linearVelocity = Vector2.zero;
+        knocked = false;
     }
     protected override void OnDeath()
     {

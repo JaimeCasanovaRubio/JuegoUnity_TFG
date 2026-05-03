@@ -125,6 +125,8 @@ public class GameManager : MonoBehaviour
             }
             EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
             if(spawner != null) spawner.SpawnEnemies();
+            Player player = FindObjectOfType<Player>();
+            if (player != null) player.transform.position = Vector3.zero;
         }
         else if (scene.name == baseScene)
         {
@@ -147,6 +149,12 @@ public class GameManager : MonoBehaviour
             || SceneGestor.doorIndex == 2 || SceneGestor.doorIndex == 3)
             {
                 SceneGestor.SetLastScene(SceneGestor.doorIndex);
+                SpawnPlayerAtTP();
+            }
+            else
+            {
+                Player player = FindObjectOfType<Player>();
+                if (player != null) player.transform.position = Vector3.zero;
             }
         }
         else
@@ -181,7 +189,30 @@ public class GameManager : MonoBehaviour
     
         Debug.LogWarning($"No se encontró prefab para: {selectedCharacter}");
     }      
-
+    private void SpawnPlayerAtTP()
+    {
+        Player player = FindObjectOfType<Player>();
+        if (player == null) return;
+        Teleport[] tps = FindObjectsByType<Teleport>(FindObjectsSortMode.None);
+        foreach (Teleport teleport in tps)
+        {
+            if (teleport.index == SceneGestor.indexToTP)
+            {   
+                Vector2 offset = SceneGestor.indexToTP switch
+                {
+                    0 => new Vector2(1.5f, 0),   // TP izquierdo → empujar a la derecha
+                    2 => new Vector2(-1.5f, 0),   // TP derecho → empujar a la izquierda
+                    1 => new Vector2(0, -1.5f),   // TP arriba → empujar hacia abajo
+                    3 => new Vector2(0, 1.5f),    // TP abajo → empujar hacia arriba
+                    _ => Vector2.zero
+                };
+                player.transform.position = (Vector2)teleport.transform.position + offset;
+                return;
+            }
+        }
+        // Si no se encontró el TP, mover al centro
+        player.transform.position = Vector3.zero;
+    }
     public void QuitGame()
     {
 #if UNITY_EDITOR
