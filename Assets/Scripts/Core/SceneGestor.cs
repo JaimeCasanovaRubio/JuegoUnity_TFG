@@ -10,16 +10,9 @@ public class SceneGestor
     private static string lastMap;
     public static int doorIndex;
     public static int indexToTP;
-    //NOMBRES ESCENAS DE MAPA
-    private static string mp1 = "MP1";
-    private static string mp2 = "MP2";
-    private static string mp3 = "MP3";
-    private static string mp4 = "MP4";
-    private static string mp5 = "MP5";
 
     //ARRAY DE MAPAS
-    public static List<string>  spawns = new List<string>{GameManager.baseScene, GameManager.mapaPrueba};
-    public static List<string> mp = new List<string>{mp1, mp2, mp3, mp4, mp5};
+    public static List<string>  spawns = new List<string>{GameManager.Instance.baseScene, GameManager.Instance.mapaPrueba};
     public static List<MapScene> mpVisited = new List<MapScene>{};
 
     public static MapScene SavedMap;
@@ -29,17 +22,17 @@ public class SceneGestor
 
     public static void ChangeScene(string sceneName, int index = 5)
     {   
-        int random = rnm.Next(0,mp.Count);
+        int random = rnm.Next(0,GameManager.Instance.primerMapa.Count);
         if(spawns.Contains(sceneName))
         {
             LoadScene(sceneName);
         }else if(sceneName.Equals("random1"))
         {   
-            string sceneToChange = mp[random];
+            string sceneToChange = GameManager.Instance.primerMapa[random];
             SavedMap = new MapScene(sceneToChange);
             //mp.RemoveAt(random);
             LoadScene(sceneToChange, index);
-        }else if(mp.Contains(sceneName) || mpVisited.Any(m => m.sceneName == sceneName))
+        }else if(GameManager.Instance.primerMapa.Contains(sceneName) || mpVisited.Any(m => m.sceneName == sceneName))
         {
             MapScene existing = mpVisited.FirstOrDefault(m => m.sceneName == sceneName);
             SavedMap = existing != null ? existing : new MapScene(sceneName);

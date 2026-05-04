@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System.Collections.Generic;
 
 
 /// <summary>
@@ -24,11 +25,14 @@ public class GameManager : MonoBehaviour
     private bool hudSpawned = false;
     
     [Header("Escenas")]
-    [SerializeField] public static string menuPrincipal = "MenuScene";
+    [SerializeField] public string menuPrincipal = "MenuScene";
 
     [Header("EscenasJugables")]
-    [SerializeField] public static string baseScene = "Base";
-    [SerializeField] public static string mapaPrueba = "MapaPrueba";
+    [SerializeField] public string baseScene = "Base";
+    [SerializeField] public string mapaPrueba = "MapaPrueba";
+    [SerializeField] public List<string> primerMapa = new List<string>();
+
+
 
     [Header("TP")]
     [SerializeField] private GameObject [] tp;
@@ -174,7 +178,7 @@ public class GameManager : MonoBehaviour
                 SpawnPlayer();
             }
         }
-        else if (SceneGestor.mp.Contains(scene.name) 
+        else if (primerMapa.Contains(scene.name)
             || SceneGestor.mpVisited.Any(m => m.sceneName == scene.name)
             || (SceneGestor.SavedMap != null && SceneGestor.SavedMap.sceneName == scene.name))
         {
