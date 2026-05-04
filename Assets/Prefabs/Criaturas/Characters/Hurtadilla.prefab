@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6989104551409368340}
   - component: {fileID: 2759580821570221909}
   - component: {fileID: 4709254514194624916}
+  - component: {fileID: 5791870678290989578}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -264,3 +265,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5791870678290989578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443534884005691761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f1aed07a89fbf4aa9b67b72e195493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrdenarPorY

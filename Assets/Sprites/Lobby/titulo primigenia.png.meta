@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e5419a834aafec4cb9e82d16dd6c75c
+guid: ed4c9cf42487d13489b87fa9a38c36c5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3134345134690531589
-    second: FONDO LOBBY _0
+      213: -1315054731016787710
+    second: titulo primigenia_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FONDO LOBBY _0
+      name: titulo primigenia_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3072
-        height: 2848
+        x: 557
+        y: 50
+        width: 2287
+        height: 1464
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf60c4bd4b19084d0800000000000000
-      internalID: -3134345134690531589
+      spriteID: 2092c8980bcffbde0800000000000000
+      internalID: -1315054731016787710
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FONDO LOBBY _0: -3134345134690531589
+      titulo primigenia_0: -1315054731016787710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

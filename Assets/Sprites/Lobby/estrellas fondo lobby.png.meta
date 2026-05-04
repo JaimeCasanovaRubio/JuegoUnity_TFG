@@ -1,34 +1,43 @@
 fileFormatVersion: 2
-guid: 1d4118572847cc54f8fea2e3d2e2860e
+guid: 1dd8a4086047e27489d7c7ae6cb1bd19
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6349520027531120541
-    second: objetos_0
+      213: 6526212772349159989
+    second: estrellas fondo lobby_0
   - first:
-      213: 2527720842142326344
-    second: objetos_1
+      213: -8339050908946053282
+    second: estrellas fondo lobby_1
   - first:
-      213: 2115978897144711606
-    second: objetos_2
+      213: 898830809826828754
+    second: estrellas fondo lobby_2
   - first:
-      213: -465773058034396076
-    second: objetos_3
+      213: -5334815269429976286
+    second: estrellas fondo lobby_3
   - first:
-      213: 7692122196500718559
-    second: objetos_4
+      213: -6630624986148171033
+    second: estrellas fondo lobby_4
   - first:
-      213: 2471942499591305465
-    second: objetos_5
+      213: -5597060278430642289
+    second: estrellas fondo lobby_5
   - first:
-      213: 6251317240380822215
-    second: objetos_6
+      213: -4009573655602803169
+    second: estrellas fondo lobby_6
   - first:
-      213: 6690336577493327282
-    second: objetos_7
+      213: -1480343532957553713
+    second: estrellas fondo lobby_7
   - first:
-      213: 5176650414004985109
-    second: objetos_8
+      213: 8483964498844601597
+    second: estrellas fondo lobby_8
+  - first:
+      213: -6797135837429944042
+    second: estrellas fondo lobby_9
+  - first:
+      213: -1094948925788796614
+    second: estrellas fondo lobby_10
+  - first:
+      213: -5051674888994278782
+    second: estrellas fondo lobby_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: objetos_0
+      name: estrellas fondo lobby_0
       rect:
         serializedVersion: 2
-        x: 113
-        y: 1728
-        width: 271
-        height: 227
+        x: 1382
+        y: 1596
+        width: 69
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9f8837e2d60e1850800000000000000
-      internalID: 6349520027531120541
+      spriteID: 53a2d7860f3c19a50800000000000000
+      internalID: 6526212772349159989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_1
+      name: estrellas fondo lobby_1
       rect:
         serializedVersion: 2
-        x: 699
-        y: 1802
-        width: 203
-        height: 180
+        x: 1658
+        y: 1629
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84e9e37a6b4441320800000000000000
-      internalID: 2527720842142326344
+      spriteID: e574f58616db54c80800000000000000
+      internalID: -8339050908946053282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_2
+      name: estrellas fondo lobby_2
       rect:
         serializedVersion: 2
-        x: 972
-        y: 1818
-        width: 202
-        height: 121
+        x: 1328
+        y: 1539
+        width: 35
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b9888498977d5d10800000000000000
-      internalID: 2115978897144711606
+      spriteID: 2d1a7ecfbd9497c00800000000000000
+      internalID: 898830809826828754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_3
+      name: estrellas fondo lobby_3
       rect:
         serializedVersion: 2
-        x: 1313
-        y: 1556
-        width: 351
-        height: 387
+        x: 748
+        y: 1441
+        width: 68
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45499e91fdd3989f0800000000000000
-      internalID: -465773058034396076
+      spriteID: 223eb4b07cde6f5b0800000000000000
+      internalID: -5334815269429976286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_4
+      name: estrellas fondo lobby_4
       rect:
         serializedVersion: 2
-        x: 1426
-        y: 1910
-        width: 9
-        height: 19
+        x: 2170
+        y: 1459
+        width: 46
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd3a2531268efba60800000000000000
-      internalID: 7692122196500718559
+      spriteID: 7e21fc5a4b94bf3a0800000000000000
+      internalID: -6630624986148171033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_5
+      name: estrellas fondo lobby_5
       rect:
         serializedVersion: 2
-        x: 1700
-        y: 1545
-        width: 219
-        height: 412
+        x: 883
+        y: 1379
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f8b4514b9a1e4220800000000000000
-      internalID: 2471942499591305465
+      spriteID: f8f41bdc45f3352b0800000000000000
+      internalID: -5597060278430642289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_6
+      name: estrellas fondo lobby_6
       rect:
         serializedVersion: 2
-        x: 526
-        y: 1839
-        width: 102
-        height: 52
+        x: 1961
+        y: 1352
+        width: 63
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c29c23c8e321c650800000000000000
-      internalID: 6251317240380822215
+      spriteID: f1ec70df0022b58c0800000000000000
+      internalID: -4009573655602803169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_7
+      name: estrellas fondo lobby_7
       rect:
         serializedVersion: 2
-        x: 545
-        y: 1838
-        width: 13
-        height: 10
+        x: 786
+        y: 1304
+        width: 35
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2bdda499ba9d8dc50800000000000000
-      internalID: 6690336577493327282
+      spriteID: fcba4846663c47be0800000000000000
+      internalID: -1480343532957553713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objetos_8
+      name: estrellas fondo lobby_8
       rect:
         serializedVersion: 2
-        x: 575
-        y: 1837
-        width: 17
-        height: 8
+        x: 2477
+        y: 1257
+        width: 68
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,8 +324,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51d552ddf1827d740800000000000000
-      internalID: 5176650414004985109
+      spriteID: dfc48a003c81db570800000000000000
+      internalID: 8483964498844601597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estrellas fondo lobby_9
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1254
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61139e7f7f8bba1a0800000000000000
+      internalID: -6797135837429944042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estrellas fondo lobby_10
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 1214
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a39c927d0c5fdc0f0800000000000000
+      internalID: -1094948925788796614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estrellas fondo lobby_11
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 1217
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2823cb01478d4e9b0800000000000000
+      internalID: -5051674888994278782
       vertices: []
       indices: 
       edges: []
@@ -335,15 +410,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      objetos_0: 6349520027531120541
-      objetos_1: 2527720842142326344
-      objetos_2: 2115978897144711606
-      objetos_3: -465773058034396076
-      objetos_4: 7692122196500718559
-      objetos_5: 2471942499591305465
-      objetos_6: 6251317240380822215
-      objetos_7: 6690336577493327282
-      objetos_8: 5176650414004985109
+      estrellas fondo lobby_0: 6526212772349159989
+      estrellas fondo lobby_1: -8339050908946053282
+      estrellas fondo lobby_10: -1094948925788796614
+      estrellas fondo lobby_11: -5051674888994278782
+      estrellas fondo lobby_2: 898830809826828754
+      estrellas fondo lobby_3: -5334815269429976286
+      estrellas fondo lobby_4: -6630624986148171033
+      estrellas fondo lobby_5: -5597060278430642289
+      estrellas fondo lobby_6: -4009573655602803169
+      estrellas fondo lobby_7: -1480343532957553713
+      estrellas fondo lobby_8: 8483964498844601597
+      estrellas fondo lobby_9: -6797135837429944042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
