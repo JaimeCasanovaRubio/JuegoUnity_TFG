@@ -20,7 +20,9 @@ public class SceneGestor
     //ARRAY DE MAPAS
     public static List<string>  spawns = new List<string>{GameManager.baseScene, GameManager.mapaPrueba};
     public static List<string> mp = new List<string>{mp1, mp2, mp3, mp4, mp5};
-    public static List<string> mpVisited = new List<string>{};
+    public static List<MapScene> mpVisited = new List<MapScene>{};
+
+    public static MapScene SavedMap;
 
 
 
@@ -34,17 +36,20 @@ public class SceneGestor
         }else if(sceneName.Equals("random1"))
         {   
             string sceneToChange = mp[random];
+            SavedMap = new MapScene(sceneToChange);
             //mp.RemoveAt(random);
-            mpVisited.Add(sceneToChange);
             LoadScene(sceneToChange, index);
-        }else if(mp.Contains(sceneName))
+        }else if(mp.Contains(sceneName) || mpVisited.Any(m => m.sceneName == sceneName))
         {
+            MapScene existing = mpVisited.FirstOrDefault(m => m.sceneName == sceneName);
+            SavedMap = existing != null ? existing : new MapScene(sceneName);
             LoadScene(sceneName,index);
         }
     }
     public static void SetLastScene(int index)
     {
         Teleport[] tps = Object.FindObjectsByType<Teleport>(FindObjectsSortMode.None);
+
         foreach (Teleport tp in tps)
         {
             if(index == 0)
@@ -52,6 +57,7 @@ public class SceneGestor
                 if(tp.index == 2)
                 {
                     indexToTP = 2;
+                    SavedMap.sceneIndex0 = lastMap;
                     tp.sceneName = lastMap;
                 }
             }
@@ -60,6 +66,7 @@ public class SceneGestor
                 if(tp.index == 3)
                 {   
                     indexToTP = 3;
+                    SavedMap.sceneIndex1 = lastMap;
                     tp.sceneName = lastMap;
                 }
             }   
@@ -68,6 +75,7 @@ public class SceneGestor
                 if(tp.index == 0)
                 {
                     indexToTP = 0;
+                    SavedMap.sceneIndex2 = lastMap;
                     tp.sceneName = lastMap;
                 }
             }
@@ -76,10 +84,33 @@ public class SceneGestor
                 if(tp.index == 1)
                 {
                     indexToTP = 1;
+                    SavedMap.sceneIndex3 = lastMap;
                     tp.sceneName = lastMap;
                 }
             }
         }
+        foreach(MapScene scene in mpVisited)
+        {
+            if(scene.sceneName == SavedMap.sceneName)
+            {
+                if(scene.sceneIndex0 != "random1"){
+                    SavedMap.sceneIndex0 = scene.sceneIndex0;
+                }
+                if(scene.sceneIndex1 != "random1"){
+                    SavedMap.sceneIndex1 = scene.sceneIndex1;
+                }
+                if(scene.sceneIndex2 != "random1"){
+                    SavedMap.sceneIndex2 = scene.sceneIndex2;
+                }
+                if(scene.sceneIndex3 != "random1"){
+                    SavedMap.sceneIndex3 = scene.sceneIndex3;
+                }
+                mpVisited.Remove(scene);
+                break;
+            }
+        }
+        mpVisited.Add(SavedMap);
+
     }
     private static void LoadScene(string sceneName, int index = 5)
     {   
