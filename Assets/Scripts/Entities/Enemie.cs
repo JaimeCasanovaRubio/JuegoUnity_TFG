@@ -15,8 +15,8 @@ public abstract class Enemie:Entity
     [SerializeField] protected float knockback = 1f;
 
     private bool knocked = false;
-    protected Vector2 startPosition;
     protected Vector2 moveDirection = Vector2.right;
+    protected float distanceOfPatrol = 0;
 
    
     protected float lastAttackTime;
@@ -34,7 +34,6 @@ public abstract class Enemie:Entity
         base.Awake();
         rb = GetComponent<Rigidbody2D>();
         state = EnemyState.Patrol;
-        startPosition = transform.position;
     }
     protected virtual void Start()
     {
@@ -72,10 +71,13 @@ public abstract class Enemie:Entity
     }
     protected virtual void Patrol()
     {
-        float distanceFromStart = transform.position.x - startPosition.x;
-        if (Mathf.Abs(distanceFromStart) >= rangeOfPatrol)
-            moveDirection *= -1;
+       if(distanceOfPatrol >= rangeOfPatrol){
+        moveDirection *= -1;
+        distanceOfPatrol = 0;
+       }else{
+        distanceOfPatrol += Time.deltaTime;
         rb.linearVelocity = moveDirection * patrolSpeed;
+       }
     }
     protected virtual void Chase()
     {

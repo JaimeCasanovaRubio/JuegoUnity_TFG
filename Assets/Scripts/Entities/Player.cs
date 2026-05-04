@@ -10,6 +10,7 @@ public abstract class Player:Entity
     [Header("Ability Cooldown")]
     [SerializeField] protected float abilityCooldownDuration = 2f;
     protected float abilityCooldownTimer = 0f;
+    protected float attackStorageTimer = 0.5f;
 
     public float AbilityCooldownRemaining => Mathf.Max(0, abilityCooldownTimer);
     public float AbilityCooldownTotal => abilityCooldownDuration;
@@ -74,7 +75,7 @@ public abstract class Player:Entity
         isInvencible = true;
         attacking = true;
         StartCoroutine(EndInvulnerability(invulnerabilityTime));
-        StartCoroutine(EndAttack(1f));
+        StartCoroutine(EndAttack(attackStorageTimer));
     }
     protected virtual void ExecAbility(){}
     protected virtual void OnCollisionEnter2D(Collision2D collision)
