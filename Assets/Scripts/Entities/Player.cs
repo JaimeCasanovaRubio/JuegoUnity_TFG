@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public abstract class Player:Entity
@@ -10,6 +11,11 @@ public abstract class Player:Entity
     [Header("Ability Cooldown")]
     [SerializeField] protected float abilityCooldownDuration = 2f;
     protected float abilityCooldownTimer = 0f;
+    protected float attackStorageTimer = 0.5f;
+
+    // Cooldown para evitar re-trigger del TP al spawnear
+    private float tpCooldown = 0f;
+    private const float TP_COOLDOWN_DURATION = 0.5f;
 
     public float AbilityCooldownRemaining => Mathf.Max(0, abilityCooldownTimer);
     public float AbilityCooldownTotal => abilityCooldownDuration;
@@ -27,9 +33,22 @@ public abstract class Player:Entity
         base.Awake();
         DontDestroyOnLoad(transform.root.gameObject);
         rb = GetComponent<Rigidbody2D>();
+        SceneManager.sceneLoaded += OnPlayerSceneLoaded;
+    }
+
+    protected virtual void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnPlayerSceneLoaded;
+    }
+
+    private void OnPlayerSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Activar cooldown al cargar escena para no re-disparar el TP
+        tpCooldown = TP_COOLDOWN_DURATION;
     }
     protected virtual void Update()
     {   
+        if (tpCooldown > 0) tpCooldown -= Time.deltaTime;
         HandleMovement();
         UpdateAbilityCooldown();
         ExecAbility();
@@ -58,6 +77,9 @@ public abstract class Player:Entity
     }
     protected void OnTriggerEnter2D(Collider2D collision)
     {
+        // Ignorar TPs durante el cooldown post-cambio de escena
+        if (tpCooldown > 0) return;
+
         Teleport tp = collision.GetComponent<Teleport>();
         if(tp!=null)
         {
@@ -74,7 +96,7 @@ public abstract class Player:Entity
         isInvencible = true;
         attacking = true;
         StartCoroutine(EndInvulnerability(invulnerabilityTime));
-        StartCoroutine(EndAttack(1f));
+        StartCoroutine(EndAttack(attackStorageTimer));
     }
     protected virtual void ExecAbility(){}
     protected virtual void OnCollisionEnter2D(Collision2D collision)

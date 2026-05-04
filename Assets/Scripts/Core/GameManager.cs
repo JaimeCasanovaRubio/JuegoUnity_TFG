@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     private HUDController hudController;
     private bool hudSpawned = false;
+    
+    [Header("Escenas")]
+    [SerializeField] public static string menuPrincipal = "MenuScene";
 
     [Header("EscenasJugables")]
     [SerializeField] public static string baseScene = "Base";
@@ -34,7 +37,6 @@ public class GameManager : MonoBehaviour
     public GameObject ControlsCanvas { get; private set; }
     public GameObject SelectCharCanvas { get; private set; }
 
-    public string currentScene;
     public bool isPaused = false;
 
     private void Awake()
@@ -94,12 +96,18 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause()
     {
-        isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0f : 1f;
-
-        if (SettingsCanvas != null)
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name != menuPrincipal)
         {
-            SettingsCanvas.SetActive(isPaused);
+            if (SettingsCanvas != null && ControlsCanvas != null)
+            {
+                if(!ControlsCanvas.activeSelf)
+                {
+                    isPaused = !isPaused;
+                    Time.timeScale = isPaused ? 0f : 1f;
+                    SettingsCanvas.SetActive(isPaused);
+                }
+            }
         }
     }
 
@@ -116,6 +124,36 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        foreach(MapScene mapS in SceneGestor.mpVisited)
+        {
+            if(mapS.sceneName == scene.name)
+            {
+                Teleport[] tps = Object.FindObjectsByType<Teleport>(FindObjectsSortMode.None);   
+                foreach(Teleport tp in tps)
+                {
+                    if(mapS.sceneIndex0 != "random1"){
+                        if(tp.index == 2){
+                            tp.sceneName = mapS.sceneIndex0;
+                        }
+                    }
+                    if(mapS.sceneIndex1 != "random1"){
+                        if(tp.index == 3){
+                            tp.sceneName = mapS.sceneIndex1;
+                        }
+                    }
+                    if(mapS.sceneIndex2 != "random1"){
+                        if(tp.index == 0){
+                            tp.sceneName = mapS.sceneIndex2;
+                        }
+                    }
+                    if(mapS.sceneIndex3 != "random1"){
+                        if(tp.index == 1){
+                            tp.sceneName = mapS.sceneIndex3;
+                        }
+                    }
+                }
+            }
+        }
         if (scene.name == mapaPrueba)
         {
             SpawnHUD();
@@ -136,7 +174,9 @@ public class GameManager : MonoBehaviour
                 SpawnPlayer();
             }
         }
-        else if (SceneGestor.mp.Contains(scene.name))
+        else if (SceneGestor.mp.Contains(scene.name) 
+            || SceneGestor.mpVisited.Any(m => m.sceneName == scene.name)
+            || (SceneGestor.SavedMap != null && SceneGestor.SavedMap.sceneName == scene.name))
         {
             SpawnHUD();
             if (FindObjectOfType<Player>() == null)

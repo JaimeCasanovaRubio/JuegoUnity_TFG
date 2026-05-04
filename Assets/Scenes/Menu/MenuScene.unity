@@ -1410,10 +1410,7 @@ MonoBehaviour:
   controlsPrefab: {fileID: 4589057401765393492, guid: cc895e80db4cb4a4992a0ba2bb970108, type: 3}
   selectCharPrefab: {fileID: 4978109676157132543, guid: 4122bf98f9fff7255a3e64ad0fc6cd1f, type: 3}
   hudPrefab: {fileID: 100000, guid: c7a63fdada1810271b06250bb536dfca, type: 3}
-  baseScene: Base
-  mapaPrueba: MapaPrueba
   tp: []
-  currentScene: 
   isPaused: 0
 --- !u!1 &1527476142
 GameObject:
@@ -1539,7 +1536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelection
   hurtadillaButton: {fileID: 0}
-  gameSceneName: OniricForest
   characterPreviewImage: {fileID: 0}
   characterNameText: {fileID: 0}
   characterDescriptionText: {fileID: 0}
@@ -1785,7 +1781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -110.99}
+  m_AnchoredPosition: {x: 1000, y: -110.99}
   m_SizeDelta: {x: 957.03, y: 176.029}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828803362
@@ -1808,7 +1804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Unknoted
+  m_text: 'Primigenia
 
 '
   m_isRightToLeft: 0
@@ -1876,7 +1872,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 185.3657, y: 0, z: 113.8743, w: 0}
+  m_margin: {x: 85.19536, y: 0, z: 113.8743, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
