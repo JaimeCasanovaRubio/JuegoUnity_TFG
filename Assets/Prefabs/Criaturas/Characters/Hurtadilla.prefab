@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 2759580821570221909}
   - component: {fileID: 4709254514194624916}
   - component: {fileID: 5791870678290989578}
+  - component: {fileID: 3452907972909508741}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -63,8 +64,8 @@ Transform:
   m_GameObject: {fileID: 7443534884005691761}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.023354862, y: 0.3404369, z: 0}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4974418320103474654}
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8927460485970759408, guid: f5ec5dc556038d74d80ae101d4413e3e, type: 3}
+  m_Sprite: {fileID: 2273345850975309311, guid: bdb7482a53a46e54d91ace871e99292f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -211,7 +212,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2.28}
+    oldSize: {x: 6.9375, y: 10.03125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -257,7 +258,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2.28}
+    oldSize: {x: 6.9375, y: 10.03125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -277,3 +278,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f1aed07a89fbf4aa9b67b72e195493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrdenarPorY
+--- !u!95 &3452907972909508741
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443534884005691761}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
