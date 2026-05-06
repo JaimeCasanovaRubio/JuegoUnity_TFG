@@ -7,6 +7,7 @@ public abstract class Player:Entity
     public static Player Instance { get; private set; }
 
     protected Rigidbody2D rb;
+    protected Animator animator;
     
     [Header("Ability Cooldown")]
     [SerializeField] protected float abilityCooldownDuration = 2f;
@@ -33,6 +34,7 @@ public abstract class Player:Entity
         base.Awake();
         DontDestroyOnLoad(transform.root.gameObject);
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         SceneManager.sceneLoaded += OnPlayerSceneLoaded;
     }
 
@@ -90,6 +92,19 @@ public abstract class Player:Entity
     {
         Vector2 input = InputHandler.Instance.Movement;
         rb.linearVelocity = input * moveSpeed;
+
+        if (animator == null) return;
+
+        bool isMoving = input.magnitude > 0.1f;
+        animator.SetBool("IsMoving", isMoving);
+
+        if (isMoving)
+        {
+            if (Mathf.Abs(input.y) >= Mathf.Abs(input.x))
+                animator.SetInteger("Direction", input.y < 0 ? 0 : 1);
+            else
+                animator.SetInteger("Direction", input.x < 0 ? 2 : 3);
+        }
     }
     protected virtual void ExecAttack()
     {

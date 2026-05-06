@@ -1276,10 +1276,6 @@ MonoBehaviour:
   controlsPrefab: {fileID: 4589057401765393492, guid: cc895e80db4cb4a4992a0ba2bb970108, type: 3}
   selectCharPrefab: {fileID: 4978109676157132543, guid: 4122bf98f9fff7255a3e64ad0fc6cd1f, type: 3}
   hudPrefab: {fileID: 100000, guid: c7a63fdada1810271b06250bb536dfca, type: 3}
-  menuPrincipal: MenuScene
-  baseScene: Base
-  mapaPrueba: MapaPrueba
-  primerMapa: []
   tp: []
   isPaused: 0
 --- !u!1 &1556684960
