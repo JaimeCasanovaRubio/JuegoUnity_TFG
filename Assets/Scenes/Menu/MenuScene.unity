@@ -1279,7 +1279,12 @@ MonoBehaviour:
   menuPrincipal: MenuScene
   baseScene: Base
   mapaPrueba: MapaPrueba
-  primerMapa: []
+  primerMapa:
+  - MP1
+  - MP2
+  - MP3
+  - MP4
+  - MP5
   tp: []
   isPaused: 0
 --- !u!1 &1556684960

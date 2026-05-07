@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4442120275860992693}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundMonster
   m_TagString: Enemie
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3400127890959365615}
   - component: {fileID: 3871309488510179541}
   - component: {fileID: 4049847355545304743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Enemie
   m_Icon: {fileID: 0}
@@ -140,11 +140,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GroundEnemy
   MaxHealth: 5
   moveSpeed: 5
+  CurrentHealth: 0
   invulnerabilityTime: 0.5
   rangeOfPatrol: 5
-  rangeOfDetection: 2
+  rangeOfDetection: 8
   patrolSpeed: 2
   chaseSpeed: 3
+  knockback: 1
 --- !u!50 &3871309488510179541
 Rigidbody2D:
   serializedVersion: 5

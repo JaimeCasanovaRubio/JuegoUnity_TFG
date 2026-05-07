@@ -268,10 +268,10 @@ TextureImporter:
       name: CaminarHurtadilla_6
       rect:
         serializedVersion: 2
-        x: 90
-        y: 73
-        width: 118
-        height: 237
+        x: 95
+        y: 75
+        width: 111
+        height: 235
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,6 +432,7 @@ TextureImporter:
       CaminarHurtadilla_7: -5216918884528526771
       CaminarHurtadilla_8: 6409636639688935901
       CaminarHurtadilla_9: 818229020859377665
+      q: 3731228737651194707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
