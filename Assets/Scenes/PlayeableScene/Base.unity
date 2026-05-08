@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 30479056}
   - component: {fileID: 30479059}
   - component: {fileID: 30479058}
+  - component: {fileID: 30479060}
   m_Layer: 0
   m_Name: OBJETOS1_6 (2)
   m_TagString: Untagged
@@ -246,7 +247,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.12523031}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -292,7 +293,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.14378297}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -304,6 +305,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.02, y: 0.23243403}
   m_EdgeRadius: 0
+--- !u!114 &30479060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30479054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &62846842
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +330,7 @@ GameObject:
   - component: {fileID: 62846843}
   - component: {fileID: 62846844}
   - component: {fileID: 62846846}
+  - component: {fileID: 62846847}
   m_Layer: 0
   m_Name: OBJETOS1_10
   m_TagString: Untagged
@@ -430,10 +446,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.08595967, y: -0.5955777}
+  m_Offset: {x: 0.08595967, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4999997, y: 0.20669013}
+    pivot: {x: 0.5135182, y: 0.17111681}
     oldSize: {x: 2.03, y: 1.8}
     newSize: {x: 2.03, y: 1.8}
     adaptiveTilingThreshold: 0.5
@@ -442,6 +458,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6370416, y: 0.38780594}
   m_EdgeRadius: 0
+--- !u!114 &62846847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62846842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &144633534
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +484,7 @@ GameObject:
   - component: {fileID: 144633536}
   - component: {fileID: 144633539}
   - component: {fileID: 144633538}
+  - component: {fileID: 144633540}
   m_Layer: 0
   m_Name: OBJETOS1_6 (3)
   m_TagString: Untagged
@@ -569,7 +600,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.06740022}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -615,7 +646,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0030639172, y: -0.1562463}
+  m_Offset: {x: 0.0030639172, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -627,6 +658,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.68299913, y: 0.20750737}
   m_EdgeRadius: 0
+--- !u!114 &144633540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144633534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &277597308
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +683,7 @@ GameObject:
   - component: {fileID: 277597309}
   - component: {fileID: 277597310}
   - component: {fileID: 277597312}
+  - component: {fileID: 277597313}
   m_Layer: 0
   m_Name: Arbol2_0
   m_TagString: Untagged
@@ -654,7 +700,7 @@ Transform:
   m_GameObject: {fileID: 277597308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.04, y: -14.99, z: 0}
+  m_LocalPosition: {x: -12.59, y: -14.43, z: 0}
   m_LocalScale: {x: -0.9339, y: 0.8794, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -753,7 +799,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.7424854, y: -3.0023654}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.31785128, y: 0.07399853}
@@ -765,6 +811,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.0996583, y: 0.3509097}
   m_EdgeRadius: 0
+--- !u!114 &277597313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277597308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &378077705
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +836,7 @@ GameObject:
   - component: {fileID: 378077706}
   - component: {fileID: 378077707}
   - component: {fileID: 378077709}
+  - component: {fileID: 378077710}
   m_Layer: 0
   m_Name: OBJETOS1_10
   m_TagString: Untagged
@@ -891,10 +952,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.111432314, y: -0.5707325}
+  m_Offset: {x: 0.111432314, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4999997, y: 0.20669013}
+    pivot: {x: 0.5135182, y: 0.17111681}
     oldSize: {x: 2.03, y: 1.8}
     newSize: {x: 2.03, y: 1.8}
     adaptiveTilingThreshold: 0.5
@@ -903,6 +964,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5652528, y: 0.49910283}
   m_EdgeRadius: 0
+--- !u!114 &378077710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378077705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &415160345
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +989,7 @@ GameObject:
   - component: {fileID: 415160346}
   - component: {fileID: 415160347}
   - component: {fileID: 415160349}
+  - component: {fileID: 415160350}
   m_Layer: 0
   m_Name: Arbol2_0
   m_TagString: Untagged
@@ -1029,7 +1105,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.65530944, y: -3.0041165}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.31785128, y: 0.07399853}
@@ -1041,6 +1117,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.1641736, y: 0.39834213}
   m_EdgeRadius: 0
+--- !u!114 &415160350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415160345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &449402038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1142,7 @@ GameObject:
   - component: {fileID: 449402039}
   - component: {fileID: 449402040}
   - component: {fileID: 449402042}
+  - component: {fileID: 449402043}
   m_Layer: 0
   m_Name: OBJETOS1_9
   m_TagString: Untagged
@@ -1167,7 +1258,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.12062955, y: -0.28747496}
+  m_Offset: {x: -0.12062955, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.49999994, y: 0.31054205}
@@ -1179,6 +1270,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.468741, y: 0.55443937}
   m_EdgeRadius: 0
+--- !u!114 &449402043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449402038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &502061946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1296,7 @@ GameObject:
   - component: {fileID: 502061948}
   - component: {fileID: 502061951}
   - component: {fileID: 502061950}
+  - component: {fileID: 502061952}
   m_Layer: 0
   m_Name: OBJETOS1_6 (1)
   m_TagString: Untagged
@@ -1306,7 +1412,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.13563901}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1352,7 +1458,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.14743364}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1364,6 +1470,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.02, y: 0.2251327}
   m_EdgeRadius: 0
+--- !u!114 &502061952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502061946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &533149044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1496,7 @@ GameObject:
   - component: {fileID: 533149046}
   - component: {fileID: 533149049}
   - component: {fileID: 533149048}
+  - component: {fileID: 533149050}
   m_Layer: 0
   m_Name: OBJETOS1_10 (3)
   m_TagString: Untagged
@@ -1491,10 +1612,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.11515331, y: -0.7030885}
+  m_Offset: {x: 0.11515331, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4999997, y: 0.20669013}
+    pivot: {x: 0.5135182, y: 0.17111681}
     oldSize: {x: 2.03, y: 1.8}
     newSize: {x: 2.03, y: 1.8}
     adaptiveTilingThreshold: 0.5
@@ -1537,10 +1658,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.071474075, y: -0.64448994}
+  m_Offset: {x: 0.071474075, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4999997, y: 0.20669013}
+    pivot: {x: 0.5135182, y: 0.17111681}
     oldSize: {x: 2.03, y: 1.8}
     newSize: {x: 2.03, y: 1.8}
     adaptiveTilingThreshold: 0.5
@@ -1549,6 +1670,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8228798, y: 0.51102006}
   m_EdgeRadius: 0
+--- !u!114 &533149050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533149044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &538707317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1851,7 @@ GameObject:
   - component: {fileID: 640285153}
   - component: {fileID: 640285154}
   - component: {fileID: 640285156}
+  - component: {fileID: 640285157}
   m_Layer: 0
   m_Name: OBJETOS1_11 (1)
   m_TagString: Untagged
@@ -1732,7 +1868,7 @@ Transform:
   m_GameObject: {fileID: 640285152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.6899996, y: -3.58, z: 0}
+  m_LocalPosition: {x: 7.666, y: -3.507, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1831,7 +1967,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.25759754}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4762398, y: 0.26200324}
@@ -1843,6 +1979,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.8490715, y: 0.4384114}
   m_EdgeRadius: 0
+--- !u!114 &640285157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640285152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &682111954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,6 +2623,7 @@ GameObject:
   - component: {fileID: 796747886}
   - component: {fileID: 796747887}
   - component: {fileID: 796747889}
+  - component: {fileID: 796747890}
   m_Layer: 0
   m_Name: Arbol1
   m_TagString: Untagged
@@ -2588,7 +2739,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.36802292, y: -3.219377}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4763203, y: 0.34192225}
@@ -2600,6 +2751,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.2915878, y: 0.3124075}
   m_EdgeRadius: 0
+--- !u!114 &796747890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796747885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &841433935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,6 +2776,7 @@ GameObject:
   - component: {fileID: 841433936}
   - component: {fileID: 841433937}
   - component: {fileID: 841433939}
+  - component: {fileID: 841433940}
   m_Layer: 0
   m_Name: Arbol1 (2)
   m_TagString: Untagged
@@ -2726,7 +2892,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.18185997, y: -3.1118279}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4763203, y: 0.34192225}
@@ -2738,6 +2904,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5010185, y: 0.6015892}
   m_EdgeRadius: 0
+--- !u!114 &841433940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841433935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &979713043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,6 +2929,7 @@ GameObject:
   - component: {fileID: 979713044}
   - component: {fileID: 979713045}
   - component: {fileID: 979713047}
+  - component: {fileID: 979713048}
   m_Layer: 0
   m_Name: Arbol1
   m_TagString: Untagged
@@ -2864,7 +3045,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.3456149, y: -3.2017584}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4763203, y: 0.34192225}
@@ -2876,6 +3057,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.2912588, y: 0.3031149}
   m_EdgeRadius: 0
+--- !u!114 &979713048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979713043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1006877399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,6 +3083,7 @@ GameObject:
   - component: {fileID: 1006877401}
   - component: {fileID: 1006877404}
   - component: {fileID: 1006877403}
+  - component: {fileID: 1006877405}
   m_Layer: 0
   m_Name: OBJETOS1_6
   m_TagString: Untagged
@@ -3003,7 +3199,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0037269592, y: -0.1005615}
+  m_Offset: {x: 0.0037269592, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3049,7 +3245,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.022359848, y: -0.058383465}
+  m_Offset: {x: -0.022359848, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3061,6 +3257,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7318096, y: 0.2541685}
   m_EdgeRadius: 0
+--- !u!114 &1006877405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006877399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1097663371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,6 +3283,7 @@ GameObject:
   - component: {fileID: 1097663372}
   - component: {fileID: 1097663376}
   - component: {fileID: 1097663375}
+  - component: {fileID: 1097663377}
   m_Layer: 0
   m_Name: OBJETOS1_5
   m_TagString: Untagged
@@ -3188,7 +3399,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.389701, y: -1.595339}
+  m_Offset: {x: 0.389701, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.6534123, y: 0.17381272}
@@ -3234,7 +3445,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.24356365, y: -1.8023674}
+  m_Offset: {x: 0.24356365, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.6534123, y: 0.17381272}
@@ -3246,6 +3457,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1507978, y: 0.515265}
   m_EdgeRadius: 0
+--- !u!114 &1097663377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097663371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1254954643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,6 +3482,7 @@ GameObject:
   - component: {fileID: 1254954644}
   - component: {fileID: 1254954645}
   - component: {fileID: 1254954647}
+  - component: {fileID: 1254954648}
   m_Layer: 0
   m_Name: Arbol2_0
   m_TagString: Untagged
@@ -3372,7 +3598,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.6442826, y: -2.9866052}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.31785128, y: 0.07399853}
@@ -3384,6 +3610,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.1143641, y: 0.4496956}
   m_EdgeRadius: 0
+--- !u!114 &1254954648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254954643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1392192017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,6 +3635,7 @@ GameObject:
   - component: {fileID: 1392192018}
   - component: {fileID: 1392192019}
   - component: {fileID: 1392192021}
+  - component: {fileID: 1392192022}
   m_Layer: 0
   m_Name: OBJETOS1_3
   m_TagString: Untagged
@@ -3510,7 +3751,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -1.6955328}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.51367396, y: 0.2891644}
@@ -3522,6 +3763,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.51, y: 0.27861643}
   m_EdgeRadius: 0
+--- !u!114 &1392192022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392192017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1633398806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,6 +3788,7 @@ GameObject:
   - component: {fileID: 1633398807}
   - component: {fileID: 1633398808}
   - component: {fileID: 1633398810}
+  - component: {fileID: 1633398811}
   m_Layer: 0
   m_Name: Arbol1
   m_TagString: Untagged
@@ -3648,7 +3904,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.37723374, y: -3.1490088}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4763203, y: 0.34192225}
@@ -3660,6 +3916,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.143147, y: 0.3326025}
   m_EdgeRadius: 0
+--- !u!114 &1633398811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633398806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1648649692
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,6 +3942,7 @@ GameObject:
   - component: {fileID: 1648649694}
   - component: {fileID: 1648649696}
   - component: {fileID: 1648649695}
+  - component: {fileID: 1648649697}
   m_Layer: 0
   m_Name: OBJETOS1_6
   m_TagString: Untagged
@@ -3787,7 +4058,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.041446686, y: -0.03626573}
+  m_Offset: {x: -0.041446686, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3833,7 +4104,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.024177194, y: -0.11585724}
+  m_Offset: {x: 0.024177194, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3845,6 +4116,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4397471, y: 0.2882855}
   m_EdgeRadius: 0
+--- !u!114 &1648649697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648649692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1683642881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3948,6 +4233,7 @@ GameObject:
   - component: {fileID: 1686838015}
   - component: {fileID: 1686838017}
   - component: {fileID: 1686838016}
+  - component: {fileID: 1686838018}
   m_Layer: 0
   m_Name: OBJETOS1_10 (2)
   m_TagString: Untagged
@@ -3964,7 +4250,7 @@ Transform:
   m_GameObject: {fileID: 1686838013}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7699995, y: -2.83, z: 0}
+  m_LocalPosition: {x: 6.8, y: -3.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4063,10 +4349,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.099187374, y: -0.620256}
+  m_Offset: {x: 0.099187374, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4999997, y: 0.20669013}
+    pivot: {x: 0.5135182, y: 0.17111681}
     oldSize: {x: 2.03, y: 1.8}
     newSize: {x: 2.03, y: 1.8}
     adaptiveTilingThreshold: 0.5
@@ -4109,10 +4395,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.099907875, y: -0.51328075}
+  m_Offset: {x: 0.099907875, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4999997, y: 0.20669013}
+    pivot: {x: 0.5135182, y: 0.17111681}
     oldSize: {x: 2.03, y: 1.8}
     newSize: {x: 2.03, y: 1.8}
     adaptiveTilingThreshold: 0.5
@@ -4121,6 +4407,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2674351, y: 0.5320139}
   m_EdgeRadius: 0
+--- !u!114 &1686838018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686838013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1728184956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,6 +4523,7 @@ GameObject:
   - component: {fileID: 1771960987}
   - component: {fileID: 1771960988}
   - component: {fileID: 1771960991}
+  - component: {fileID: 1771960992}
   m_Layer: 0
   m_Name: OBJETOS1_10 (1)
   m_TagString: Untagged
@@ -4338,10 +4639,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.07402372, y: -0.6785768}
+  m_Offset: {x: 0.07402372, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4999997, y: 0.20669013}
+    pivot: {x: 0.5135182, y: 0.17111681}
     oldSize: {x: 2.03, y: 1.8}
     newSize: {x: 2.03, y: 1.8}
     adaptiveTilingThreshold: 0.5
@@ -4350,6 +4651,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5365067, y: 0.31134868}
   m_EdgeRadius: 0
+--- !u!114 &1771960992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771960986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &1847393112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,6 +4676,7 @@ GameObject:
   - component: {fileID: 1847393113}
   - component: {fileID: 1847393114}
   - component: {fileID: 1847393116}
+  - component: {fileID: 1847393117}
   m_Layer: 0
   m_Name: OBJETOS1_3
   m_TagString: Untagged
@@ -4476,7 +4792,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -1.4712714}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.51367396, y: 0.2891644}
@@ -4488,6 +4804,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.51, y: 0.58923364}
   m_EdgeRadius: 0
+--- !u!114 &1847393117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847393112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1 &2035570215
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,6 +4829,7 @@ GameObject:
   - component: {fileID: 2035570216}
   - component: {fileID: 2035570217}
   - component: {fileID: 2035570219}
+  - component: {fileID: 2035570220}
   m_Layer: 0
   m_Name: Arbol1 (1)
   m_TagString: Untagged
@@ -4515,7 +4846,7 @@ Transform:
   m_GameObject: {fileID: 2035570215}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.2, y: -14.4, z: 0}
+  m_LocalPosition: {x: -15.77, y: -15.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4614,7 +4945,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.35975766, y: -3.2386231}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4763203, y: 0.34192225}
@@ -4624,8 +4955,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2355065, y: 0.14125538}
+  m_Size: {x: 2.2355065, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &2035570220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035570215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
