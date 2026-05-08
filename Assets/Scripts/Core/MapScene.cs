@@ -7,6 +7,7 @@ public class MapScene
     public string sceneIndex1 = "random1";
     public string sceneIndex2 = "random1";
     public string sceneIndex3 = "random1";
+    public bool isVisited = false;
     
     public MapScene(string sceneName){
         this.sceneName = sceneName;

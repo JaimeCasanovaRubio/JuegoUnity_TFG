@@ -18,6 +18,15 @@ public abstract class Player:Entity
     private float tpCooldown = 0f;
     private const float TP_COOLDOWN_DURATION = 0.5f;
 
+    protected bool IsMelee {get; private set;} = true;
+    protected bool IsRanged {get; private set;} = false;
+
+    [Header("Ranged Attack")]
+    [SerializeField] protected GameObject projectilePrefab;
+    [SerializeField] protected float projectileSpeed = 10f;
+    [SerializeField] protected Transform firePoint;
+    protected Vector2 lastFacingDirection = Vector2.down;
+
     public float AbilityCooldownRemaining => Mathf.Max(0, abilityCooldownTimer);
     public float AbilityCooldownTotal => abilityCooldownDuration;
     
@@ -77,17 +86,6 @@ public abstract class Player:Entity
     {
         abilityCooldownTimer = abilityCooldownDuration;
     }
-    protected void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Ignorar TPs durante el cooldown post-cambio de escena
-        if (tpCooldown > 0) return;
-
-        Teleport tp = collision.GetComponent<Teleport>();
-        if(tp!=null)
-        {
-            GameManager.Instance.ChangeScene(tp.sceneName, tp.index);
-        }
-    }
     protected virtual void HandleMovement()
     {
         Vector2 input = InputHandler.Instance.Movement;
@@ -101,19 +99,61 @@ public abstract class Player:Entity
         if (isMoving)
         {
             if (Mathf.Abs(input.y) >= Mathf.Abs(input.x))
+            {
                 animator.SetInteger("Direction", input.y < 0 ? 0 : 1);
+                lastFacingDirection = input.y < 0 ? Vector2.down : Vector2.up;
+            }
             else
+            {
                 animator.SetInteger("Direction", input.x < 0 ? 2 : 3);
+                lastFacingDirection = input.x < 0 ? Vector2.left : Vector2.right;
+            }
         }
     }
     protected virtual void ExecAttack()
     {
+        if (attacking) return;
+
+        if(IsMelee)
+        {
+            MeleeAttack();
+        }   
+        if(IsRanged)
+        {
+            RangedAttack();
+        }   
+        
+    }
+    protected virtual void ExecAbility(){}
+    protected virtual void MeleeAttack(){
         isInvencible = true;
         attacking = true;
         StartCoroutine(EndInvulnerability(invulnerabilityTime));
-        StartCoroutine(EndAttack(attackStorageTimer));
+        StartCoroutine(EndAttack(attackStorageTimer));    
     }
-    protected virtual void ExecAbility(){}
+    protected virtual void RangedAttack(){
+        isInvencible = true;
+        StartCoroutine(EndInvulnerability(invulnerabilityTime));
+        
+        if (projectilePrefab != null)
+        {
+            Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
+            GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+            
+            float angle = Mathf.Atan2(lastFacingDirection.y, lastFacingDirection.x) * Mathf.Rad2Deg;
+            proj.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            Projectile projectileScript = proj.GetComponentInChildren<Projectile>();
+            if (projectileScript != null)
+            {
+                projectileScript.Setup(lastFacingDirection, projectileSpeed, damage, gameObject);
+            }
+            else
+            {
+                Debug.LogError("¡ATENCIÓN! El prefab disparado no tiene el script Projectile.cs asociado.");
+            }
+        }
+    }
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemie"))
@@ -123,6 +163,30 @@ public abstract class Player:Entity
                 enemie.TakeDamage(damage);
             }
         }
+    }
+    protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Ignorar TPs durante el cooldown post-cambio de escena
+        if (collision.gameObject.CompareTag("TP")){
+            if (tpCooldown > 0) return;
+
+            Teleport tp = collision.GetComponent<Teleport>();
+            if(tp!=null)
+            {
+                GameManager.Instance.ChangeScene(tp.sceneName, tp.index, tp.goBack);
+            }
+        } 
+        if(collision.gameObject.CompareTag("ranged")){
+            IsRanged = true;
+            IsMelee = false;
+            Debug.Log("Arma cambiada aranged");
+        }
+        if(collision.gameObject.CompareTag("meele")){
+            IsRanged = false;
+            IsMelee = true;
+            Debug.Log("Arma cambiada a melee");
+        }
+        
     }
     private IEnumerator EndInvulnerability(float delay)
     {

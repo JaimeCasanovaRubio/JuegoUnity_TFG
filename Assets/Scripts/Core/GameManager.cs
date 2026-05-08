@@ -32,11 +32,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public string mapaPrueba = "MapaPrueba";
     [SerializeField] public List<string> primerMapa = new List<string>();
 
-
-
-    [Header("TP")]
-    [SerializeField] private GameObject [] tp;
-
     public GameObject SettingsCanvas { get; private set; }
     public GameObject ControlsCanvas { get; private set; }
     public GameObject SelectCharCanvas { get; private set; }
@@ -115,9 +110,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeScene(string sceneName, int index = 6)
+    public void ChangeScene(string sceneName, int index = 6, bool goBack = false)
     {   
-        SceneGestor.ChangeScene(sceneName, index);
+        SceneGestor.ChangeScene(sceneName, index, goBack);
     }
 
     public void StartGameWithCharacter(string characterType)
@@ -188,7 +183,21 @@ public class GameManager : MonoBehaviour
                 SpawnPlayer();
             }
             EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
-            if(spawner != null) spawner.SpawnEnemies();
+            if(spawner != null)
+            {
+                if (SceneGestor.SavedMap != null)
+                {
+                    if (!SceneGestor.SavedMap.isVisited)
+                    {
+                        spawner.SpawnEnemies();
+                        SceneGestor.SavedMap.isVisited = true;
+                    }
+                }
+                else
+                {
+                    spawner.SpawnEnemies();
+                }
+            }
             if(SceneGestor.doorIndex == 0|| SceneGestor.doorIndex == 1 
             || SceneGestor.doorIndex == 2 || SceneGestor.doorIndex == 3)
             {

@@ -149,10 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemieSpawner
   enemyPrefabs:
-  - {fileID: 5441277260643185569, guid: f8bca52266d068e49a1d0076027b611f, type: 3}
+  - {fileID: 2964552186154463161, guid: 3201b4786d5f9b9fe81079a7f5a37228, type: 3}
   spawnPoints:
   - {fileID: 472984880}
-  - {fileID: 201244798}
 --- !u!4 &26818171
 Transform:
   m_ObjectHideFlags: 0
@@ -182,7 +181,7 @@ GameObject:
   - component: {fileID: 110746986}
   m_Layer: 0
   m_Name: Triangle (3)
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,8 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 3
+  targetScene: random1
 --- !u!212 &110746988
 SpriteRenderer:
   serializedVersion: 2
@@ -321,37 +320,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &201244797
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 201244798}
-  m_Layer: 0
-  m_Name: spawn_2
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &201244798
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201244797}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1578751594}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260742484
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +334,7 @@ GameObject:
   - component: {fileID: 260742486}
   m_Layer: 0
   m_Name: Triangle (2)
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,8 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 2
+  targetScene: random1
 --- !u!212 &260742488
 SpriteRenderer:
   serializedVersion: 2
@@ -585,7 +553,7 @@ GameObject:
   - component: {fileID: 1111114217}
   m_Layer: 0
   m_Name: Triangle (1)
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -663,8 +631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 1
+  targetScene: random1
 --- !u!212 &1111114219
 SpriteRenderer:
   serializedVersion: 2
@@ -738,7 +706,7 @@ GameObject:
   - component: {fileID: 1279571745}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -816,8 +784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 0
+  targetScene: random1
 --- !u!212 &1279571747
 SpriteRenderer:
   serializedVersion: 2
@@ -1009,7 +977,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 472984880}
-  - {fileID: 201244798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1953689999
