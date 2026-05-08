@@ -173,7 +173,7 @@ public abstract class Player:Entity
             Teleport tp = collision.GetComponent<Teleport>();
             if(tp!=null)
             {
-                GameManager.Instance.ChangeScene(tp.sceneName, tp.index);
+                GameManager.Instance.ChangeScene(tp.sceneName, tp.index, tp.goBack);
             }
         } 
         if(collision.gameObject.CompareTag("ranged")){

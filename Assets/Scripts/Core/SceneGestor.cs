@@ -20,12 +20,12 @@ public class SceneGestor
 
 
 
-    public static void ChangeScene(string sceneName, int index = 5)
+    public static void ChangeScene(string sceneName, int index = 5, bool goBack = false)
     {   
         int random = rnm.Next(0,GameManager.Instance.primerMapa.Count);
         if(spawns.Contains(sceneName))
         {
-            LoadScene(sceneName);
+            LoadScene(sceneName, index, goBack);
         }else if(sceneName.Equals("random1"))
         {   
             string sceneToChange = GameManager.Instance.primerMapa[random];
@@ -98,6 +98,7 @@ public class SceneGestor
                 if(scene.sceneIndex3 != "random1"){
                     SavedMap.sceneIndex3 = scene.sceneIndex3;
                 }
+                SavedMap.isVisited = scene.isVisited;
                 mpVisited.Remove(scene);
                 break;
             }
@@ -105,7 +106,7 @@ public class SceneGestor
         mpVisited.Add(SavedMap);
 
     }
-    private static void LoadScene(string sceneName, int index = 5)
+    private static void LoadScene(string sceneName, int index = 5, bool goBack = false)
     {   
         lastMap = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         doorIndex = index;
