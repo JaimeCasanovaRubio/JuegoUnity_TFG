@@ -110,9 +110,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeScene(string sceneName, int index = 6, bool goBack = false)
+    public void ChangeScene(string sceneName, int index = 6)
     {   
-        SceneGestor.ChangeScene(sceneName, index, goBack);
+        SceneGestor.ChangeScene(sceneName, index);
     }
 
     public void StartGameWithCharacter(string characterType)
@@ -130,25 +130,21 @@ public class GameManager : MonoBehaviour
                 Teleport[] tps = Object.FindObjectsByType<Teleport>(FindObjectsSortMode.None);   
                 foreach(Teleport tp in tps)
                 {
-                    if(mapS.sceneIndex0 != "random1"){
-                        if(tp.index == 2){
-                            tp.sceneName = mapS.sceneIndex0;
-                        }
+                    if(mapS.sceneIndex0 != "random1" && tp.index == 0){
+                        tp.sceneName = mapS.sceneIndex0;
+                        tp.goBack = mapS.isVisited0;
                     }
-                    if(mapS.sceneIndex1 != "random1"){
-                        if(tp.index == 3){
-                            tp.sceneName = mapS.sceneIndex1;
-                        }
+                    if(mapS.sceneIndex1 != "random1" && tp.index == 1){
+                        tp.sceneName = mapS.sceneIndex1;
+                        tp.goBack = mapS.isVisited1;
                     }
-                    if(mapS.sceneIndex2 != "random1"){
-                        if(tp.index == 0){
-                            tp.sceneName = mapS.sceneIndex2;
-                        }
+                    if(mapS.sceneIndex2 != "random1" && tp.index == 2){
+                        tp.sceneName = mapS.sceneIndex2;
+                        tp.goBack = mapS.isVisited2;
                     }
-                    if(mapS.sceneIndex3 != "random1"){
-                        if(tp.index == 1){
-                            tp.sceneName = mapS.sceneIndex3;
-                        }
+                    if(mapS.sceneIndex3 != "random1" && tp.index == 3){
+                        tp.sceneName = mapS.sceneIndex3;
+                        tp.goBack = mapS.isVisited3;
                     }
                 }
             }
@@ -162,8 +158,17 @@ public class GameManager : MonoBehaviour
             }
             EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
             if(spawner != null) spawner.SpawnEnemies();
-            Player player = FindObjectOfType<Player>();
-            if (player != null) player.transform.position = Vector3.zero;
+            
+            if(SceneGestor.doorIndex == 0 || SceneGestor.doorIndex == 1 || SceneGestor.doorIndex == 2 || SceneGestor.doorIndex == 3)
+            {
+                SceneGestor.SetLastScene(SceneGestor.doorIndex);
+                SpawnPlayerAtTP();
+            }
+            else
+            {
+                Player player = FindObjectOfType<Player>();
+                if (player != null) player.transform.position = Vector3.zero;
+            }
         }
         else if (scene.name == baseScene)
         {
@@ -171,6 +176,11 @@ public class GameManager : MonoBehaviour
             if (FindObjectOfType<Player>() == null)
             {
                 SpawnPlayer();
+            }
+            if(SceneGestor.doorIndex == 0 || SceneGestor.doorIndex == 1 || SceneGestor.doorIndex == 2 || SceneGestor.doorIndex == 3)
+            {
+                SceneGestor.SetLastScene(SceneGestor.doorIndex);
+                SpawnPlayerAtTP();
             }
         }
         else if (primerMapa.Contains(scene.name)

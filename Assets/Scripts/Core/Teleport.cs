@@ -6,7 +6,11 @@ public class Teleport:MonoBehaviour
     [SerializeField] int Index;
     public int index => Index;
     [SerializeField] bool GoBack;
-    public bool goBack => GoBack;
+    public bool goBack 
+    { 
+        get => GoBack; 
+        set => GoBack = value; 
+    }
 
       
     [SerializeField] private string targetScene;
