@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 8cf42b2ff90a94945b8619a70e2e2d4a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3996273940756420539
+    second: Verdugo de titanes + AF3 (S)_0
+  - first:
+      213: -2350445848466433760
+    second: Verdugo de titanes + AF3 (S)_1
+  - first:
+      213: -3912743401449917558
+    second: Verdugo de titanes + AF3 (S)_2
+  - first:
+      213: -5086699064655500943
+    second: Verdugo de titanes + AF3 (S)_3
+  - first:
+      213: 7647123261623457223
+    second: Verdugo de titanes + AF3 (S)_4
+  - first:
+      213: 5019745654703003479
+    second: Verdugo de titanes + AF3 (S)_5
+  - first:
+      213: -1485146764950305689
+    second: Verdugo de titanes + AF3 (S)_6
+  - first:
+      213: 2624729682825160674
+    second: Verdugo de titanes + AF3 (S)_7
+  - first:
+      213: -3157050975230873878
+    second: Verdugo de titanes + AF3 (S)_8
+  - first:
+      213: 5694084732087325386
+    second: Verdugo de titanes + AF3 (S)_9
+  - first:
+      213: -6176781854519434394
+    second: Verdugo de titanes + AF3 (S)_10
+  - first:
+      213: -4860413847153156022
+    second: Verdugo de titanes + AF3 (S)_11
+  - first:
+      213: -5522749180987383759
+    second: Verdugo de titanes + AF3 (S)_12
+  - first:
+      213: -8924776999969755550
+    second: Verdugo de titanes + AF3 (S)_13
+  - first:
+      213: -4057276565591145272
+    second: Verdugo de titanes + AF3 (S)_14
+  - first:
+      213: 8343017272310635428
+    second: Verdugo de titanes + AF3 (S)_15
+  - first:
+      213: -6842845447425758494
+    second: Verdugo de titanes + AF3 (S)_16
+  - first:
+      213: -9108797522277147100
+    second: Verdugo de titanes + AF3 (S)_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_0
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1201
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548201826026a88c0800000000000000
+      internalID: -3996273940756420539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_1
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 848
+        width: 150
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029dd5a34f9816fd0800000000000000
+      internalID: -2350445848466433760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_2
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 846
+        width: 153
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a83f2536b9423b9c0800000000000000
+      internalID: -3912743401449917558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_3
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 845
+        width: 152
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179a5e3b62a6869b0800000000000000
+      internalID: -5086699064655500943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_4
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 1091
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c551ba171a002a60800000000000000
+      internalID: 7647123261623457223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_5
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 844
+        width: 162
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7571263c318b9a540800000000000000
+      internalID: 5019745654703003479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_6
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 839
+        width: 164
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76401dbc2e2b36be0800000000000000
+      internalID: -1485146764950305689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_7
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 835
+        width: 166
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7a7387db9ec6420800000000000000
+      internalID: 2624729682825160674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_8
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 531
+        width: 121
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee20936dd6ef24d0800000000000000
+      internalID: -3157050975230873878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_9
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 531
+        width: 119
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac25a0135e3750f40800000000000000
+      internalID: 5694084732087325386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_10
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 520
+        width: 121
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6636a4a11a9a74aa0800000000000000
+      internalID: -6176781854519434394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_11
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 525
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40eb0b8b575c8cb0800000000000000
+      internalID: -4860413847153156022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_12
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 527
+        width: 143
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130eaa371e04b53b0800000000000000
+      internalID: -5522749180987383759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_13
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 518
+        width: 148
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ee931aa92d42480800000000000000
+      internalID: -8924776999969755550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 180
+        width: 246
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c44c60c578a1b7c0800000000000000
+      internalID: -4057276565591145272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_15
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 378
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab1607810a58c370800000000000000
+      internalID: 8343017272310635428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_16
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 191
+        width: 171
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eae94d02545901a0800000000000000
+      internalID: -6842845447425758494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Verdugo de titanes + AF3 (S)_17
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 183
+        width: 176
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e56b9f9ec079180800000000000000
+      internalID: -9108797522277147100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Verdugo de titanes + AF3 (S)_0: -3996273940756420539
+      Verdugo de titanes + AF3 (S)_1: -2350445848466433760
+      Verdugo de titanes + AF3 (S)_10: -6176781854519434394
+      Verdugo de titanes + AF3 (S)_11: -4860413847153156022
+      Verdugo de titanes + AF3 (S)_12: -5522749180987383759
+      Verdugo de titanes + AF3 (S)_13: -8924776999969755550
+      Verdugo de titanes + AF3 (S)_14: -4057276565591145272
+      Verdugo de titanes + AF3 (S)_15: 8343017272310635428
+      Verdugo de titanes + AF3 (S)_16: -6842845447425758494
+      Verdugo de titanes + AF3 (S)_17: -9108797522277147100
+      Verdugo de titanes + AF3 (S)_2: -3912743401449917558
+      Verdugo de titanes + AF3 (S)_3: -5086699064655500943
+      Verdugo de titanes + AF3 (S)_4: 7647123261623457223
+      Verdugo de titanes + AF3 (S)_5: 5019745654703003479
+      Verdugo de titanes + AF3 (S)_6: -1485146764950305689
+      Verdugo de titanes + AF3 (S)_7: 2624729682825160674
+      Verdugo de titanes + AF3 (S)_8: -3157050975230873878
+      Verdugo de titanes + AF3 (S)_9: 5694084732087325386
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
