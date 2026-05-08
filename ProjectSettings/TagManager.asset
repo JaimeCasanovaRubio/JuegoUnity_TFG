@@ -7,6 +7,8 @@ TagManager:
   - TP
   - Colision
   - Enemie
+  - meele
+  - ranged
   layers:
   - Default
   - TransparentFX

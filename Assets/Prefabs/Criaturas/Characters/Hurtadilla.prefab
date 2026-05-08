@@ -225,6 +225,9 @@ MonoBehaviour:
   CurrentHealth: 0
   invulnerabilityTime: 0.5
   abilityCooldownDuration: 2
+  projectilePrefab: {fileID: 512618379300302562, guid: c8785b30cf987f9bcbfe547d6e8e3684, type: 3}
+  projectileSpeed: 10
+  firePoint: {fileID: 0}
   abilitySpeed: 100
 --- !u!50 &6989104551409368340
 Rigidbody2D:

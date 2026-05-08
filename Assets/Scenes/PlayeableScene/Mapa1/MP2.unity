@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 133279947}
   m_Layer: 0
   m_Name: Triangle (2)
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 2
+  targetScene: random1
 --- !u!212 &133279949
 SpriteRenderer:
   serializedVersion: 2
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 937695109}
   m_Layer: 0
   m_Name: Triangle (3)
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,8 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 3
+  targetScene: random1
 --- !u!212 &937695111
 SpriteRenderer:
   serializedVersion: 2
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 1724691084}
   m_Layer: 0
   m_Name: Triangle (1)
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -935,8 +935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 1
+  targetScene: random1
 --- !u!212 &1724691086
 SpriteRenderer:
   serializedVersion: 2
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 1851273185}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1088,8 +1088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91194ea051781f1a76c9911b95df3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  targetScene: random1
   Index: 0
+  targetScene: random1
 --- !u!212 &1851273187
 SpriteRenderer:
   serializedVersion: 2
