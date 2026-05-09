@@ -30,12 +30,11 @@ public class MainMenu : MonoBehaviour
                 Debug.LogWarning("[MainMenu] No se encontró ControlsConfigUI en el canvas persistente (o sus hijos).");
             }
 
-            var selectCharUI = GameManager.Instance.SelectCharCanvas?.GetComponentInChildren<CharacterSelection>(true);
-            if (selectCharUI != null)
+            var gameSelectorUI = GameManager.Instance.GameSelectorCanvas?.GetComponentInChildren<GameSelector>(true);
+            if (gameSelectorUI != null)
             {
-                selectCharUI.onBackEvent.RemoveListener(OnBackFromMenu);
-                selectCharUI.onBackEvent.AddListener(OnBackFromMenu);
-
+                gameSelectorUI.onBackEvent.RemoveListener(OnBackFromMenu);
+                gameSelectorUI.onBackEvent.AddListener(OnBackFromMenu);
             }
         
         }
@@ -48,14 +47,14 @@ public class MainMenu : MonoBehaviour
     public void OnPlayClicked()
     {
         Debug.Log("▶️ Iniciando juego...");
-        if (GameManager.Instance != null && GameManager.Instance.SelectCharCanvas != null)
+        if (GameManager.Instance != null && GameManager.Instance.GameSelectorCanvas != null)
         {
             mainMenuUI.SetActive(false);
-            GameManager.Instance.SelectCharCanvas.SetActive(true);
+            GameManager.Instance.GameSelectorCanvas.SetActive(true);
         }
         else
         {
-            Debug.LogError("[MainMenu] No se pudo encontrar el canvas de Controles persistente.");
+            Debug.LogError("[MainMenu] No se pudo encontrar el canvas de Seleccion de Partida persistente.");
         }
         
     }
@@ -79,11 +78,17 @@ public class MainMenu : MonoBehaviour
         
         // Desactivar explícitamente los canvas persistentes
         if (GameManager.Instance != null)
-        {
+        {   
+            if (GameManager.Instance.GameSelectorCanvas != null) GameManager.Instance.GameSelectorCanvas.SetActive(false);
             if (GameManager.Instance.ControlsCanvas != null) GameManager.Instance.ControlsCanvas.SetActive(false);
             if (GameManager.Instance.SelectCharCanvas != null) GameManager.Instance.SelectCharCanvas.SetActive(false);
         }
         
         mainMenuUI.SetActive(true);
+    }
+    public void OnQuitClicked()
+    {
+        Debug.Log("[MainMenu] Saliendo del juego...");
+        if (GameManager.Instance != null) GameManager.Instance.QuitGame();
     }
 }
