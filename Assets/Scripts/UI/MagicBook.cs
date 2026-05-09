@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class MagicBook : MonoBehaviour
 {
     [Header("Armazones")]
-    [SerializeField] private Button armazon1; // El Alambique
+    [SerializeField] private Button armazon1; // Verdugo de Titanes
     [SerializeField] private Button armazon2; // Garras de Umbra
-    [SerializeField] private Button armazon3; // Verdugo de Titanes
+    [SerializeField] private Button armazon3; // El Alambique
 
     [Header("Afinidades (toggle - puede no haber ninguna)")]
     [SerializeField] private Button afinidad1; // AF1
