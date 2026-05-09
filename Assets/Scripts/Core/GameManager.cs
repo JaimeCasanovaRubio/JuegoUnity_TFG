@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject controlsPrefab;
     [SerializeField] private GameObject selectCharPrefab;
     [SerializeField] private GameObject hudPrefab;
+    [SerializeField] private GameObject gameSelectorPrefab;
+    [SerializeField] private GameObject magicBookPrefab;
 
     private HUDController hudController;
     private bool hudSpawned = false;
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
     public GameObject SettingsCanvas { get; private set; }
     public GameObject ControlsCanvas { get; private set; }
     public GameObject SelectCharCanvas { get; private set; }
+    public GameObject GameSelectorCanvas { get; private set; }
+    public GameObject MagicBookCanvas { get; private set; }
 
     public bool isPaused = false;
 
@@ -83,6 +87,18 @@ public class GameManager : MonoBehaviour
             SelectCharCanvas.name = "SelectCharCanvas";
             SelectCharCanvas.SetActive(false);
         }
+        if(gameSelectorPrefab != null && GameSelectorCanvas == null)
+        {
+            GameSelectorCanvas = Instantiate (gameSelectorPrefab, transform);
+            GameSelectorCanvas.name = "GameSelectorCanvas";
+            GameSelectorCanvas.SetActive(false);
+        }
+        if(magicBookPrefab != null && MagicBookCanvas == null)
+        {
+            MagicBookCanvas = Instantiate (magicBookPrefab, transform);
+            MagicBookCanvas.name = "MagicBookCanvas";
+            MagicBookCanvas.SetActive(false);
+        }
     }
 
     private void Update()
@@ -110,19 +126,32 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeScene(string sceneName, int index = 6, bool goBack = false)
+    public void ChangeScene(string sceneName, int index = 6)
     {   
-        SceneGestor.ChangeScene(sceneName, index, goBack);
+        SceneGestor.ChangeScene(sceneName, index);
     }
 
-    public void StartGameWithCharacter(string characterType)
+    public void StartGameWithCharacter(string characterType, int gameNumber)
     {
+        PlayerPrefs.SetString("SelectedCharacter"+gameNumber, characterType); 
+        PlayerPrefs.SetInt("Armazon1_G"+gameNumber,1);
+        PlayerPrefs.SetInt("Armazon2_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Armazon3_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Armazon4_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Afinidad1_G"+gameNumber,1);
+        PlayerPrefs.SetInt("Afinidad2_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Afinidad3_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Afinidad4_G"+gameNumber,0);
+
         PlayerPrefs.SetString("SelectedCharacter", characterType);
+        
         ChangeScene(baseScene);
+           
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("Escena cargada: " + scene.name);
         foreach(MapScene mapS in SceneGestor.mpVisited)
         {
             if(mapS.sceneName == scene.name)
@@ -130,25 +159,21 @@ public class GameManager : MonoBehaviour
                 Teleport[] tps = Object.FindObjectsByType<Teleport>(FindObjectsSortMode.None);   
                 foreach(Teleport tp in tps)
                 {
-                    if(mapS.sceneIndex0 != "random1"){
-                        if(tp.index == 2){
-                            tp.sceneName = mapS.sceneIndex0;
-                        }
+                    if(mapS.sceneIndex0 != "random1" && tp.index == 0){
+                        tp.sceneName = mapS.sceneIndex0;
+                        tp.goBack = mapS.isVisited0;
                     }
-                    if(mapS.sceneIndex1 != "random1"){
-                        if(tp.index == 3){
-                            tp.sceneName = mapS.sceneIndex1;
-                        }
+                    if(mapS.sceneIndex1 != "random1" && tp.index == 1){
+                        tp.sceneName = mapS.sceneIndex1;
+                        tp.goBack = mapS.isVisited1;
                     }
-                    if(mapS.sceneIndex2 != "random1"){
-                        if(tp.index == 0){
-                            tp.sceneName = mapS.sceneIndex2;
-                        }
+                    if(mapS.sceneIndex2 != "random1" && tp.index == 2){
+                        tp.sceneName = mapS.sceneIndex2;
+                        tp.goBack = mapS.isVisited2;
                     }
-                    if(mapS.sceneIndex3 != "random1"){
-                        if(tp.index == 1){
-                            tp.sceneName = mapS.sceneIndex3;
-                        }
+                    if(mapS.sceneIndex3 != "random1" && tp.index == 3){
+                        tp.sceneName = mapS.sceneIndex3;
+                        tp.goBack = mapS.isVisited3;
                     }
                 }
             }
@@ -162,8 +187,17 @@ public class GameManager : MonoBehaviour
             }
             EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
             if(spawner != null) spawner.SpawnEnemies();
-            Player player = FindObjectOfType<Player>();
-            if (player != null) player.transform.position = Vector3.zero;
+            
+            if(SceneGestor.doorIndex == 0 || SceneGestor.doorIndex == 1 || SceneGestor.doorIndex == 2 || SceneGestor.doorIndex == 3)
+            {
+                SceneGestor.SetLastScene(SceneGestor.doorIndex);
+                SpawnPlayerAtTP();
+            }
+            else
+            {
+                Player player = FindObjectOfType<Player>();
+                if (player != null) player.transform.position = Vector3.zero;
+            }
         }
         else if (scene.name == baseScene)
         {
@@ -171,6 +205,11 @@ public class GameManager : MonoBehaviour
             if (FindObjectOfType<Player>() == null)
             {
                 SpawnPlayer();
+            }
+            if(SceneGestor.doorIndex == 0 || SceneGestor.doorIndex == 1 || SceneGestor.doorIndex == 2 || SceneGestor.doorIndex == 3)
+            {
+                SceneGestor.SetLastScene(SceneGestor.doorIndex);
+                SpawnPlayerAtTP();
             }
         }
         else if (primerMapa.Contains(scene.name)
@@ -266,12 +305,66 @@ public class GameManager : MonoBehaviour
         // Si no se encontró el TP, mover al centro
         player.transform.position = Vector3.zero;
     }
+    public void CreateOnPlayerPrefs(int game)
+    {
+
+        if(game == 1){
+            
+            Player player = null;
+            string character = PlayerPrefs.GetString("SelectedCharacter1");
+            foreach(GameObject prefab in characterPrefabs)
+            {
+                if(prefab.name == character)
+                {
+                     GameObject newPlayer = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                     player = newPlayer.GetComponent<Player>();
+                    break;
+                }
+            }
+            if (player == null) player = FindObjectOfType<Player>();
+
+            player.Armazon1 = PlayerPrefs.GetInt("Armazon1_G1") == 1 ? true : false;
+            player.Armazon2 = PlayerPrefs.GetInt("Armazon2_G1") == 1 ? true : false;
+            player.Armazon3 = PlayerPrefs.GetInt("Armazon3_G1") == 1 ? true : false;
+            player.Afinidad1 = PlayerPrefs.GetInt("Afinidad1_G1") == 1 ? true : false;
+            player.Afinidad2 = PlayerPrefs.GetInt("Afinidad2_G1") == 1 ? true : false;
+            player.Afinidad3 = PlayerPrefs.GetInt("Afinidad3_G1") == 1 ? true : false;
+            player.Afinidad4 = PlayerPrefs.GetInt("Afinidad4_G1") == 1 ? true : false;
+        }else if(game == 2){
+            Player player = null;
+            string character = PlayerPrefs.GetString("SelectedCharacter2");
+            foreach(GameObject prefab in characterPrefabs)
+            {
+                if(prefab.name == character)
+                {
+                     GameObject newPlayer = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                     player = newPlayer.GetComponent<Player>();
+                    break;
+                }
+            }
+            if (player == null) player = FindObjectOfType<Player>();
+
+            player.Armazon1 = PlayerPrefs.GetInt("Armazon1_G2") == 1 ? true : false;
+            player.Armazon2 = PlayerPrefs.GetInt("Armazon2_G2") == 1 ? true : false;
+            player.Armazon3 = PlayerPrefs.GetInt("Armazon3_G2") == 1 ? true : false;
+            player.Afinidad1 = PlayerPrefs.GetInt("Afinidad1_G2") == 1 ? true : false;
+            player.Afinidad2 = PlayerPrefs.GetInt("Afinidad2_G2") == 1 ? true : false;
+            player.Afinidad3 = PlayerPrefs.GetInt("Afinidad3_G2") == 1 ? true : false;
+            player.Afinidad4 = PlayerPrefs.GetInt("Afinidad4_G2") == 1 ? true : false;
+            
+        }
+        GameSelectorCanvas.SetActive(false);
+        ChangeScene(baseScene);
+    }
     public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 }

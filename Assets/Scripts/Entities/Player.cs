@@ -21,6 +21,20 @@ public abstract class Player:Entity
     protected bool IsMelee {get; private set;} = true;
     protected bool IsRanged {get; private set;} = false;
 
+    [Header("Armazones")]
+    [SerializeField]public bool Armazon1 = true;
+    [SerializeField]public bool Armazon2 = false;
+    [SerializeField]public bool Armazon3 = false;
+    
+    [Header("Afinidades")]
+    [SerializeField]public bool Afinidad1 = true;
+    [SerializeField]public bool Afinidad2 = false;
+    [SerializeField]public bool Afinidad3 = false;
+    [SerializeField]public bool Afinidad4 = false;
+    
+    [SerializeField]public string Armazon = "Armazon1";
+    [SerializeField]public string Afinidad = "Afinidad1";
+
     [Header("Ranged Attack")]
     [SerializeField] protected GameObject projectilePrefab;
     [SerializeField] protected float projectileSpeed = 10f;
@@ -60,12 +74,43 @@ public abstract class Player:Entity
     protected virtual void Update()
     {   
         if (tpCooldown > 0) tpCooldown -= Time.deltaTime;
+        ProveArmazon();
+        ProveAfinidad();
         HandleMovement();
         UpdateAbilityCooldown();
         ExecAbility();
         if(InputHandler.Instance.AttackPressed)
         {
             ExecAttack();
+        }
+    }
+
+    protected void ProveArmazon(){
+        switch (Armazon){
+            case "Armazon1":
+                IsRanged = true;
+                IsMelee = false;
+                break;
+            case "Armazon2":
+                IsRanged = false;
+                IsMelee = true;
+                break;
+            case "Armazon3":
+                IsRanged = true;
+                IsMelee = false;
+                break;
+        }
+    }
+    protected void ProveAfinidad(){
+        switch (Afinidad){
+            case "Afinidad1":
+                break;
+            case "Afinidad2":
+                break;
+            case "Afinidad3":
+                break;
+            case "Afinidad4":
+                break;
         }
     }
     
@@ -173,7 +218,7 @@ public abstract class Player:Entity
             Teleport tp = collision.GetComponent<Teleport>();
             if(tp!=null)
             {
-                GameManager.Instance.ChangeScene(tp.sceneName, tp.index, tp.goBack);
+                GameManager.Instance.ChangeScene(tp.sceneName, tp.index);
             }
         } 
         if(collision.gameObject.CompareTag("ranged")){
@@ -185,6 +230,20 @@ public abstract class Player:Entity
             IsRanged = false;
             IsMelee = true;
             Debug.Log("Arma cambiada a melee");
+        }
+        if(collision.gameObject.CompareTag("magicBook")){
+            Debug.Log("Book picked up");
+            if(GameManager.Instance.MagicBookCanvas != null){
+                Debug.Log("Book Canvas found");
+                GameManager.Instance.MagicBookCanvas.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+        if(collision.gameObject.CompareTag("Armazon2")){
+            Armazon2 = true;
+            Armazon = "Armazon2";
+            PlayerPrefs.SetInt("Armazon2_G"+GameSelector.gameSelected, 1);
+            Destroy(collision.gameObject);
         }
         
     }
