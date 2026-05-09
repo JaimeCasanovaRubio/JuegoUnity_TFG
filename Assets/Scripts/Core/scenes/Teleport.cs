@@ -19,4 +19,11 @@ public class Teleport:MonoBehaviour
         get => targetScene; 
         set => targetScene = value; 
     }
+
+    [SerializeField] private string targetId;
+    public string targetRoomId
+    {
+        get => targetId;
+        set => targetId = value;
+    }
 }
