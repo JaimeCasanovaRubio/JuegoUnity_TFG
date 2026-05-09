@@ -21,19 +21,55 @@ public abstract class Player:Entity
     protected bool IsMelee {get; private set;} = true;
     protected bool IsRanged {get; private set;} = false;
 
+    [Header("Diseños en juego - Verdugo de Titanes (Armazon1)")]
+    [SerializeField] private GameObject verdugo_base;
+    [SerializeField] private GameObject verdugo_af1;
+    [SerializeField] private GameObject verdugo_af2;
+    [SerializeField] private GameObject verdugo_af3;
+
+    [Header("Diseños en juego - Garras de Umbra (Armazon2)")]
+    [SerializeField] private GameObject garras_base;
+    [SerializeField] private GameObject garras_af1;
+    [SerializeField] private GameObject garras_af2;
+    [SerializeField] private GameObject garras_af3;
+
+    [Header("Diseños en juego - El Alambique (Armazon3)")]
+    [SerializeField] private GameObject alambique_base;
+    [SerializeField] private GameObject alambique_af1;
+    [SerializeField] private GameObject alambique_af2;
+    [SerializeField] private GameObject alambique_af3;
+
+    [Header("Retratos para el libro (sprite estático por combinación)")]
+    [SerializeField] private Sprite retrato_verdugo_base;
+    [SerializeField] private Sprite retrato_verdugo_af1;
+    [SerializeField] private Sprite retrato_verdugo_af2;
+    [SerializeField] private Sprite retrato_verdugo_af3;
+    [SerializeField] private Sprite retrato_garras_base;
+    [SerializeField] private Sprite retrato_garras_af1;
+    [SerializeField] private Sprite retrato_garras_af2;
+    [SerializeField] private Sprite retrato_garras_af3;
+    [SerializeField] private Sprite retrato_alambique_base;
+    [SerializeField] private Sprite retrato_alambique_af1;
+    [SerializeField] private Sprite retrato_alambique_af2;
+    [SerializeField] private Sprite retrato_alambique_af3;
+
+    private string lastArmazonAfinidad = "";
+
     [Header("Armazones")]
-    [SerializeField]public bool Armazon1 = true;
-    [SerializeField]public bool Armazon2 = false;
-    [SerializeField]public bool Armazon3 = false;
-    
+    [SerializeField]public bool Armazon1 = true;  // Verdugo de Titanes (base, desbloqueado)
+    [SerializeField]public bool Armazon2 = false; // Garras de Umbra
+    [SerializeField]public bool Armazon3 = false; // El Alambique
+
     [Header("Afinidades")]
     [SerializeField]public bool Afinidad1 = true;
     [SerializeField]public bool Afinidad2 = false;
     [SerializeField]public bool Afinidad3 = false;
     [SerializeField]public bool Afinidad4 = false;
-    
+
     [SerializeField]public string Armazon = "Armazon1";
-    [SerializeField]public string Afinidad = "Afinidad1";
+    [SerializeField]public string Afinidad = "";  // "" = sin afinidad (muestra sprite base)
+
+    public Sprite CurrentDesignSprite { get; private set; }
 
     [Header("Ranged Attack")]
     [SerializeField] protected GameObject projectilePrefab;
@@ -57,9 +93,7 @@ public abstract class Player:Entity
         base.Awake();
         DontDestroyOnLoad(transform.root.gameObject);
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        Armazon = "Armazon1";
-        Afinidad = "Afinidad1";
+        animator = GetComponentInChildren<Animator>();
         SceneManager.sceneLoaded += OnPlayerSceneLoaded;
     }
 
@@ -102,6 +136,7 @@ public abstract class Player:Entity
                 IsMelee = false;
                 break;
         }
+        UpdateDesign();
     }
     protected void ProveAfinidad(){
         switch (Afinidad){
@@ -114,6 +149,63 @@ public abstract class Player:Entity
             case "Afinidad4":
                 break;
         }
+        UpdateDesign();
+    }
+
+    private void UpdateDesign()
+    {
+        string combo = Armazon + "_" + Afinidad;
+        if (combo == lastArmazonAfinidad) return;
+        lastArmazonAfinidad = combo;
+
+        GameObject diseñoActivo = (Armazon, Afinidad) switch
+        {
+            ("Armazon1", "")          => verdugo_base,
+            ("Armazon1", "Afinidad1") => verdugo_af1,
+            ("Armazon1", "Afinidad2") => verdugo_af2,
+            ("Armazon1", "Afinidad3") => verdugo_af3,
+            ("Armazon2", "")          => garras_base,
+            ("Armazon2", "Afinidad1") => garras_af1,
+            ("Armazon2", "Afinidad2") => garras_af2,
+            ("Armazon2", "Afinidad3") => garras_af3,
+            ("Armazon3", "")          => alambique_base,
+            ("Armazon3", "Afinidad1") => alambique_af1,
+            ("Armazon3", "Afinidad2") => alambique_af2,
+            ("Armazon3", "Afinidad3") => alambique_af3,
+            _                         => verdugo_base
+        };
+
+        GameObject[] todos = {
+            verdugo_base, verdugo_af1, verdugo_af2, verdugo_af3,
+            garras_base,  garras_af1,  garras_af2,  garras_af3,
+            alambique_base, alambique_af1, alambique_af2, alambique_af3
+        };
+        foreach (var d in todos)
+            if (d != null) d.SetActive(false);
+
+        if (diseñoActivo != null)
+        {
+            diseñoActivo.SetActive(true);
+            Animator childAnimator = diseñoActivo.GetComponent<Animator>();
+            if (childAnimator != null) animator = childAnimator;
+        }
+
+        CurrentDesignSprite = (Armazon, Afinidad) switch
+        {
+            ("Armazon1", "")          => retrato_verdugo_base,
+            ("Armazon1", "Afinidad1") => retrato_verdugo_af1,
+            ("Armazon1", "Afinidad2") => retrato_verdugo_af2,
+            ("Armazon1", "Afinidad3") => retrato_verdugo_af3,
+            ("Armazon2", "")          => retrato_garras_base,
+            ("Armazon2", "Afinidad1") => retrato_garras_af1,
+            ("Armazon2", "Afinidad2") => retrato_garras_af2,
+            ("Armazon2", "Afinidad3") => retrato_garras_af3,
+            ("Armazon3", "")          => retrato_alambique_base,
+            ("Armazon3", "Afinidad1") => retrato_alambique_af1,
+            ("Armazon3", "Afinidad2") => retrato_alambique_af2,
+            ("Armazon3", "Afinidad3") => retrato_alambique_af3,
+            _                         => retrato_verdugo_base
+        };
     }
     
     protected virtual void UpdateAbilityCooldown()
