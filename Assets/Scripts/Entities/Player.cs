@@ -22,17 +22,18 @@ public abstract class Player:Entity
     protected bool IsRanged {get; private set;} = false;
 
     [Header("Armazones")]
-    public bool Armazon1 {get; set;} = false;
-    public bool Armazon2 {get; set;} = false;
-    public bool Armazon3 {get; set;} = false;
-
-    public bool Afinidad1 {get; set;} = false;
-    public bool Afinidad2 {get; set;} = false;
-    public bool Afinidad3 {get; set;} = false;
-    public bool Afinidad4 {get; set;} = false;
+    [SerializeField]public bool Armazon1 = true;
+    [SerializeField]public bool Armazon2 = false;
+    [SerializeField]public bool Armazon3 = false;
     
-    public string Armazon {get; set;} = null;
-    public string Afinidad {get; set;} = null;
+    [Header("Afinidades")]
+    [SerializeField]public bool Afinidad1 = true;
+    [SerializeField]public bool Afinidad2 = false;
+    [SerializeField]public bool Afinidad3 = false;
+    [SerializeField]public bool Afinidad4 = false;
+    
+    [SerializeField]public string Armazon = "Armazon1";
+    [SerializeField]public string Afinidad = "Afinidad1";
 
     [Header("Ranged Attack")]
     [SerializeField] protected GameObject projectilePrefab;
@@ -73,12 +74,43 @@ public abstract class Player:Entity
     protected virtual void Update()
     {   
         if (tpCooldown > 0) tpCooldown -= Time.deltaTime;
+        ProveArmazon();
+        ProveAfinidad();
         HandleMovement();
         UpdateAbilityCooldown();
         ExecAbility();
         if(InputHandler.Instance.AttackPressed)
         {
             ExecAttack();
+        }
+    }
+
+    protected void ProveArmazon(){
+        switch (Armazon){
+            case "Armazon1":
+                IsRanged = true;
+                IsMelee = false;
+                break;
+            case "Armazon2":
+                IsRanged = false;
+                IsMelee = true;
+                break;
+            case "Armazon3":
+                IsRanged = true;
+                IsMelee = false;
+                break;
+        }
+    }
+    protected void ProveAfinidad(){
+        switch (Afinidad){
+            case "Afinidad1":
+                break;
+            case "Afinidad2":
+                break;
+            case "Afinidad3":
+                break;
+            case "Afinidad4":
+                break;
         }
     }
     
@@ -204,8 +236,14 @@ public abstract class Player:Entity
             if(GameManager.Instance.MagicBookCanvas != null){
                 Debug.Log("Book Canvas found");
                 GameManager.Instance.MagicBookCanvas.SetActive(true);
-                GameManager.Instance.TogglePause();
+                Time.timeScale = 0f;
             }
+        }
+        if(collision.gameObject.CompareTag("Armazon2")){
+            Armazon2 = true;
+            Armazon = "Armazon2";
+            PlayerPrefs.SetInt("Armazon2_G"+GameSelector.gameSelected, 1);
+            Destroy(collision.gameObject);
         }
         
     }

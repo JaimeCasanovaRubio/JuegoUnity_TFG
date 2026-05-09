@@ -134,14 +134,14 @@ public class GameManager : MonoBehaviour
     public void StartGameWithCharacter(string characterType, int gameNumber)
     {
         PlayerPrefs.SetString("SelectedCharacter"+gameNumber, characterType); 
-        PlayerPrefs.SetInt("Armazon1_G1",0);
-        PlayerPrefs.SetInt("Armazon2_G1",0);
-        PlayerPrefs.SetInt("Armazon3_G1",0);
-        PlayerPrefs.SetInt("Armazon4_G1",0);
-        PlayerPrefs.SetInt("Afinidad1_G1",1);
-        PlayerPrefs.SetInt("Afinidad2_G1",0);
-        PlayerPrefs.SetInt("Afinidad3_G1",0);
-        PlayerPrefs.SetInt("Afinidad4_G1",0);
+        PlayerPrefs.SetInt("Armazon1_G"+gameNumber,1);
+        PlayerPrefs.SetInt("Armazon2_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Armazon3_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Armazon4_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Afinidad1_G"+gameNumber,1);
+        PlayerPrefs.SetInt("Afinidad2_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Afinidad3_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Afinidad4_G"+gameNumber,0);
 
         PlayerPrefs.SetString("SelectedCharacter", characterType);
         
@@ -310,16 +310,19 @@ public class GameManager : MonoBehaviour
 
         if(game == 1){
             
+            Player player = null;
             string character = PlayerPrefs.GetString("SelectedCharacter1");
             foreach(GameObject prefab in characterPrefabs)
             {
                 if(prefab.name == character)
                 {
-                     Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                     GameObject newPlayer = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                     player = newPlayer.GetComponent<Player>();
                     break;
                 }
             }
-            Player player = FindObjectOfType<Player>();
+            if (player == null) player = FindObjectOfType<Player>();
+
             player.Armazon1 = PlayerPrefs.GetInt("Armazon1_G1") == 1 ? true : false;
             player.Armazon2 = PlayerPrefs.GetInt("Armazon2_G1") == 1 ? true : false;
             player.Armazon3 = PlayerPrefs.GetInt("Armazon3_G1") == 1 ? true : false;
@@ -328,16 +331,19 @@ public class GameManager : MonoBehaviour
             player.Afinidad3 = PlayerPrefs.GetInt("Afinidad3_G1") == 1 ? true : false;
             player.Afinidad4 = PlayerPrefs.GetInt("Afinidad4_G1") == 1 ? true : false;
         }else if(game == 2){
+            Player player = null;
             string character = PlayerPrefs.GetString("SelectedCharacter2");
             foreach(GameObject prefab in characterPrefabs)
             {
                 if(prefab.name == character)
                 {
-                     Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                     GameObject newPlayer = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                     player = newPlayer.GetComponent<Player>();
                     break;
                 }
             }
-            Player player = FindObjectOfType<Player>();
+            if (player == null) player = FindObjectOfType<Player>();
+
             player.Armazon1 = PlayerPrefs.GetInt("Armazon1_G2") == 1 ? true : false;
             player.Armazon2 = PlayerPrefs.GetInt("Armazon2_G2") == 1 ? true : false;
             player.Armazon3 = PlayerPrefs.GetInt("Armazon3_G2") == 1 ? true : false;
