@@ -133,10 +133,10 @@ public class GameManager : MonoBehaviour
 
     public void StartGameWithCharacter(string characterType, int gameNumber)
     {
-        PlayerPrefs.SetString("SelectedCharacter"+gameNumber, characterType); 
-        PlayerPrefs.SetInt("Armazon1_G"+gameNumber,1);
-        PlayerPrefs.SetInt("Armazon2_G"+gameNumber,0);
-        PlayerPrefs.SetInt("Armazon3_G"+gameNumber,0);
+        PlayerPrefs.SetString("SelectedCharacter"+gameNumber, characterType);
+        PlayerPrefs.SetInt("Armazon1_G"+gameNumber,1); // Verdugo de Titanes - desbloqueado al inicio
+        PlayerPrefs.SetInt("Armazon2_G"+gameNumber,0); // Garras de Umbra - bloqueado al inicio
+        PlayerPrefs.SetInt("Armazon3_G"+gameNumber,0); // El Alambique - bloqueado al inicio
         PlayerPrefs.SetInt("Armazon4_G"+gameNumber,0);
         PlayerPrefs.SetInt("Afinidad1_G"+gameNumber,1);
         PlayerPrefs.SetInt("Afinidad2_G"+gameNumber,0);
