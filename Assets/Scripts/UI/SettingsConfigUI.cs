@@ -31,7 +31,7 @@ public class SettingsConfigUI : MonoBehaviour
 
         GameManager.Instance.SettingsCanvas.SetActive(false);
         GameManager.Instance.TogglePause();
-        SceneGestor.ChangeScene(GameManager.Instance.baseScene);
+        GameManager.Instance.CreateOnPlayerPrefs(GameSelector.gameSelected);
     }
 
     public void OnVolverClicker()

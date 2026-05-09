@@ -35,13 +35,12 @@ public class GameSelector : MonoBehaviour
     /// </summary>
     public void SelectGame(string gameName)
     {   
-        
         if(gameName == "game1"){
+            gameSelected = 1; // IMPORTANTE: Hay que guardarlo también si la partida ya existe
             if(PlayerPrefs.GetInt("Game1") == 1){
                 GameManager.Instance.CreateOnPlayerPrefs(1);
             }else{
                 if(GameManager.Instance.SelectCharCanvas!=null){
-                    gameSelected = 1;
                     GameManager.Instance.SelectCharCanvas.SetActive(true);
                     GameManager.Instance.GameSelectorCanvas.SetActive(false);
                 }
@@ -52,11 +51,11 @@ public class GameSelector : MonoBehaviour
             
         }
         else if(gameName == "game2"){
+            gameSelected = 2; // IMPORTANTE: Hay que guardarlo también si la partida ya existe
             if(PlayerPrefs.GetInt("Game2") == 1){
                 GameManager.Instance.CreateOnPlayerPrefs(2);
             }else{
                 if(GameManager.Instance.SelectCharCanvas!=null){
-                    gameSelected = 2;
                     GameManager.Instance.SelectCharCanvas.SetActive(true);
                     GameManager.Instance.GameSelectorCanvas.SetActive(false);
                 }

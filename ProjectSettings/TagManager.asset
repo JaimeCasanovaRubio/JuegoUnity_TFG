@@ -10,6 +10,8 @@ TagManager:
   - meele
   - ranged
   - magicBook
+  - Armazon1
+  - Armazon2
   layers:
   - Default
   - TransparentFX
