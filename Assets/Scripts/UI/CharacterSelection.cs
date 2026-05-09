@@ -41,22 +41,25 @@ public class CharacterSelection : MonoBehaviour
     {
         selectedCharacter = characterName;
         Debug.Log($"🎭 Personaje seleccionado: {characterName}");
+        int gameSelected = GameSelector.gameSelected;
 
         // Iniciar el juego con este personaje
-        StartGameWithCharacter(characterName);
+        StartGameWithCharacter(characterName, gameSelected);
     }
 
     /// <summary>
     /// Inicia el juego con el personaje seleccionado.
     /// </summary>
-    private void StartGameWithCharacter(string characterName)
+    private void StartGameWithCharacter(string characterName, int gameSelected)
     {
         // Guardar el personaje seleccionado en PlayerPrefs
         PlayerPrefs.SetString("SelectedCharacter", characterName);
         PlayerPrefs.Save();
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.StartGameWithCharacter(characterName);
+            PlayerPrefs.SetInt("Game"+gameSelected,1);
+            
+            GameManager.Instance.StartGameWithCharacter(characterName, gameSelected);
             if (GameManager.Instance.SelectCharCanvas != null) {
                 GameManager.Instance.SelectCharCanvas.SetActive(false);
             }

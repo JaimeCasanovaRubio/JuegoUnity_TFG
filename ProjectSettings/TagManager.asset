@@ -9,6 +9,7 @@ TagManager:
   - Enemie
   - meele
   - ranged
+  - magicBook
   layers:
   - Default
   - TransparentFX

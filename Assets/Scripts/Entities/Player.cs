@@ -21,6 +21,19 @@ public abstract class Player:Entity
     protected bool IsMelee {get; private set;} = true;
     protected bool IsRanged {get; private set;} = false;
 
+    [Header("Armazones")]
+    public bool Armazon1 {get; set;} = false;
+    public bool Armazon2 {get; set;} = false;
+    public bool Armazon3 {get; set;} = false;
+
+    public bool Afinidad1 {get; set;} = false;
+    public bool Afinidad2 {get; set;} = false;
+    public bool Afinidad3 {get; set;} = false;
+    public bool Afinidad4 {get; set;} = false;
+    
+    public string Armazon {get; set;} = null;
+    public string Afinidad {get; set;} = null;
+
     [Header("Ranged Attack")]
     [SerializeField] protected GameObject projectilePrefab;
     [SerializeField] protected float projectileSpeed = 10f;
@@ -173,7 +186,7 @@ public abstract class Player:Entity
             Teleport tp = collision.GetComponent<Teleport>();
             if(tp!=null)
             {
-                GameManager.Instance.ChangeScene(tp.sceneName, tp.index, tp.goBack);
+                GameManager.Instance.ChangeScene(tp.sceneName, tp.index);
             }
         } 
         if(collision.gameObject.CompareTag("ranged")){
@@ -185,6 +198,14 @@ public abstract class Player:Entity
             IsRanged = false;
             IsMelee = true;
             Debug.Log("Arma cambiada a melee");
+        }
+        if(collision.gameObject.CompareTag("magicBook")){
+            Debug.Log("Book picked up");
+            if(GameManager.Instance.MagicBookCanvas != null){
+                Debug.Log("Book Canvas found");
+                GameManager.Instance.MagicBookCanvas.SetActive(true);
+                GameManager.Instance.TogglePause();
+            }
         }
         
     }
