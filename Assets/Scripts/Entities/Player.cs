@@ -58,6 +58,8 @@ public abstract class Player:Entity
         DontDestroyOnLoad(transform.root.gameObject);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        Armazon = "Armazon1";
+        Afinidad = "Afinidad1";
         SceneManager.sceneLoaded += OnPlayerSceneLoaded;
     }
 
@@ -218,7 +220,14 @@ public abstract class Player:Entity
             Teleport tp = collision.GetComponent<Teleport>();
             if(tp!=null)
             {
-                GameManager.Instance.ChangeScene(tp.sceneName, tp.index);
+                if (!string.IsNullOrEmpty(tp.targetRoomId))
+                {
+                    GameManager.Instance.ChangeScene(tp.sceneName, tp.targetRoomId, tp.index);
+                }
+                else
+                {
+                    GameManager.Instance.ChangeScene(tp.sceneName, tp.index);
+                }
             }
         } 
         if(collision.gameObject.CompareTag("ranged")){
