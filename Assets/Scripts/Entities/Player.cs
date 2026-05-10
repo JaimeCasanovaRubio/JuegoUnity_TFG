@@ -4,7 +4,7 @@ using System.Collections;
 
 public abstract class Player:Entity
 {
-    public static Player Instance { get; private set; }
+    public static Player Instance { get; set; }
 
     protected Rigidbody2D rb;
     protected Animator animator;
@@ -67,7 +67,7 @@ public abstract class Player:Entity
     [SerializeField]public bool Afinidad4 = false;
 
     [SerializeField]public string Armazon = "Armazon1";
-    [SerializeField]public string Afinidad = "";  // "" = sin afinidad (muestra sprite base)
+    [SerializeField]public string Afinidad = "Afinidad1";  // "" = sin afinidad (muestra sprite base)
 
     public Sprite CurrentDesignSprite { get; private set; }
 
@@ -93,6 +93,8 @@ public abstract class Player:Entity
         base.Awake();
         DontDestroyOnLoad(transform.root.gameObject);
         rb = GetComponent<Rigidbody2D>();
+        Armazon = "Armazon1";
+        Afinidad = "Afinidad1";
         animator = GetComponentInChildren<Animator>();
         SceneManager.sceneLoaded += OnPlayerSceneLoaded;
     }
@@ -322,16 +324,6 @@ public abstract class Player:Entity
                 }
             }
         } 
-        if(collision.gameObject.CompareTag("ranged")){
-            IsRanged = true;
-            IsMelee = false;
-            Debug.Log("Arma cambiada aranged");
-        }
-        if(collision.gameObject.CompareTag("meele")){
-            IsRanged = false;
-            IsMelee = true;
-            Debug.Log("Arma cambiada a melee");
-        }
         if(collision.gameObject.CompareTag("magicBook")){
             Debug.Log("Book picked up");
             if(GameManager.Instance.MagicBookCanvas != null){
@@ -344,9 +336,37 @@ public abstract class Player:Entity
             Armazon2 = true;
             Armazon = "Armazon2";
             PlayerPrefs.SetInt("Armazon2_G"+GameSelector.gameSelected, 1);
+            PlayerPrefs.Save();
             Destroy(collision.gameObject);
         }
-        
+        if(collision.gameObject.CompareTag("Armazon3")){
+            Armazon3 = true;
+            Armazon = "Armazon3";
+            PlayerPrefs.SetInt("Armazon3_G"+GameSelector.gameSelected, 1);
+            PlayerPrefs.Save();
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.CompareTag("Afinidad2")){
+            Afinidad2 = true;
+            Afinidad = "Afinidad2";
+            PlayerPrefs.SetInt("Afinidad2_G"+GameSelector.gameSelected, 1);
+            PlayerPrefs.Save();
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.CompareTag("Afinidad3")){
+            Afinidad3 = true;
+            Afinidad = "Afinidad3";
+            PlayerPrefs.SetInt("Afinidad3_G"+GameSelector.gameSelected, 1);
+            PlayerPrefs.Save();
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.CompareTag("Afinidad4")){
+            Afinidad4 = true;
+            Afinidad = "Afinidad4";
+            PlayerPrefs.SetInt("Afinidad4_G"+GameSelector.gameSelected, 1);
+            PlayerPrefs.Save();
+            Destroy(collision.gameObject);
+        }
     }
     private IEnumerator EndInvulnerability(float delay)
     {

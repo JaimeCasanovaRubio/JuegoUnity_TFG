@@ -27,6 +27,7 @@ public class SettingsConfigUI : MonoBehaviour
         if (player != null)
         {
             Destroy(player.gameObject);
+            Player.Instance = null; // Libera la instancia para que la nueva se convierta en la principal
         }
 
         GameManager.Instance.SettingsCanvas.SetActive(false);

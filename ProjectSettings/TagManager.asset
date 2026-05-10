@@ -12,6 +12,11 @@ TagManager:
   - magicBook
   - Armazon1
   - Armazon2
+  - Armazon3
+  - Afinidad1
+  - Afinidad2
+  - Afinidad3
+  - Afinidad4
   layers:
   - Default
   - TransparentFX

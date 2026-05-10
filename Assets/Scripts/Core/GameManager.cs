@@ -202,9 +202,14 @@ public class GameManager : MonoBehaviour
         else if (scene.name == baseScene)
         {
             hudSpawned = false;
-            if (FindObjectOfType<Player>() == null)
+            Player player = FindObjectOfType<Player>();
+            if (player == null)
             {
                 SpawnPlayer();
+            }
+            else
+            {
+                player.transform.position = Vector3.zero;
             }
         }
         else if (primerMapa.Contains(scene.name)

@@ -20,7 +20,7 @@ public class GameSelector : MonoBehaviour
     public UnityEvent onBackEvent = new UnityEvent();
 
     private void Start()
-    {
+    {   
         var selectCharUI = GameManager.Instance.SelectCharCanvas?.GetComponentInChildren<CharacterSelection>(true);
         if (selectCharUI != null)
         {
