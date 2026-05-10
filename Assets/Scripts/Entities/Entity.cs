@@ -43,7 +43,11 @@ public abstract class Entity: MonoBehaviour
         {
             StartCoroutine(ApplyInvulnerability());
         }   
-    }      
+    }   
+    public virtual void TakeDamage(float amount, string afinidad){
+    }   
+
+
     private System.Collections.IEnumerator ApplyInvulnerability()
     {
         isInvencible = true;

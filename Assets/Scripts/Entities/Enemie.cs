@@ -15,6 +15,9 @@ public abstract class Enemie:Entity
     [SerializeField] protected float knockback = 1f;
 
     private bool knocked = false;
+    [SerializeField] protected bool Stun = false;
+    [SerializeField] protected bool Burn = false;
+    
     protected Vector2 moveDirection = Vector2.right;
     protected float distanceOfPatrol = 0;
 
@@ -45,6 +48,7 @@ public abstract class Enemie:Entity
         {
             OnDeath();
         }
+        if(Stun) return;
         if(knocked) return;
         HandleMovement();
     }
@@ -106,6 +110,9 @@ public abstract class Enemie:Entity
     }
     public override void TakeDamage(float amount)
     {
+        
+    }
+    public virtual void TakeDamage(float amount, string afinidad){
         base.TakeDamage(amount);
 
         rb.linearVelocity = Vector2.zero;
@@ -113,13 +120,43 @@ public abstract class Enemie:Entity
         rb.AddForce(-direction * knockback, ForceMode2D.Impulse);
 
         StartCoroutine(ApplyKnockback());
-    }
+
+        switch(afinidad){
+            case "Afinidad1":
+                Player.Instance.CurrentHealth += 2;
+                break;
+            case "Afinidad2":
+                StartCoroutine(Burned(5f));
+                break;
+            case "Afinidad3":
+                StartCoroutine(Stuned(5f));
+                break;
+            case "Afinidad0":
+                break;
+        }
+    }   
     private IEnumerator ApplyKnockback()
     {
         knocked = true;
         yield return new WaitForSeconds(0.1f);
         rb.linearVelocity = Vector2.zero;
         knocked = false;
+    }
+    private IEnumerator Stuned(float duration){
+        Stun = true;
+        yield return new WaitForSeconds(duration);
+        Stun = false;
+    }
+    private IEnumerator Burned(float duration){
+        float timer = duration;
+        Burn = true;
+        while(timer > 0)
+        {
+            base.TakeDamage(damage * 0.25f);
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        Burn = false;
     }
     protected override void OnDeath()
     {

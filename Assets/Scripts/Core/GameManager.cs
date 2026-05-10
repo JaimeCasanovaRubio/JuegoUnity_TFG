@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Armazon2_G"+gameNumber,0); // Garras de Umbra - bloqueado al inicio
         PlayerPrefs.SetInt("Armazon3_G"+gameNumber,0); // El Alambique - bloqueado al inicio
         PlayerPrefs.SetInt("Armazon4_G"+gameNumber,0);
-        PlayerPrefs.SetInt("Afinidad1_G"+gameNumber,1);
+        PlayerPrefs.SetInt("Afinidad1_G"+gameNumber,0);
         PlayerPrefs.SetInt("Afinidad2_G"+gameNumber,0);
         PlayerPrefs.SetInt("Afinidad3_G"+gameNumber,0);
         PlayerPrefs.SetInt("Afinidad0_G"+gameNumber,1); // Base siempre disponible

@@ -79,7 +79,13 @@ public class Projectile : MonoBehaviour
         Entity entity = collision.gameObject.GetComponent<Entity>();
         if (entity != null)
         {
-            entity.TakeDamage(damage);
+            if(ownerTag == "Player"){
+                Player player = Player.Instance;
+                entity.TakeDamage(damage, player.Afinidad);
+            }else{
+                entity.TakeDamage(damage);
+            }
+            
         }
 
         // Se destruye al chocar contra cualquier cosa (árboles, enemigos, paredes...)

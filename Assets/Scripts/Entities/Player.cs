@@ -82,6 +82,8 @@ public abstract class Player:Entity
     
     public bool attacking {get; protected set;} = false;
 
+    protected SpriteRenderer sp;
+
     protected virtual void Awake()
     {
         if (Instance != null )
@@ -93,10 +95,13 @@ public abstract class Player:Entity
         base.Awake();
         DontDestroyOnLoad(transform.root.gameObject);
         rb = GetComponent<Rigidbody2D>();
+        sp = GetComponent<SpriteRenderer>();
         Armazon = "Armazon1";
         Afinidad = "Afinidad0";
         animator = GetComponentInChildren<Animator>();
         SceneManager.sceneLoaded += OnPlayerSceneLoaded;
+        lastArmazonAfinidad = Armazon + "_" + Afinidad;
+        ActivateDesign();
     }
 
     protected virtual void OnDestroy()
@@ -114,6 +119,7 @@ public abstract class Player:Entity
         if (tpCooldown > 0) tpCooldown -= Time.deltaTime;
         ProveArmazon();
         ProveAfinidad();
+        CheckDesignChange();
         HandleMovement();
         UpdateAbilityCooldown();
         ExecAbility();
@@ -127,19 +133,19 @@ public abstract class Player:Entity
     protected void ProveArmazon(){
         switch (Armazon){
             case "Armazon1":
-                IsRanged = true;
-                IsMelee = false;
-                break;
-            case "Armazon2":
                 IsRanged = false;
                 IsMelee = true;
+                break;
+            case "Armazon2":
+                IsRanged = true;
+                IsMelee = false;
                 break;
             case "Armazon3":
                 IsRanged = true;
                 IsMelee = false;
                 break;
         }
-        UpdateDesign();
+        
     }
     protected void ProveAfinidad(){
         switch (Afinidad){
@@ -152,64 +158,81 @@ public abstract class Player:Entity
             case "Afinidad3":
                 break;
         }
-        UpdateDesign();
+
     }
 
-    private void UpdateDesign()
+    private void CheckDesignChange()
     {
-        string combo = Armazon + "_" + Afinidad;
-        if (combo == lastArmazonAfinidad) return;
-        lastArmazonAfinidad = combo;
-
-        GameObject diseñoActivo = (Armazon, Afinidad) switch
+        string currentKey = Armazon + "_" + Afinidad;
+        if (currentKey != lastArmazonAfinidad)
         {
-            ("Armazon1", "Afinidad0") => verdugo_base,
-            ("Armazon1", "Afinidad1") => verdugo_af1,
-            ("Armazon1", "Afinidad2") => verdugo_af2,
-            ("Armazon1", "Afinidad3") => verdugo_af3,
-            ("Armazon2", "Afinidad0") => garras_base,
-            ("Armazon2", "Afinidad1") => garras_af1,
-            ("Armazon2", "Afinidad2") => garras_af2,
-            ("Armazon2", "Afinidad3") => garras_af3,
-            ("Armazon3", "Afinidad0") => alambique_base,
-            ("Armazon3", "Afinidad1") => alambique_af1,
-            ("Armazon3", "Afinidad2") => alambique_af2,
-            ("Armazon3", "Afinidad3") => alambique_af3,
-            _                         => verdugo_base
-        };
+            lastArmazonAfinidad = currentKey;
+            ActivateDesign();
+        }
+    }
 
-        GameObject[] todos = {
-            verdugo_base, verdugo_af1, verdugo_af2, verdugo_af3,
-            garras_base,  garras_af1,  garras_af2,  garras_af3,
-            alambique_base, alambique_af1, alambique_af2, alambique_af3
-        };
-        foreach (var d in todos)
-            if (d != null) d.SetActive(false);
+    protected virtual void ActivateDesign()
+    {
+        if (verdugo_base == null) return;
 
-        if (diseñoActivo != null)
+        SetDesignActive(verdugo_base, false);
+        SetDesignActive(verdugo_af1, false);
+        SetDesignActive(verdugo_af2, false);
+        SetDesignActive(verdugo_af3, false);
+        SetDesignActive(garras_base, false);
+        SetDesignActive(garras_af1, false);
+        SetDesignActive(garras_af2, false);
+        SetDesignActive(garras_af3, false);
+        SetDesignActive(alambique_base, false);
+        SetDesignActive(alambique_af1, false);
+        SetDesignActive(alambique_af2, false);
+        SetDesignActive(alambique_af3, false);
+
+        GameObject designToActivate = null;
+
+        switch (Armazon)
         {
-            diseñoActivo.SetActive(true);
-            Animator childAnimator = diseñoActivo.GetComponent<Animator>();
-            if (childAnimator != null) animator = childAnimator;
+            case "Armazon1":
+                switch (Afinidad)
+                {
+                    case "Afinidad0": designToActivate = verdugo_base; break;
+                    case "Afinidad1": designToActivate = verdugo_af1; break;
+                    case "Afinidad2": designToActivate = verdugo_af2; break;
+                    case "Afinidad3": designToActivate = verdugo_af3; break;
+                }
+                break;
+            case "Armazon2":
+                switch (Afinidad)
+                {
+                    case "Afinidad0": designToActivate = garras_base; break;
+                    case "Afinidad1": designToActivate = garras_af1; break;
+                    case "Afinidad2": designToActivate = garras_af2; break;
+                    case "Afinidad3": designToActivate = garras_af3; break;
+                }
+                break;
+            case "Armazon3":
+                switch (Afinidad)
+                {
+                    case "Afinidad0": designToActivate = alambique_base; break;
+                    case "Afinidad1": designToActivate = alambique_af1; break;
+                    case "Afinidad2": designToActivate = alambique_af2; break;
+                    case "Afinidad3": designToActivate = alambique_af3; break;
+                }
+                break;
         }
 
-        CurrentDesignSprite = (Armazon, Afinidad) switch
-        {
-            ("Armazon1", "Afinidad0") => retrato_verdugo_base,
-            ("Armazon1", "Afinidad1") => retrato_verdugo_af1,
-            ("Armazon1", "Afinidad2") => retrato_verdugo_af2,
-            ("Armazon1", "Afinidad3") => retrato_verdugo_af3,
-            ("Armazon2", "Afinidad0") => retrato_garras_base,
-            ("Armazon2", "Afinidad1") => retrato_garras_af1,
-            ("Armazon2", "Afinidad2") => retrato_garras_af2,
-            ("Armazon2", "Afinidad3") => retrato_garras_af3,
-            ("Armazon3", "Afinidad0") => retrato_alambique_base,
-            ("Armazon3", "Afinidad1") => retrato_alambique_af1,
-            ("Armazon3", "Afinidad2") => retrato_alambique_af2,
-            ("Armazon3", "Afinidad3") => retrato_alambique_af3,
-            _                         => retrato_verdugo_base
-        };
+        SetDesignActive(designToActivate, true);
     }
+
+    private void SetDesignActive(GameObject design, bool active)
+    {
+        if (design != null)
+        {
+            design.SetActive(active);
+        }
+    }
+
+   
     
     protected virtual void UpdateAbilityCooldown()
     {
@@ -302,7 +325,7 @@ public abstract class Player:Entity
         {
             if(attacking){
                 Enemie enemie = collision.gameObject.GetComponent<Enemie>();
-                enemie.TakeDamage(damage);
+                enemie.TakeDamage(damage, Afinidad);
             }
         }
     }

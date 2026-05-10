@@ -13,13 +13,6 @@ public class MagicBook : MonoBehaviour
     [SerializeField] private Button afinidad2; // AF2
     [SerializeField] private Button afinidad3; // AF3
 
-    [Header("Círculos de selección (Image hijo de cada botón)")]
-    [SerializeField] private Image circleArmazon1;
-    [SerializeField] private Image circleArmazon2;
-    [SerializeField] private Image circleArmazon3;
-    [SerializeField] private Image circleAfinidad1;
-    [SerializeField] private Image circleAfinidad2;
-    [SerializeField] private Image circleAfinidad3;
 
     [Header("Retrato derecho del libro")]
     [SerializeField] private Image portraitImage;
@@ -29,29 +22,31 @@ public class MagicBook : MonoBehaviour
         if (Player.Instance == null) return;
 
         if (armazon1 != null) armazon1.gameObject.SetActive(Player.Instance.Armazon1);
-        if (armazon2 != null) armazon2.gameObject.SetActive(Player.Instance.Armazon2);
-        if (armazon3 != null) armazon3.gameObject.SetActive(Player.Instance.Armazon3);
+        if (armazon2 != null) {
+            armazon2.gameObject.SetActive(Player.Instance.Armazon2);
+            Debug.Log("Armazon2: " + Player.Instance.Armazon2);   
+        }
+        if (armazon3 != null) {
+            armazon3.gameObject.SetActive(Player.Instance.Armazon3);
+            Debug.Log("Armazon3: " + Player.Instance.Armazon3);   
+        }
 
-        if (afinidad1 != null) afinidad1.gameObject.SetActive(Player.Instance.Afinidad1);
-        if (afinidad2 != null) afinidad2.gameObject.SetActive(Player.Instance.Afinidad2);
-        if (afinidad3 != null) afinidad3.gameObject.SetActive(Player.Instance.Afinidad3);
+        if (afinidad1 != null) {
+            afinidad1.gameObject.SetActive(Player.Instance.Afinidad1);
+            Debug.Log("Afinidad1: " + Player.Instance.Afinidad1);   
+        }
+        if (afinidad2 != null) {
+            afinidad2.gameObject.SetActive(Player.Instance.Afinidad2);
+            Debug.Log("Afinidad2: " + Player.Instance.Afinidad2);   
+        }
+        if (afinidad3 != null) {
+            afinidad3.gameObject.SetActive(Player.Instance.Afinidad3);
+            Debug.Log("Afinidad3: " + Player.Instance.Afinidad3);   
+        }
 
-        UpdateSelectionVisuals();
         RefreshPortrait();
     }
 
-    private void UpdateSelectionVisuals()
-    {
-        if (Player.Instance == null) return;
-
-        if (circleArmazon1 != null) circleArmazon1.gameObject.SetActive(Player.Instance.Armazon == "Armazon1");
-        if (circleArmazon2 != null) circleArmazon2.gameObject.SetActive(Player.Instance.Armazon == "Armazon2");
-        if (circleArmazon3 != null) circleArmazon3.gameObject.SetActive(Player.Instance.Armazon == "Armazon3");
-
-        if (circleAfinidad1 != null) circleAfinidad1.gameObject.SetActive(Player.Instance.Afinidad == "Afinidad1");
-        if (circleAfinidad2 != null) circleAfinidad2.gameObject.SetActive(Player.Instance.Afinidad == "Afinidad2");
-        if (circleAfinidad3 != null) circleAfinidad3.gameObject.SetActive(Player.Instance.Afinidad == "Afinidad3");
-    }
 
     private void RefreshPortrait()
     {
@@ -69,19 +64,16 @@ public class MagicBook : MonoBehaviour
     public void OnArmazon1Clicker()
     {
         Player.Instance.Armazon = "Armazon1";
-        UpdateSelectionVisuals();
         RefreshPortrait();
     }
     public void OnArmazon2Clicker()
     {
         Player.Instance.Armazon = "Armazon2";
-        UpdateSelectionVisuals();
         RefreshPortrait();
     }
     public void OnArmazon3Clicker()
     {
         Player.Instance.Armazon = "Armazon3";
-        UpdateSelectionVisuals();
         RefreshPortrait();
     }
 
@@ -89,19 +81,16 @@ public class MagicBook : MonoBehaviour
     public void OnAfinidad1Clicker()
     {
         Player.Instance.Afinidad = Player.Instance.Afinidad == "Afinidad1" ? "Afinidad0" : "Afinidad1";
-        UpdateSelectionVisuals();
         RefreshPortrait();
     }
     public void OnAfinidad2Clicker()
     {
         Player.Instance.Afinidad = Player.Instance.Afinidad == "Afinidad2" ? "Afinidad0" : "Afinidad2";
-        UpdateSelectionVisuals();
         RefreshPortrait();
     }
     public void OnAfinidad3Clicker()
     {
         Player.Instance.Afinidad = Player.Instance.Afinidad == "Afinidad3" ? "Afinidad0" : "Afinidad3";
-        UpdateSelectionVisuals();
         RefreshPortrait();
     }
 }
