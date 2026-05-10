@@ -157,59 +157,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OBJETOS2 (1)_0
-      rect:
-        serializedVersion: 2
-        x: 2986
-        y: 2090
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45d5584c5443a8bd0800000000000000
-      internalID: -2627229958362800812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_1
-      rect:
-        serializedVersion: 2
-        x: 2957
-        y: 2077
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1add13f774b0ce2d0800000000000000
-      internalID: -3248208829536412255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: OBJETOS2 (1)_2
       rect:
         serializedVersion: 2
-        x: 3038
-        y: 2078
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1633
+        y: 1495
+        width: 534
+        height: 569
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -226,12 +182,12 @@ TextureImporter:
       name: OBJETOS2 (1)_3
       rect:
         serializedVersion: 2
-        x: 1634
-        y: 1496
-        width: 532
-        height: 566
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2773
+        y: 1456
+        width: 452
+        height: 576
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,37 +201,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OBJETOS2 (1)_4
-      rect:
-        serializedVersion: 2
-        x: 2774
-        y: 1456
-        width: 450
-        height: 580
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa9fcb21df3028d30800000000000000
-      internalID: 4432109368761973162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: OBJETOS2 (1)_5
       rect:
         serializedVersion: 2
-        x: 2957
-        y: 2029
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 468
+        y: 1576
+        width: 229
+        height: 149
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -292,12 +226,12 @@ TextureImporter:
       name: OBJETOS2 (1)_6
       rect:
         serializedVersion: 2
-        x: 469
-        y: 1577
-        width: 227
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 853
+        y: 1549
+        width: 372
+        height: 273
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -314,12 +248,12 @@ TextureImporter:
       name: OBJETOS2 (1)_7
       rect:
         serializedVersion: 2
-        x: 854
-        y: 1550
-        width: 370
-        height: 271
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2234
+        y: 1486
+        width: 334
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -336,12 +270,12 @@ TextureImporter:
       name: OBJETOS2 (1)_8
       rect:
         serializedVersion: 2
-        x: 2236
-        y: 1488
-        width: 330
-        height: 461
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 447
+        y: 770
+        width: 480
+        height: 579
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -355,59 +289,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OBJETOS2 (1)_9
-      rect:
-        serializedVersion: 2
-        x: 447
-        y: 771
-        width: 480
-        height: 577
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 231204c54274dea50800000000000000
-      internalID: 6551971254386041138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_10
-      rect:
-        serializedVersion: 2
-        x: 992
-        y: 617
-        width: 501
-        height: 731
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9278ad59be6edfe90800000000000000
-      internalID: -6990177147103312087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: OBJETOS2 (1)_11
       rect:
         serializedVersion: 2
         x: 1737
         y: 635
         width: 516
-        height: 691
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 692
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -424,12 +314,12 @@ TextureImporter:
       name: OBJETOS2 (1)_12
       rect:
         serializedVersion: 2
-        x: 2249
-        y: 902
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2639
+        y: 615
+        width: 537
+        height: 692
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -443,155 +333,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OBJETOS2 (1)_13
+      name: OBJETOS2 (1)_4
       rect:
         serializedVersion: 2
-        x: 2640
-        y: 615
-        width: 536
-        height: 691
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 979
+        y: 587
+        width: 517
+        height: 771
+      alignment: 9
+      pivot: {x: 0.5071047, y: 0.003677804}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6ab0a964f06545540800000000000000
-      internalID: 4995712510269721510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_14
-      rect:
-        serializedVersion: 2
-        x: 2207
-        y: 865
-        width: 53
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6655de91b65c98530800000000000000
-      internalID: 3857831619606697318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_15
-      rect:
-        serializedVersion: 2
-        x: 2634
-        y: 882
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe06c85c5af85f300800000000000000
-      internalID: 285292093554581743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_16
-      rect:
-        serializedVersion: 2
-        x: 2255
-        y: 859
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a64622562c773ed0800000000000000
-      internalID: -2434340569541622109
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_17
-      rect:
-        serializedVersion: 2
-        x: 2632
-        y: 844
-        width: 56
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 834073077a6525650800000000000000
-      internalID: 6220129312494257208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_18
-      rect:
-        serializedVersion: 2
-        x: 2634
-        y: 795
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88cf8d9a6daea1530800000000000000
-      internalID: 3826629041098128520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OBJETOS2 (1)_19
-      rect:
-        serializedVersion: 2
-        x: 1203
-        y: 614
-        width: 9
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7fe585703d5811450800000000000000
-      internalID: 6057770115197853431
+      spriteID: 11258c67802a8a6429339be2d8ed559e
+      internalID: 4432109368761973162
       vertices: []
       indices: 
       edges: []
@@ -600,7 +358,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a50f55d66e5c42a48b41f2b59d3af9bb
     internalID: 0
     vertices: []
     indices: 
@@ -608,7 +366,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       OBJETOS2 (1)_0: -2627229958362800812
       OBJETOS2 (1)_1: -3248208829536412255
