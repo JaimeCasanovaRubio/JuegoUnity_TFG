@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Afinidad1_G"+gameNumber,1);
         PlayerPrefs.SetInt("Afinidad2_G"+gameNumber,0);
         PlayerPrefs.SetInt("Afinidad3_G"+gameNumber,0);
-        PlayerPrefs.SetInt("Afinidad4_G"+gameNumber,0);
+        PlayerPrefs.SetInt("Afinidad0_G"+gameNumber,1); // Base siempre disponible
 
         PlayerPrefs.SetString("SelectedCharacter", characterType);
         
@@ -328,7 +328,7 @@ public class GameManager : MonoBehaviour
             player.Afinidad1 = PlayerPrefs.GetInt("Afinidad1_G1") == 1 ? true : false;
             player.Afinidad2 = PlayerPrefs.GetInt("Afinidad2_G1") == 1 ? true : false;
             player.Afinidad3 = PlayerPrefs.GetInt("Afinidad3_G1") == 1 ? true : false;
-            player.Afinidad4 = PlayerPrefs.GetInt("Afinidad4_G1") == 1 ? true : false;
+            player.Afinidad0 = PlayerPrefs.GetInt("Afinidad0_G1") == 1 ? true : false;
         }else if(game == 2){
             Player player = null;
             string character = PlayerPrefs.GetString("SelectedCharacter2");
@@ -349,7 +349,7 @@ public class GameManager : MonoBehaviour
             player.Afinidad1 = PlayerPrefs.GetInt("Afinidad1_G2") == 1 ? true : false;
             player.Afinidad2 = PlayerPrefs.GetInt("Afinidad2_G2") == 1 ? true : false;
             player.Afinidad3 = PlayerPrefs.GetInt("Afinidad3_G2") == 1 ? true : false;
-            player.Afinidad4 = PlayerPrefs.GetInt("Afinidad4_G2") == 1 ? true : false;
+            player.Afinidad0 = PlayerPrefs.GetInt("Afinidad0_G2") == 1 ? true : false;
             
         }
         GameSelectorCanvas.SetActive(false);

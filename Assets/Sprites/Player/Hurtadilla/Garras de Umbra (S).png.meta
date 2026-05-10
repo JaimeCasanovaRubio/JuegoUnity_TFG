@@ -169,15 +169,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Garras de Umbra (S)_0
+      name: Garras de Umbra (S)_1
       rect:
         serializedVersion: 2
         x: 454
         y: 848
-        width: 153
+        width: 154
         height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,37 +191,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_1
-      rect:
-        serializedVersion: 2
-        x: 628
-        y: 846
-        width: 173
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c470d3948171c490800000000000000
-      internalID: -7727770671361526588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Garras de Umbra (S)_2
       rect:
         serializedVersion: 2
-        x: 804
-        y: 924
-        width: 9
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 648
+        y: 846
+        width: 159
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -242,8 +220,8 @@ TextureImporter:
         y: 845
         width: 153
         height: 232
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,10 +240,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1026
         y: 844
-        width: 190
+        width: 189
         height: 224
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -284,10 +262,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1247
         y: 839
-        width: 177
+        width: 176
         height: 225
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -308,8 +286,8 @@ TextureImporter:
         y: 835
         width: 198
         height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -327,33 +305,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 464
-        y: 531
+        y: 532
         width: 125
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c0438ce7c22f8770800000000000000
-      internalID: 8615142854244909249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_8
-      rect:
-        serializedVersion: 2
-        x: 655
-        y: 531
-        width: 124
-        height: 231
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -367,37 +323,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_9
+      name: Garras de Umbra (S)_8
       rect:
         serializedVersion: 2
-        x: 854
-        y: 520
-        width: 131
-        height: 244
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1224457080a462a60800000000000000
-      internalID: 7648882415478522401
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_10
-      rect:
-        serializedVersion: 2
-        x: 1067
-        y: 525
-        width: 110
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 655
+        y: 532
+        width: 124
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -411,37 +345,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_11
+      name: Garras de Umbra (S)_9
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 527
-        width: 113
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26b982d8900bbbb20800000000000000
-      internalID: 3151305919345236834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_12
-      rect:
-        serializedVersion: 2
-        x: 1391
-        y: 682
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 854
+        y: 520
+        width: 130
+        height: 244
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -455,37 +367,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_13
+      name: Garras de Umbra (S)_10
       rect:
         serializedVersion: 2
-        x: 1477
-        y: 518
+        x: 1068
+        y: 526
         width: 108
         height: 236
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2256fedc6616379e0800000000000000
-      internalID: -1624847946381040350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_14
-      rect:
-        serializedVersion: 2
-        x: 581
-        y: 653
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -499,15 +389,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_15
+      name: Garras de Umbra (S)_11
       rect:
         serializedVersion: 2
-        x: 771
-        y: 648
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1282
+        y: 527
+        width: 117
+        height: 234
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -521,15 +411,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_16
+      name: Garras de Umbra (S)_12
       rect:
         serializedVersion: 2
-        x: 977
-        y: 651
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1478
+        y: 518
+        width: 107
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -543,59 +433,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_17
+      name: Garras de Umbra (S)_13
       rect:
         serializedVersion: 2
-        x: 1175
-        y: 618
-        width: 8
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb9171f75b6337be0800000000000000
-      internalID: -1480779699325560388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_18
-      rect:
-        serializedVersion: 2
-        x: 1392
-        y: 615
-        width: 8
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 37d94e913727b0be0800000000000000
-      internalID: -1509987411371451021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_19
-      rect:
-        serializedVersion: 2
-        x: 1588
-        y: 609
-        width: 9
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 458
+        y: 180
+        width: 165
+        height: 228
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -609,15 +455,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_20
+      name: Garras de Umbra (S)_14
       rect:
         serializedVersion: 2
-        x: 457
-        y: 180
-        width: 166
+        x: 861
+        y: 191
+        width: 140
         height: 228
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -631,37 +477,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garras de Umbra (S)_21
+      name: Garras de Umbra (S)_15
       rect:
         serializedVersion: 2
-        x: 860
-        y: 191
-        width: 154
-        height: 228
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0d95a548ba3a4a330800000000000000
-      internalID: 3721279149170121168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_22
-      rect:
-        serializedVersion: 2
-        x: 997
-        y: 320
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1214
+        y: 184
+        width: 139
+        height: 227
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -674,33 +498,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Garras de Umbra (S)_23
-      rect:
-        serializedVersion: 2
-        x: 1214
-        y: 183
-        width: 139
-        height: 228
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 70171d3e0398d50f0800000000000000
-      internalID: -1126593488699166457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e7b5550bd70df994e9e8a8d6551950ba
     internalID: 0
     vertices: []
     indices: 
@@ -708,32 +510,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Garras de Umbra (S)_0: 4173492819075181626
-      Garras de Umbra (S)_1: -7727770671361526588
-      Garras de Umbra (S)_10: 3746705788303926259
-      Garras de Umbra (S)_11: 3151305919345236834
-      Garras de Umbra (S)_12: -8215108707879517408
-      Garras de Umbra (S)_13: -1624847946381040350
-      Garras de Umbra (S)_14: -7876871021865360888
-      Garras de Umbra (S)_15: 355927949276550859
-      Garras de Umbra (S)_16: 559221709133289607
+      Garras de Umbra (S)_1: 4173492819075181626
+      Garras de Umbra (S)_10: -7876871021865360888
+      Garras de Umbra (S)_11: 355927949276550859
+      Garras de Umbra (S)_12: 559221709133289607
+      Garras de Umbra (S)_13: -8909303408012151024
+      Garras de Umbra (S)_14: -8680948886357352577
+      Garras de Umbra (S)_15: -1982869317515687871
       Garras de Umbra (S)_17: -1480779699325560388
       Garras de Umbra (S)_18: -1509987411371451021
-      Garras de Umbra (S)_19: -8909303408012151024
       Garras de Umbra (S)_2: -9034891131921342329
-      Garras de Umbra (S)_20: -8680948886357352577
       Garras de Umbra (S)_21: 3721279149170121168
-      Garras de Umbra (S)_22: -1982869317515687871
       Garras de Umbra (S)_23: -1126593488699166457
       Garras de Umbra (S)_3: -2303369849366168422
       Garras de Umbra (S)_4: 1543786680353623446
       Garras de Umbra (S)_5: 7508604749124251888
       Garras de Umbra (S)_6: -4276788193577833121
-      Garras de Umbra (S)_7: 8615142854244909249
-      Garras de Umbra (S)_8: 8308981882749742396
-      Garras de Umbra (S)_9: 7648882415478522401
+      Garras de Umbra (S)_7: 8308981882749742396
+      Garras de Umbra (S)_8: 3746705788303926259
+      Garras de Umbra (S)_9: -8215108707879517408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

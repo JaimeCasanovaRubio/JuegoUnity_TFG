@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1554602575171566129}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_AF1"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 3532632998563294627}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_AF2"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 9185249215577767567}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_base"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 1151094746997227909}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_AF3"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 8875361514755282699}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_base"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 4597604048167096197}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_AF2"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,7 +807,7 @@ GameObject:
   - component: {fileID: 5844705581832123533}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_AF1"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 2501806367666226185}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_AF3"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 7971508514932605535}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugoAF2"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 5640384333973230287}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugo_base"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1218,15 +1218,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 243969603328484714, guid: 96fab8b4bbbbe1c41ae8e32e5f4cdecf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6200001, y: 2.2707028}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!95 &5640384333973230287
 Animator:
@@ -1263,7 +1263,7 @@ GameObject:
   - component: {fileID: 4715762296054545699}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugoAF1"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 1724713976891743201}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugoAF3"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1510,7 +1510,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.023354862, y: 0.3404369, z: 0}
-  m_LocalScale: {x: 0.42, y: 0.42, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6031368935546595496}
@@ -1631,10 +1631,10 @@ MonoBehaviour:
   Armazon1: 1
   Armazon2: 0
   Armazon3: 0
-  Afinidad1: 1
+  Afinidad1: 0
   Afinidad2: 0
   Afinidad3: 0
-  Afinidad4: 0
+  Afinidad0: 1
   Armazon: Armazon1
   Afinidad: 
   projectilePrefab: {fileID: 512618379300302562, guid: c8785b30cf987f9bcbfe547d6e8e3684, type: 3}

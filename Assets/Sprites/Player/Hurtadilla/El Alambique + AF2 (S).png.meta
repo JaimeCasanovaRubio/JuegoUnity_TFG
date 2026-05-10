@@ -157,15 +157,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_0
+      name: El Alambique + AF2 (S)_1
       rect:
         serializedVersion: 2
         x: 433
         y: 848
         width: 151
-        height: 323
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 218
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,37 +179,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_1
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 846
-        width: 155
-        height: 249
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14dd6c0957bd83690800000000000000
-      internalID: -7622101071337956031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: El Alambique + AF2 (S)_2
+      name: El Alambique + AF2 (S)_3
       rect:
         serializedVersion: 2
         x: 810
         y: 845
         width: 154
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,59 +201,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_3
+      name: El Alambique + AF2 (S)_2
       rect:
         serializedVersion: 2
-        x: 1257
-        y: 1091
-        width: 11
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6476b583eaf79e30800000000000000
-      internalID: 4510349406942688365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: El Alambique + AF2 (S)_4
-      rect:
-        serializedVersion: 2
-        x: 406
-        y: 1039
-        width: 11
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c9c7bec34493d310800000000000000
-      internalID: 1428648525758450112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: El Alambique + AF2 (S)_5
-      rect:
-        serializedVersion: 2
-        x: 1054
-        y: 844
-        width: 162
-        height: 239
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 621
+        y: 841
+        width: 154
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,15 +223,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_6
+      name: El Alambique + AF2 (S)_4
       rect:
         serializedVersion: 2
-        x: 1265
-        y: 839
-        width: 193
-        height: 236
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1055
+        y: 844
+        width: 161
+        height: 224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -311,15 +245,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_7
+      name: El Alambique + AF2 (S)_5
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 835
-        width: 163
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1266
+        y: 839
+        width: 192
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,15 +267,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_8
+      name: El Alambique + AF2 (S)_6
       rect:
         serializedVersion: 2
-        x: 422
-        y: 531
-        width: 179
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1471
+        y: 835
+        width: 162
+        height: 227
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -355,37 +289,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_9
+      name: El Alambique + AF2 (S)_7
       rect:
         serializedVersion: 2
-        x: 639
-        y: 531
-        width: 123
-        height: 231
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e847f4d1666a1f20800000000000000
-      internalID: 3394137839547926752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: El Alambique + AF2 (S)_10
-      rect:
-        serializedVersion: 2
-        x: 857
-        y: 520
-        width: 107
-        height: 244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 457
+        y: 532
+        width: 143
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -399,15 +311,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_11
+      name: El Alambique + AF2 (S)_8
       rect:
         serializedVersion: 2
-        x: 1056
-        y: 525
-        width: 143
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 639
+        y: 532
+        width: 122
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -421,15 +333,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_12
+      name: El Alambique + AF2 (S)_9
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 709
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 857
+        y: 520
+        width: 107
+        height: 244
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -443,15 +355,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_13
+      name: El Alambique + AF2 (S)_10
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 527
-        width: 135
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1058
+        y: 526
+        width: 134
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -465,15 +377,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_14
+      name: El Alambique + AF2 (S)_11
       rect:
         serializedVersion: 2
-        x: 1477
-        y: 518
-        width: 132
-        height: 236
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1282
+        y: 527
+        width: 134
+        height: 234
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -487,15 +399,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_15
+      name: El Alambique + AF2 (S)_12
       rect:
         serializedVersion: 2
-        x: 365
-        y: 368
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1478
+        y: 518
+        width: 123
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -509,59 +421,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_16
+      name: El Alambique + AF2 (S)_13
       rect:
         serializedVersion: 2
         x: 448
         y: 180
         width: 164
         height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a28e73cf89ba3b790800000000000000
-      internalID: -7515474679596324822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: El Alambique + AF2 (S)_17
-      rect:
-        serializedVersion: 2
-        x: 669
-        y: 367
-        width: 20
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23f024b23784c9560800000000000000
-      internalID: 7321806753681772338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: El Alambique + AF2 (S)_18
-      rect:
-        serializedVersion: 2
-        x: 865
-        y: 161
-        width: 134
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -575,23 +443,45 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: El Alambique + AF2 (S)_19
+      name: El Alambique + AF2 (S)_14
       rect:
         serializedVersion: 2
-        x: 1130
-        y: 158
-        width: 227
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 866
+        y: 162
+        width: 133
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c1361f4a6c5a5af50800000000000000
-      internalID: 6892097077349802780
+      spriteID: 3a3cd88d0f04d004f892c47e3c1e9460
+      internalID: -1348402889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Alambique + AF2 (S)_15
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 159
+        width: 139
+        height: 236
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c963e9ee6268e04fbcbec5990e369d1
+      internalID: -613770508
       vertices: []
       indices: 
       edges: []
@@ -600,7 +490,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6a09eb13baf59674e82b12965457fdd2
     internalID: 0
     vertices: []
     indices: 
@@ -608,28 +498,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      El Alambique + AF2 (S)_0: -7823267332298740795
-      El Alambique + AF2 (S)_1: -7622101071337956031
-      El Alambique + AF2 (S)_10: 5431328718675647112
-      El Alambique + AF2 (S)_11: 1688551391894323043
-      El Alambique + AF2 (S)_12: -6081331354101785556
-      El Alambique + AF2 (S)_13: 5952059837836552165
-      El Alambique + AF2 (S)_14: 1279063408070099132
-      El Alambique + AF2 (S)_15: 6674894097709883305
+      El Alambiqu: -7622101071337956031
+      El Alambique + AF2 (S)_1: -7823267332298740795
+      El Alambique + AF2 (S)_10: 5952059837836552165
+      El Alambique + AF2 (S)_11: 1279063408070099132
+      El Alambique + AF2 (S)_12: 6674894097709883305
+      El Alambique + AF2 (S)_13: -2309942679598329749
+      El Alambique + AF2 (S)_14: -1348402889
+      El Alambique + AF2 (S)_15: -613770508
       El Alambique + AF2 (S)_16: -7515474679596324822
       El Alambique + AF2 (S)_17: 7321806753681772338
-      El Alambique + AF2 (S)_18: -2309942679598329749
       El Alambique + AF2 (S)_19: 6892097077349802780
-      El Alambique + AF2 (S)_2: -380978312404982971
-      El Alambique + AF2 (S)_3: 4510349406942688365
-      El Alambique + AF2 (S)_4: 1428648525758450112
-      El Alambique + AF2 (S)_5: 8640771032094320333
-      El Alambique + AF2 (S)_6: -4203111049586160720
-      El Alambique + AF2 (S)_7: -496819370417262836
-      El Alambique + AF2 (S)_8: -3623507892315050006
-      El Alambique + AF2 (S)_9: 3394137839547926752
+      El Alambique + AF2 (S)_2: 8640771032094320333
+      El Alambique + AF2 (S)_21: 1052486881
+      El Alambique + AF2 (S)_23: 993708388
+      El Alambique + AF2 (S)_24: 1415455816
+      El Alambique + AF2 (S)_3: -380978312404982971
+      El Alambique + AF2 (S)_4: -4203111049586160720
+      El Alambique + AF2 (S)_5: -496819370417262836
+      El Alambique + AF2 (S)_6: -3623507892315050006
+      El Alambique + AF2 (S)_7: 5431328718675647112
+      El Alambique + AF2 (S)_8: 1688551391894323043
+      El Alambique + AF2 (S)_9: -6081331354101785556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
