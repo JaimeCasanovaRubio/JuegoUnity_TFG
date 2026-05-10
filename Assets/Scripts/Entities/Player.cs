@@ -64,10 +64,10 @@ public abstract class Player:Entity
     [SerializeField]public bool Afinidad1 = true;
     [SerializeField]public bool Afinidad2 = false;
     [SerializeField]public bool Afinidad3 = false;
-    [SerializeField]public bool Afinidad4 = false;
+    [SerializeField]public bool Afinidad0 = true; // Sin afinidad (base, siempre disponible)
 
     [SerializeField]public string Armazon = "Armazon1";
-    [SerializeField]public string Afinidad = "Afinidad1";  // "" = sin afinidad (muestra sprite base)
+    [SerializeField]public string Afinidad = "Afinidad0";
 
     public Sprite CurrentDesignSprite { get; private set; }
 
@@ -94,7 +94,7 @@ public abstract class Player:Entity
         DontDestroyOnLoad(transform.root.gameObject);
         rb = GetComponent<Rigidbody2D>();
         Armazon = "Armazon1";
-        Afinidad = "Afinidad1";
+        Afinidad = "Afinidad0";
         animator = GetComponentInChildren<Animator>();
         SceneManager.sceneLoaded += OnPlayerSceneLoaded;
     }
@@ -117,6 +117,7 @@ public abstract class Player:Entity
         HandleMovement();
         UpdateAbilityCooldown();
         ExecAbility();
+        if (animator != null) animator.SetBool("IsAttacking", attacking);
         if(InputHandler.Instance.AttackPressed)
         {
             ExecAttack();
@@ -142,13 +143,13 @@ public abstract class Player:Entity
     }
     protected void ProveAfinidad(){
         switch (Afinidad){
+            case "Afinidad0":
+                break;
             case "Afinidad1":
                 break;
             case "Afinidad2":
                 break;
             case "Afinidad3":
-                break;
-            case "Afinidad4":
                 break;
         }
         UpdateDesign();
@@ -162,15 +163,15 @@ public abstract class Player:Entity
 
         GameObject diseñoActivo = (Armazon, Afinidad) switch
         {
-            ("Armazon1", "")          => verdugo_base,
+            ("Armazon1", "Afinidad0") => verdugo_base,
             ("Armazon1", "Afinidad1") => verdugo_af1,
             ("Armazon1", "Afinidad2") => verdugo_af2,
             ("Armazon1", "Afinidad3") => verdugo_af3,
-            ("Armazon2", "")          => garras_base,
+            ("Armazon2", "Afinidad0") => garras_base,
             ("Armazon2", "Afinidad1") => garras_af1,
             ("Armazon2", "Afinidad2") => garras_af2,
             ("Armazon2", "Afinidad3") => garras_af3,
-            ("Armazon3", "")          => alambique_base,
+            ("Armazon3", "Afinidad0") => alambique_base,
             ("Armazon3", "Afinidad1") => alambique_af1,
             ("Armazon3", "Afinidad2") => alambique_af2,
             ("Armazon3", "Afinidad3") => alambique_af3,
@@ -194,15 +195,15 @@ public abstract class Player:Entity
 
         CurrentDesignSprite = (Armazon, Afinidad) switch
         {
-            ("Armazon1", "")          => retrato_verdugo_base,
+            ("Armazon1", "Afinidad0") => retrato_verdugo_base,
             ("Armazon1", "Afinidad1") => retrato_verdugo_af1,
             ("Armazon1", "Afinidad2") => retrato_verdugo_af2,
             ("Armazon1", "Afinidad3") => retrato_verdugo_af3,
-            ("Armazon2", "")          => retrato_garras_base,
+            ("Armazon2", "Afinidad0") => retrato_garras_base,
             ("Armazon2", "Afinidad1") => retrato_garras_af1,
             ("Armazon2", "Afinidad2") => retrato_garras_af2,
             ("Armazon2", "Afinidad3") => retrato_garras_af3,
-            ("Armazon3", "")          => retrato_alambique_base,
+            ("Armazon3", "Afinidad0") => retrato_alambique_base,
             ("Armazon3", "Afinidad1") => retrato_alambique_af1,
             ("Armazon3", "Afinidad2") => retrato_alambique_af2,
             ("Armazon3", "Afinidad3") => retrato_alambique_af3,
@@ -357,13 +358,6 @@ public abstract class Player:Entity
             Afinidad3 = true;
             Afinidad = "Afinidad3";
             PlayerPrefs.SetInt("Afinidad3_G"+GameSelector.gameSelected, 1);
-            PlayerPrefs.Save();
-            Destroy(collision.gameObject);
-        }
-        if(collision.gameObject.CompareTag("Afinidad4")){
-            Afinidad4 = true;
-            Afinidad = "Afinidad4";
-            PlayerPrefs.SetInt("Afinidad4_G"+GameSelector.gameSelected, 1);
             PlayerPrefs.Save();
             Destroy(collision.gameObject);
         }

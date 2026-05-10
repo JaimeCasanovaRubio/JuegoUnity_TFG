@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: a48ad0cfc52961947a19d182936e8d6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1706344252455231237
+    second: LIBRO PRIMIGENIO (1)_0
+  - first:
+      213: 1888187673958265579
+    second: LIBRO PRIMIGENIO (1)_1
+  - first:
+      213: 5982969997394240232
+    second: LIBRO PRIMIGENIO (1)_2
+  - first:
+      213: 3207803030071220097
+    second: LIBRO PRIMIGENIO (1)_3
+  - first:
+      213: -6173806582148436507
+    second: LIBRO PRIMIGENIO (1)_4
+  - first:
+      213: 1022751148825769300
+    second: LIBRO PRIMIGENIO (1)_5
+  - first:
+      213: 1505715935119201340
+    second: LIBRO PRIMIGENIO (1)_6
+  - first:
+      213: -3067034834705361040
+    second: LIBRO PRIMIGENIO (1)_7
+  - first:
+      213: -7589980916298358453
+    second: LIBRO PRIMIGENIO (1)_8
+  - first:
+      213: 2523690148315245510
+    second: LIBRO PRIMIGENIO (1)_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1151
+        width: 184
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf060e761f8d158e0800000000000000
+      internalID: -1706344252455231237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_1
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1138
+        width: 211
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2bd877fa0343a10800000000000000
+      internalID: 1888187673958265579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_2
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1134
+        width: 201
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2e0847387c70350800000000000000
+      internalID: 5982969997394240232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_3
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 180
+        width: 1947
+        height: 1109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18711d43cd7648c20800000000000000
+      internalID: 3207803030071220097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_4
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 927
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ede21faf9b325aa0800000000000000
+      internalID: -6173806582148436507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 749
+        width: 202
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455f16740ca813e00800000000000000
+      internalID: 1022751148825769300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_6
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 752
+        width: 210
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34dc655aa065e410800000000000000
+      internalID: 1505715935119201340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_7
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 764
+        width: 218
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07753a35114bf65d0800000000000000
+      internalID: -3067034834705361040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_8
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 900
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41ea00f198faa690800000000000000
+      internalID: -7589980916298358453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIBRO PRIMIGENIO (1)_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 284
+        width: 253
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cbab7d91d2f50320800000000000000
+      internalID: 2523690148315245510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LIBRO PRIMIGENIO (1)_0: -1706344252455231237
+      LIBRO PRIMIGENIO (1)_1: 1888187673958265579
+      LIBRO PRIMIGENIO (1)_2: 5982969997394240232
+      LIBRO PRIMIGENIO (1)_3: 3207803030071220097
+      LIBRO PRIMIGENIO (1)_4: -6173806582148436507
+      LIBRO PRIMIGENIO (1)_5: 1022751148825769300
+      LIBRO PRIMIGENIO (1)_6: 1505715935119201340
+      LIBRO PRIMIGENIO (1)_7: -3067034834705361040
+      LIBRO PRIMIGENIO (1)_8: -7589980916298358453
+      LIBRO PRIMIGENIO (1)_9: 2523690148315245510
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
