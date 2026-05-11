@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1276998839101878520}
   - component: {fileID: 209266037196091806}
   - component: {fileID: 1554602575171566129}
+  - component: {fileID: 2761645510547948234}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_AF1"
   m_TagString: Player
@@ -43,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 592206286560938014}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: 93684ce6d2fef56bc94f1a0528fcded1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -104,16 +105,30 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -4111403699426685002, guid: 16a2b75f806b7c346a55340f6c4ee0be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5100001, y: 2.3107152}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
+--- !u!114 &2761645510547948234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592206286560938014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &636931785490722622
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +195,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.2, y: -0.7}
+  m_Offset: {x: 1, y: -0.9}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -190,7 +205,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2, y: 0.5}
+  m_Size: {x: 0.5, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &874815962938954931
 GameObject:
@@ -203,6 +218,7 @@ GameObject:
   - component: {fileID: 8481080423980487324}
   - component: {fileID: 2625791245917255426}
   - component: {fileID: 3532632998563294627}
+  - component: {fileID: 3958217837506099003}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_AF2"
   m_TagString: Player
@@ -274,16 +290,16 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 8697372654818361015, guid: 2d68bde61ad3ddc4b982ff8b99506187, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.46, y: 2.4307523}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
 --- !u!95 &3532632998563294627
 Animator:
   serializedVersion: 7
@@ -294,7 +310,7 @@ Animator:
   m_GameObject: {fileID: 874815962938954931}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc64c95e61108045689b7d9bea4d54df, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -306,6 +322,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3958217837506099003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874815962938954931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &1571449015251357336
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +379,7 @@ GameObject:
   - component: {fileID: 2078959991315232563}
   - component: {fileID: 3372903571467173779}
   - component: {fileID: 9185249215577767567}
+  - component: {fileID: 6353926637087306417}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_base"
   m_TagString: Player
@@ -420,16 +451,16 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 4173492819075181626, guid: 69bff7694befd1c4ab4cb90207a54c60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.54, y: 2.290709}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
 --- !u!95 &9185249215577767567
 Animator:
   serializedVersion: 7
@@ -440,7 +471,7 @@ Animator:
   m_GameObject: {fileID: 1632452419329273737}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: d3c2688e81a595d16ac5be7d0af7ad98, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -452,6 +483,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6353926637087306417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632452419329273737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &3086185003424872897
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +508,7 @@ GameObject:
   - component: {fileID: 3851583438818272242}
   - component: {fileID: 5960342664432491077}
   - component: {fileID: 1151094746997227909}
+  - component: {fileID: 6027915272739629743}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_AF3"
   m_TagString: Player
@@ -495,7 +541,7 @@ Animator:
   m_GameObject: {fileID: 3086185003424872897}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: c828176a7a98c491bbfcf396a9c8ee75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -556,16 +602,30 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8600802088030942766, guid: 5093b43f963a345458cf284064f47bde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5100001, y: 2.4307523}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
+--- !u!114 &6027915272739629743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086185003424872897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &3790367451638277569
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +637,7 @@ GameObject:
   - component: {fileID: 5811491643353221256}
   - component: {fileID: 4756170061420731248}
   - component: {fileID: 8875361514755282699}
+  - component: {fileID: 192205657141896861}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_base"
   m_TagString: Player
@@ -648,16 +709,16 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -4340370058198928190, guid: 4b9bd990fd3aebf4e95ac472fc0f107c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5100001, y: 2.4307523}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
 --- !u!95 &8875361514755282699
 Animator:
   serializedVersion: 7
@@ -668,7 +729,7 @@ Animator:
   m_GameObject: {fileID: 3790367451638277569}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b5ea128a0c11995bac4c30fdea0c5b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -680,6 +741,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &192205657141896861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790367451638277569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &3835636685125679195
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +766,7 @@ GameObject:
   - component: {fileID: 6473431490460751553}
   - component: {fileID: 6345272581010731654}
   - component: {fileID: 4597604048167096197}
+  - component: {fileID: 1472168931384501761}
   m_Layer: 6
   m_Name: "dise\xF1o_alambique_AF2"
   m_TagString: Player
@@ -762,16 +838,16 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -7823267332298740795, guid: cb3ec6c6c919fab419aec33af319bd92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5100001, y: 2.1806748}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
 --- !u!95 &4597604048167096197
 Animator:
   serializedVersion: 7
@@ -782,7 +858,7 @@ Animator:
   m_GameObject: {fileID: 3835636685125679195}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: a5025d593c8110c0eb600d41ac8450f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -794,6 +870,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1472168931384501761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835636685125679195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &3951701618934193742
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +895,7 @@ GameObject:
   - component: {fileID: 1999010470637955639}
   - component: {fileID: 1963603145376735829}
   - component: {fileID: 5844705581832123533}
+  - component: {fileID: 2059737312660514206}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_AF1"
   m_TagString: Player
@@ -837,7 +928,7 @@ Animator:
   m_GameObject: {fileID: 3951701618934193742}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: 81a4430ee674e864b877c5bbc602640e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -898,16 +989,30 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 5344018345710062611, guid: c0c81b23d94b4154a984be31f0faed24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.54, y: 2.290709}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
+--- !u!114 &2059737312660514206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951701618934193742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &4787242230982728900
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +1024,7 @@ GameObject:
   - component: {fileID: 3568312429439920451}
   - component: {fileID: 2542238719407985854}
   - component: {fileID: 2501806367666226185}
+  - component: {fileID: 7818680425607137934}
   m_Layer: 6
   m_Name: "dise\xF1o_garras_AF3"
   m_TagString: Player
@@ -951,7 +1057,7 @@ Animator:
   m_GameObject: {fileID: 4787242230982728900}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: 81265a75cda69538894ab43b04abe959, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1012,16 +1118,30 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -4913644910028442644, guid: 4bd078e57af58854cae0636b5eec353a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.54, y: 2.2406936}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
+--- !u!114 &7818680425607137934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787242230982728900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &5698334478163467819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1153,7 @@ GameObject:
   - component: {fileID: 2096582811856396565}
   - component: {fileID: 9108983107822505850}
   - component: {fileID: 7971508514932605535}
+  - component: {fileID: 1114114699753253852}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugoAF2"
   m_TagString: Player
@@ -1104,16 +1225,16 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -7544190455114767486, guid: de9e3e35899de16479e2d52b8e8645a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.54, y: 2.3107152}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
 --- !u!95 &7971508514932605535
 Animator:
   serializedVersion: 7
@@ -1124,7 +1245,7 @@ Animator:
   m_GameObject: {fileID: 5698334478163467819}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: f638cddc716b52d0badbe41f118b4483, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1136,6 +1257,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1114114699753253852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698334478163467819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &6437736579064932007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,6 +1282,7 @@ GameObject:
   - component: {fileID: 6682259635128592282}
   - component: {fileID: 4062166724544836433}
   - component: {fileID: 5640384333973230287}
+  - component: {fileID: 5613892681428660780}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugo_base"
   m_TagString: Player
@@ -1227,7 +1363,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &5640384333973230287
 Animator:
   serializedVersion: 7
@@ -1238,7 +1374,7 @@ Animator:
   m_GameObject: {fileID: 6437736579064932007}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: 32686a797c74c58ccad5077772fd2627, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1250,6 +1386,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5613892681428660780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437736579064932007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &6815246761790342271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1411,7 @@ GameObject:
   - component: {fileID: 7885013279744180257}
   - component: {fileID: 6167137619761095212}
   - component: {fileID: 4715762296054545699}
+  - component: {fileID: 6013280809391900411}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugoAF1"
   m_TagString: Player
@@ -1293,7 +1444,7 @@ Animator:
   m_GameObject: {fileID: 6815246761790342271}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: e13c882c27f1e09d49d957927088f799, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1354,16 +1505,30 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5148244516741230799, guid: 10b228e493cc84e47a1eaea128e2305f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.52, y: 2.300712}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
+--- !u!114 &6013280809391900411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815246761790342271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &6933945939907387265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1540,7 @@ GameObject:
   - component: {fileID: 2334202846063800389}
   - component: {fileID: 410098284189795347}
   - component: {fileID: 1724713976891743201}
+  - component: {fileID: 7424050793085245712}
   m_Layer: 6
   m_Name: "dise\xF1o_verdugoAF3"
   m_TagString: Player
@@ -1407,7 +1573,7 @@ Animator:
   m_GameObject: {fileID: 6933945939907387265}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce1a15d03c676a94d8e8810706489420, type: 2}
+  m_Controller: {fileID: 9100000, guid: bbed3153764334de18948519a1e6db4c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1468,16 +1634,30 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2350445848466433760, guid: 8cf42b2ff90a94945b8619a70e2e2d4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5000001, y: 2.4307523}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_SpriteSortPoint: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 1
+--- !u!114 &7424050793085245712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933945939907387265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &7443534884005691761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1672,7 @@ GameObject:
   - component: {fileID: 6989104551409368340}
   - component: {fileID: 2759580821570221909}
   - component: {fileID: 4709254514194624916}
-  - component: {fileID: 6158626348721784677}
+  - component: {fileID: 3801655765103707152}
   m_Layer: 6
   m_Name: Square
   m_TagString: Player
@@ -1702,7 +1882,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5, y: 3.5}
+  m_Offset: {x: 0.1, y: 1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1712,7 +1892,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.5, y: 6}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &4709254514194624916
 BoxCollider2D:
@@ -1748,7 +1928,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5, y: 3.5}
+  m_Offset: {x: 0.1, y: 1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1758,9 +1938,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.5, y: 6}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &6158626348721784677
+--- !u!114 &3801655765103707152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

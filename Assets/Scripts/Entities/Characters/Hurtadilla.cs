@@ -21,5 +21,4 @@ public class Hurtadilla:Player
         }
     }
 
-    protected override void OnDeath(){}
 }
