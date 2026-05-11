@@ -71,11 +71,14 @@ public abstract class Player:Entity
 
     public Sprite CurrentDesignSprite { get; private set; }
 
+    [Header("Efecto visual curación (Afinidad1)")]
+    [SerializeField] private GameObject fxVida;
+
     [Header("Ranged Attack")]
-    [SerializeField] protected GameObject projectilePrefab;
+    [SerializeField] protected GameObject[] projectilePrefabs;
     [SerializeField] protected float projectileSpeed = 10f;
     [SerializeField] protected Transform firePoint;
-    protected Vector2 lastFacingDirection = Vector2.down;
+    protected Vector2 lastFacingDirection = Vector2.right;
 
     public float AbilityCooldownRemaining => Mathf.Max(0, abilityCooldownTimer);
     public float AbilityCooldownTotal => abilityCooldownDuration;
@@ -308,25 +311,39 @@ public abstract class Player:Entity
     protected virtual void RangedAttack(){
         isInvencible = true;
         StartCoroutine(EndInvulnerability(invulnerabilityTime));
-        
-        if (projectilePrefab != null)
-        {
-            Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
-            GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
-            
-            float angle = Mathf.Atan2(lastFacingDirection.y, lastFacingDirection.x) * Mathf.Rad2Deg;
-            proj.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            Projectile projectileScript = proj.GetComponentInChildren<Projectile>();
-            if (projectileScript != null)
-            {
-                projectileScript.Setup(lastFacingDirection, projectileSpeed, damage, gameObject);
-            }
-            else
-            {
-                Debug.LogError("¡ATENCIÓN! El prefab disparado no tiene el script Projectile.cs asociado.");
-            }
-        }
+        if (Armazon == "Armazon3")
+            FirePlaced();
+        else
+            FireSingle(lastFacingDirection);
+    }
+
+    private void FireSingle(Vector2 direction)
+    {
+        GameObject prefab = projectilePrefabs != null && projectilePrefabs.Length > 0 ? projectilePrefabs[0] : null;
+        if (prefab == null) return;
+
+        Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
+        GameObject proj = Instantiate(prefab, spawnPos, Quaternion.identity);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        proj.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Projectile projectileScript = proj.GetComponentInChildren<Projectile>();
+        if (projectileScript != null)
+            projectileScript.Setup(direction, projectileSpeed, damage, gameObject);
+    }
+
+    private void FirePlaced()
+    {
+        GameObject prefab = projectilePrefabs != null && projectilePrefabs.Length > 1 ? projectilePrefabs[1] : null;
+        if (prefab == null) return;
+
+        float radius = 2.0f;
+        Vector3 basePos = firePoint != null ? firePoint.position : transform.position;
+        Vector3 spawnPos = basePos + (Vector3)(lastFacingDirection * radius);
+        GameObject proj = Instantiate(prefab, spawnPos, Quaternion.identity);
+        Projectile projectileScript = proj.GetComponentInChildren<Projectile>();
+        if (projectileScript != null)
+            projectileScript.Setup(lastFacingDirection, 0f, damage, gameObject);
     }
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
@@ -399,6 +416,16 @@ public abstract class Player:Entity
             PlayerPrefs.Save();
             Destroy(collision.gameObject);
         }
+    }
+    public void ShowHealFx()
+    {
+        if (fxVida != null) StartCoroutine(ShowFxBriefly(fxVida, 1f));
+    }
+    private IEnumerator ShowFxBriefly(GameObject fx, float duration)
+    {
+        fx.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        fx.SetActive(false);
     }
     private IEnumerator EndInvulnerability(float delay)
     {
