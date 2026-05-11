@@ -259,8 +259,17 @@ public class GameManager : MonoBehaviour
         else
         {
             hudSpawned = false;
-            
         }
+
+        SetupCameraFollow(scene);
+    }
+
+    private void SetupCameraFollow(Scene scene)
+    {
+        if (scene.name == menuPrincipal) return;
+        Camera mainCam = Camera.main;
+        if (mainCam != null && mainCam.GetComponent<SeguimientoCamara>() == null)
+            mainCam.gameObject.AddComponent<SeguimientoCamara>();
     }
     
     private void SpawnHUD()

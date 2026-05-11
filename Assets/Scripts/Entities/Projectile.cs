@@ -65,7 +65,7 @@ public class Projectile : MonoBehaviour
         }
 
         // Destruir el proyectil después de 1 segundo como máximo para que no dure infinito
-        Destroy(gameObject, 1f);
+        Destroy(transform.root.gameObject, 1f);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {   
@@ -95,6 +95,6 @@ public class Projectile : MonoBehaviour
 
         // Se destruye al chocar contra cualquier cosa (árboles, enemigos, paredes...)
         Debug.Log("El proyectil chocó al instante contra: " + collision.gameObject.name);
-        Destroy(gameObject);
+        Destroy(transform.root.gameObject);
     }
 }
