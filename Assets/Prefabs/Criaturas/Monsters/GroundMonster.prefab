@@ -121,8 +121,8 @@ Transform:
   m_GameObject: {fileID: 6626184068990856759}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.6667, y: 0, z: 0}
+  m_LocalScale: {x: 0.4421, y: 0.4544, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4442120275860992693}
@@ -207,6 +207,8 @@ MonoBehaviour:
   patrolSpeed: 2
   chaseSpeed: 3
   knockback: 1
+  Stun: 0
+  Burn: 0
 --- !u!50 &3871309488510179541
 Rigidbody2D:
   serializedVersion: 5

@@ -121,8 +121,8 @@ Transform:
   m_GameObject: {fileID: 5497598651908339148}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.036, y: 0, z: 0}
+  m_LocalScale: {x: 0.3047399, y: 0.3435, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4648671452040721413}
@@ -270,6 +270,8 @@ MonoBehaviour:
   patrolSpeed: 2
   chaseSpeed: 3
   knockback: 1
+  Stun: 0
+  Burn: 0
   rangeOfAttack: 5
   attackCooldown: 2
   projectilePrefab: {fileID: 512618379300302562, guid: c8785b30cf987f9bcbfe547d6e8e3684, type: 3}
