@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 7731622653176519482}
   - component: {fileID: 2060862074937112287}
   - component: {fileID: 5409897293923315210}
-  - component: {fileID: 3908050767956956568}
   - component: {fileID: 8329238303987111058}
+  - component: {fileID: 4721322613579988498}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -61,8 +61,8 @@ Transform:
   m_GameObject: {fileID: 4521089989025122280}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0578, y: 0.999, z: 0}
-  m_LocalScale: {x: 0.27025834, y: 0.25981423, z: 1}
+  m_LocalPosition: {x: -1.0276, y: 1.0111, z: 0}
+  m_LocalScale: {x: 0.20302, y: 0.19880001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7593521898725239664}
@@ -153,8 +153,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &3908050767956956568
-PolygonCollider2D:
+--- !u!114 &8329238303987111058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4521089989025122280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c41defbb8d1bb78a200ae362801781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projectile
+--- !u!61 &4721322613579988498
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -187,7 +199,7 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -197,21 +209,5 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 1
---- !u!114 &8329238303987111058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4521089989025122280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7c41defbb8d1bb78a200ae362801781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  m_Size: {x: 3, y: 4}
+  m_EdgeRadius: 0

@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 3400127890959365615}
   - component: {fileID: 3871309488510179541}
   - component: {fileID: 4049847355545304743}
+  - component: {fileID: 4146962585907581727}
   m_Layer: 7
   m_Name: Circle
   m_TagString: Enemie
@@ -458,8 +459,22 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 1}
+  m_Radius: 0.75
+--- !u!114 &4146962585907581727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626184068990856759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7b00b07442cb9aa212fc5ca65543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSortByY
+  sortingOrderOffset: 0
+  runOnlyOnce: 0
 --- !u!1 &7258216448822184622
 GameObject:
   m_ObjectHideFlags: 0
