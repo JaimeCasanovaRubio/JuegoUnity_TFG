@@ -2071,5 +2071,6 @@ MonoBehaviour:
   footstep_1: {fileID: 8300000, guid: bad66c4af4e5cd334bc4d45ce50e2394, type: 3}
   footstep_2: {fileID: 8300000, guid: 6e77e0ede4461ff08a7a070a8639e9e7, type: 3}
   attackSound: {fileID: 8300000, guid: 3e75f6ade1d743ce28370d7dfc9f1983, type: 3}
-  abilitySound: {fileID: 0}
-  hurtSound: {fileID: 0}
+  abilitySound: {fileID: 8300000, guid: 94c428c375a8963a9bf12720045954a1, type: 3}
+  hurtSound: {fileID: 8300000, guid: ea53194bb3d6d1478bbf36eb29533810, type: 3}
+  tpSound: {fileID: 8300000, guid: 5427b8431bd7f5bd4ba364949c94f9f7, type: 3}

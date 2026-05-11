@@ -318,7 +318,12 @@ public abstract class Player:Entity
         }   
         
     }
-    protected virtual void ExecAbility(){}
+    protected virtual void ExecAbility(){
+        if(InputHandler.Instance.AbilityPressed)
+        {
+            if (playerSound != null) playerSound.PlayAbility();
+        }
+    }
     protected virtual void MeleeAttack(){
         isInvencible = true;
         attacking = true;
@@ -367,6 +372,7 @@ public abstract class Player:Entity
             Teleport tp = collision.GetComponent<Teleport>();
             if(tp!=null)
             {
+                if (playerSound != null) playerSound.PlayTP();
                 if (!string.IsNullOrEmpty(tp.targetRoomId))
                 {
                     GameManager.Instance.ChangeScene(tp.sceneName, tp.targetRoomId, tp.index);
@@ -432,6 +438,7 @@ public abstract class Player:Entity
     }  
     protected override void OnDeath()  
     {   
+        if(playerSound != null) playerSound.PlayHurt();
         if(GameManager.Instance.DeadScreenCanvas != null){
             Debug.Log("DeadScreen found");
             Destroy(gameObject);

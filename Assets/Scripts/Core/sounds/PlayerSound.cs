@@ -17,6 +17,9 @@ public class PlayerSound : MonoBehaviour
     [Header("Hurt")]
     [SerializeField] private AudioClip hurtSound;
 
+    [Header("TP")]
+    [SerializeField] private AudioClip tpSound;
+
 
     public void PlayFootstep1()
     {
@@ -54,6 +57,14 @@ public class PlayerSound : MonoBehaviour
         if (hurtSound != null)
         {
             audioSource.PlayOneShot(hurtSound);
+        }
+    }
+
+    public void PlayTP()
+    {
+        if (tpSound != null)
+        {
+            audioSource.PlayOneShot(tpSound);
         }
     }
 }
