@@ -349,27 +349,16 @@ public abstract class Player:Entity
 
     private void FireSingle(Vector2 direction)
     {
-        isInvencible = true;
-        StartCoroutine(EndInvulnerability(invulnerabilityTime));
-        
-        if (projectilePrefab != null)
-        {
-            Vector3 spawnPos = transform.position;
-            GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
-            
-            float angle = Mathf.Atan2(lastFacingDirection.y, lastFacingDirection.x) * Mathf.Rad2Deg;
-            proj.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        GameObject prefab = projectilePrefabs != null && projectilePrefabs.Length > 0 ? projectilePrefabs[0] : null;
+        if (prefab == null) return;
 
-            Projectile projectileScript = proj.GetComponentInChildren<Projectile>();
-            if (projectileScript != null)
-            {
-                projectileScript.Setup(lastFacingDirection, projectileSpeed, damage, gameObject);
-            }
-            else
-            {
-                Debug.LogError("¡ATENCIÓN! El prefab disparado no tiene el script Projectile.cs asociado.");
-            }
-        }
+        Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
+        GameObject proj = Instantiate(prefab, spawnPos, Quaternion.identity);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        proj.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Projectile projectileScript = proj.GetComponentInChildren<Projectile>();
+        if (projectileScript != null)
+            projectileScript.Setup(direction, projectileSpeed, damage, gameObject);
     }
 
     private void FirePlaced()
