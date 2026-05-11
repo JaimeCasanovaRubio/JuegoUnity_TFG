@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MagicBook : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class MagicBook : MonoBehaviour
     [Header("Retrato derecho del libro")]
     [SerializeField] private Image portraitImage;
 
+    [Header("Textos descriptivos")]
+    [SerializeField] private TextMeshProUGUI textoArmazon;
+    [SerializeField] private TextMeshProUGUI textoAfinidad;
+
     private void OnEnable()
     {
         if (Player.Instance == null) return;
@@ -38,6 +43,7 @@ public class MagicBook : MonoBehaviour
 
         UpdateSelectionCircles();
         RefreshPortrait();
+        RefreshTexts();
     }
 
     private void UpdateSelectionCircles()
@@ -60,6 +66,33 @@ public class MagicBook : MonoBehaviour
         if (sprite != null) portraitImage.sprite = sprite;
     }
 
+    private void RefreshTexts()
+    {
+        if (Player.Instance == null) return;
+
+        if (textoArmazon != null)
+        {
+            textoArmazon.text = Player.Instance.Armazon switch
+            {
+                "Armazon1" => "Verdugo de Titanes: cuerpo a cuerpo",
+                "Armazon2" => "Garras de Umbra: a distancia",
+                "Armazon3" => "El Alambique: proyectil dirigido",
+                _ => ""
+            };
+        }
+
+        if (textoAfinidad != null)
+        {
+            textoAfinidad.text = Player.Instance.Afinidad switch
+            {
+                "Afinidad1" => "Pacto Carmesí: curas al atacar",
+                "Afinidad2" => "Fiebre ceniza: enemigos arden",
+                "Afinidad3" => "Tumba eterna: enemigos aturdidos",
+                _ => ""
+            };
+        }
+    }
+
     public void OnVolverClicker()
     {
         GameManager.Instance.MagicBookCanvas.SetActive(false);
@@ -72,6 +105,7 @@ public class MagicBook : MonoBehaviour
         Player.Instance.ActivateDesign();
         UpdateSelectionCircles();
         RefreshPortrait();
+        RefreshTexts();
     }
     public void OnArmazon2Clicker()
     {
@@ -79,6 +113,7 @@ public class MagicBook : MonoBehaviour
         Player.Instance.ActivateDesign();
         UpdateSelectionCircles();
         RefreshPortrait();
+        RefreshTexts();
     }
     public void OnArmazon3Clicker()
     {
@@ -86,6 +121,7 @@ public class MagicBook : MonoBehaviour
         Player.Instance.ActivateDesign();
         UpdateSelectionCircles();
         RefreshPortrait();
+        RefreshTexts();
     }
 
     public void OnAfinidad1Clicker()
@@ -94,6 +130,7 @@ public class MagicBook : MonoBehaviour
         Player.Instance.ActivateDesign();
         UpdateSelectionCircles();
         RefreshPortrait();
+        RefreshTexts();
     }
     public void OnAfinidad2Clicker()
     {
@@ -101,6 +138,7 @@ public class MagicBook : MonoBehaviour
         Player.Instance.ActivateDesign();
         UpdateSelectionCircles();
         RefreshPortrait();
+        RefreshTexts();
     }
     public void OnAfinidad3Clicker()
     {
@@ -108,5 +146,6 @@ public class MagicBook : MonoBehaviour
         Player.Instance.ActivateDesign();
         UpdateSelectionCircles();
         RefreshPortrait();
+        RefreshTexts();
     }
 }
