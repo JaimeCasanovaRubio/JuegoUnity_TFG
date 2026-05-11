@@ -175,7 +175,7 @@ public abstract class Player:Entity
         }
     }
 
-    protected virtual void ActivateDesign()
+    public virtual void ActivateDesign()
     {
         if (verdugo_base == null) return;
 
@@ -193,39 +193,44 @@ public abstract class Player:Entity
         SetDesignActive(alambique_af3, false);
 
         GameObject designToActivate = null;
+        Sprite portraitToSet = null;
 
         switch (Armazon)
         {
             case "Armazon1":
                 switch (Afinidad)
                 {
-                    case "Afinidad0": designToActivate = verdugo_base; break;
-                    case "Afinidad1": designToActivate = verdugo_af1; break;
-                    case "Afinidad2": designToActivate = verdugo_af2; break;
-                    case "Afinidad3": designToActivate = verdugo_af3; break;
+                    case "Afinidad0": designToActivate = verdugo_base;  portraitToSet = retrato_verdugo_base;  break;
+                    case "Afinidad1": designToActivate = verdugo_af1;   portraitToSet = retrato_verdugo_af1;   break;
+                    case "Afinidad2": designToActivate = verdugo_af2;   portraitToSet = retrato_verdugo_af2;   break;
+                    case "Afinidad3": designToActivate = verdugo_af3;   portraitToSet = retrato_verdugo_af3;   break;
                 }
                 break;
             case "Armazon2":
                 switch (Afinidad)
                 {
-                    case "Afinidad0": designToActivate = garras_base; break;
-                    case "Afinidad1": designToActivate = garras_af1; break;
-                    case "Afinidad2": designToActivate = garras_af2; break;
-                    case "Afinidad3": designToActivate = garras_af3; break;
+                    case "Afinidad0": designToActivate = garras_base;   portraitToSet = retrato_garras_base;   break;
+                    case "Afinidad1": designToActivate = garras_af1;    portraitToSet = retrato_garras_af1;    break;
+                    case "Afinidad2": designToActivate = garras_af2;    portraitToSet = retrato_garras_af2;    break;
+                    case "Afinidad3": designToActivate = garras_af3;    portraitToSet = retrato_garras_af3;    break;
                 }
                 break;
             case "Armazon3":
                 switch (Afinidad)
                 {
-                    case "Afinidad0": designToActivate = alambique_base; break;
-                    case "Afinidad1": designToActivate = alambique_af1; break;
-                    case "Afinidad2": designToActivate = alambique_af2; break;
-                    case "Afinidad3": designToActivate = alambique_af3; break;
+                    case "Afinidad0": designToActivate = alambique_base;  portraitToSet = retrato_alambique_base;  break;
+                    case "Afinidad1": designToActivate = alambique_af1;   portraitToSet = retrato_alambique_af1;   break;
+                    case "Afinidad2": designToActivate = alambique_af2;   portraitToSet = retrato_alambique_af2;   break;
+                    case "Afinidad3": designToActivate = alambique_af3;   portraitToSet = retrato_alambique_af3;   break;
                 }
                 break;
         }
 
+        if (portraitToSet != null) CurrentDesignSprite = portraitToSet;
+
         SetDesignActive(designToActivate, true);
+        if (designToActivate != null)
+            animator = designToActivate.GetComponent<Animator>();
     }
 
     private void SetDesignActive(GameObject design, bool active)

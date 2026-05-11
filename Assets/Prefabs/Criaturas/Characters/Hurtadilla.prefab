@@ -1798,16 +1798,16 @@ MonoBehaviour:
   alambique_af3: {fileID: 3086185003424872897}
   retrato_verdugo_base: {fileID: -8963331123343250534, guid: 96fab8b4bbbbe1c41ae8e32e5f4cdecf, type: 3}
   retrato_verdugo_af1: {fileID: -5148244516741230799, guid: 10b228e493cc84e47a1eaea128e2305f, type: 3}
-  retrato_verdugo_af2: {fileID: 7327076206793711710, guid: de9e3e35899de16479e2d52b8e8645a7, type: 3}
+  retrato_verdugo_af2: {fileID: -7544190455114767486, guid: de9e3e35899de16479e2d52b8e8645a7, type: 3}
   retrato_verdugo_af3: {fileID: -2350445848466433760, guid: 8cf42b2ff90a94945b8619a70e2e2d4a, type: 3}
   retrato_garras_base: {fileID: 4173492819075181626, guid: 69bff7694befd1c4ab4cb90207a54c60, type: 3}
   retrato_garras_af1: {fileID: 5344018345710062611, guid: c0c81b23d94b4154a984be31f0faed24, type: 3}
-  retrato_garras_af2: {fileID: -5000257005587654121, guid: 2d68bde61ad3ddc4b982ff8b99506187, type: 3}
-  retrato_garras_af3: {fileID: 5289434841574661345, guid: 4bd078e57af58854cae0636b5eec353a, type: 3}
+  retrato_garras_af2: {fileID: 8697372654818361015, guid: 2d68bde61ad3ddc4b982ff8b99506187, type: 3}
+  retrato_garras_af3: {fileID: -4913644910028442644, guid: 4bd078e57af58854cae0636b5eec353a, type: 3}
   retrato_alambique_base: {fileID: -4340370058198928190, guid: 4b9bd990fd3aebf4e95ac472fc0f107c, type: 3}
-  retrato_alambique_af1: {fileID: -8689498883791086389, guid: 16a2b75f806b7c346a55340f6c4ee0be, type: 3}
+  retrato_alambique_af1: {fileID: -4111403699426685002, guid: 16a2b75f806b7c346a55340f6c4ee0be, type: 3}
   retrato_alambique_af2: {fileID: -7823267332298740795, guid: cb3ec6c6c919fab419aec33af319bd92, type: 3}
-  retrato_alambique_af3: {fileID: 1190196606384686018, guid: 5093b43f963a345458cf284064f47bde, type: 3}
+  retrato_alambique_af3: {fileID: -8600802088030942766, guid: 5093b43f963a345458cf284064f47bde, type: 3}
   Armazon1: 1
   Armazon2: 0
   Armazon3: 0
