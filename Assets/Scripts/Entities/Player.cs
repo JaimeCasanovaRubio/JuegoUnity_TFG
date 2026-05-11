@@ -84,6 +84,13 @@ public abstract class Player:Entity
 
     protected SpriteRenderer sp;
 
+    [SerializeField] protected PlayerSound playerSound;
+
+    bool step1= false;
+    [Header("Footstep Settings")]
+    [SerializeField] private float footstepInterval = 0.1f;
+    private float footstepTimer = 0f;
+
     protected virtual void Awake()
     {
         if (Instance != null )
@@ -130,6 +137,7 @@ public abstract class Player:Entity
         if (animator != null) animator.SetBool("IsAttacking", attacking);
         if(InputHandler.Instance.AttackPressed)
         {
+            if (playerSound != null) playerSound.PlayAttack();
             ExecAttack();
         }
     }
@@ -271,7 +279,19 @@ public abstract class Player:Entity
         animator.SetBool("IsMoving", isMoving);
 
         if (isMoving)
-        {
+        {   
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0f)
+            {
+                if(step1){
+                    if (playerSound != null) playerSound.PlayFootstep1();
+                }else{
+                    if (playerSound != null) playerSound.PlayFootstep2();
+                }
+                step1 = !step1;
+                footstepTimer = footstepInterval;
+            }
+
             if (Mathf.Abs(input.y) >= Mathf.Abs(input.x))
             {
                 animator.SetInteger("Direction", input.y < 0 ? 0 : 1);
