@@ -116,6 +116,10 @@ public abstract class Player:Entity
     }
     protected virtual void Update()
     {   
+        if(CurrentHealth <= 0) {
+            Debug.Log("Player died");
+            OnDeath();
+        }
         if (tpCooldown > 0) tpCooldown -= Time.deltaTime;
         ProveArmazon();
         ProveAfinidad();
@@ -369,6 +373,12 @@ public abstract class Player:Entity
             PlayerPrefs.SetInt("Armazon3_G"+GameSelector.gameSelected, 1);
             PlayerPrefs.Save();
             Destroy(collision.gameObject);
+        }if(collision.gameObject.CompareTag("Afinidad1")){
+            Afinidad1 = true;
+            Afinidad = "Afinidad1";
+            PlayerPrefs.SetInt("Afinidad1_G"+GameSelector.gameSelected, 1);
+            PlayerPrefs.Save();
+            Destroy(collision.gameObject);
         }
         if(collision.gameObject.CompareTag("Afinidad2")){
             Afinidad2 = true;
@@ -394,5 +404,16 @@ public abstract class Player:Entity
     {
         yield return new WaitForSeconds(delay);
         attacking = false;
-    }    
+    }  
+    protected override void OnDeath()  
+    {   
+        if(GameManager.Instance.DeadScreenCanvas != null){
+            Debug.Log("DeadScreen found");
+            Destroy(gameObject);
+            Time.timeScale = 0f;
+            GameManager.Instance.DeadScreenCanvas.SetActive(true);
+        }else{
+            Debug.Log("DeadScreen not found");
+        }
+    }  
 }

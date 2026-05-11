@@ -66,6 +66,14 @@ public class GameSelector : MonoBehaviour
         }
     }
 
+    public void DeleteGame(string gameName){
+        if(gameName == "game1"){
+            PlayerPrefs.SetInt("Game1", 0);
+        }else if(gameName == "game2"){
+            PlayerPrefs.SetInt("Game2", 0);
+        }
+    }
+
     private void OnBackFromMenu()
     {
         if(GameManager.Instance.SelectCharCanvas != null) GameManager.Instance.SelectCharCanvas.SetActive(false);

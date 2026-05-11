@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject hudPrefab;
     [SerializeField] private GameObject gameSelectorPrefab;
     [SerializeField] private GameObject magicBookPrefab;
+    [SerializeField] private GameObject deadScreenPrefab;
 
     private HUDController hudController;
     private bool hudSpawned = false;
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     public GameObject SelectCharCanvas { get; private set; }
     public GameObject GameSelectorCanvas { get; private set; }
     public GameObject MagicBookCanvas { get; private set; }
+    public GameObject DeadScreenCanvas { get; private set; }
 
     public bool isPaused = false;
 
@@ -98,6 +100,12 @@ public class GameManager : MonoBehaviour
             MagicBookCanvas = Instantiate (magicBookPrefab, transform);
             MagicBookCanvas.name = "MagicBookCanvas";
             MagicBookCanvas.SetActive(false);
+        }
+        if(deadScreenPrefab != null && DeadScreenCanvas == null)
+        {
+            DeadScreenCanvas = Instantiate (deadScreenPrefab, transform);
+            DeadScreenCanvas.name = "DeadScreenCanvas";
+            DeadScreenCanvas.SetActive(false);
         }
     }
 

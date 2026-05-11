@@ -76,12 +76,17 @@ public class Projectile : MonoBehaviour
         }
 
         // Si choca con una entidad (como un Enemigo), le hacemos daño
-        Entity entity = collision.gameObject.GetComponent<Entity>();
+        Entity entity = collision.gameObject.GetComponentInChildren<Entity>();
         if (entity != null)
         {
             if(ownerTag == "Player"){
                 Player player = Player.Instance;
-                entity.TakeDamage(damage, player.Afinidad);
+                Enemie enemie = collision.gameObject.GetComponentInChildren<Enemie>();
+                if(enemie != null){
+                    Debug.Log("[Projectile] Chocó con un enemigo");
+                    enemie.TakeDamage(damage, player.Afinidad);
+                }
+               
             }else{
                 entity.TakeDamage(damage);
             }
