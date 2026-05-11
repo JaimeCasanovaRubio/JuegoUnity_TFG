@@ -6,6 +6,7 @@ public class Hurtadilla:Player
     
     protected override void ExecAbility()
     {
+        base.ExecAbility();
         if (CanUseAbility() && InputHandler.Instance != null && InputHandler.Instance.AbilityPressed)
         {
             Vector2 dashDir = InputHandler.Instance.LastDirection switch
