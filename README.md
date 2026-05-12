@@ -59,10 +59,7 @@ TFG_MI_FORK/
 
 1. Instala **Unity 2022.3 LTS** desde [Unity Hub](https://unity.com/download)
 2. Clona el repositorio:
-   ```bash
-   git clone https://github.com/OlgaMarco15/TFG_MI_FORK.git
-   ```
-3. Abre Unity Hub → **Add project from disk** → selecciona la carpeta `JuegoUnity_TFG_olga`
+3. Abre Unity Hub → **Add project from disk** → selecciona la carpeta.
 4. Abre la escena `Assets/Scenes/Menu` y pulsa **Play**
 
 ---
