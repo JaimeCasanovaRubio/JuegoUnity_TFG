@@ -26,6 +26,11 @@ public class SceneGestor
     {   
         int random = rnm.Next(0,GameManager.Instance.primerMapa.Count);
         lastSceneMap = SavedMap;
+        if(sceneName.Equals("Boss")){
+            SavedMap = null;
+            LoadScene(sceneName, index);
+        }
+
         if(spawns.Contains(sceneName))
         {
             SavedMap = null;
@@ -50,7 +55,9 @@ public class SceneGestor
         LoadScene(sceneName,index);
     }
     public static void SetLastScene(int index)
-    {
+    {   
+        if(SceneManager.GetActiveScene().name.Equals("Boss")) return;
+        
         Teleport[] tps = Object.FindObjectsByType<Teleport>(FindObjectsSortMode.None);
 
         if (lastSceneMap != null && !mpVisited.Contains(lastSceneMap))

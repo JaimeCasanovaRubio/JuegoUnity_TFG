@@ -87,7 +87,7 @@ public abstract class Player:Entity
 
     protected SpriteRenderer sp;
 
-    [SerializeField] protected PlayerSound playerSound;
+    [SerializeField] protected SoundPlayer SoundPlayer;
 
     bool step1= false;
     [Header("Footstep Settings")]
@@ -140,7 +140,7 @@ public abstract class Player:Entity
         if (animator != null) animator.SetBool("IsAttacking", attacking);
         if(InputHandler.Instance.AttackPressed)
         {
-            if (playerSound != null) playerSound.PlayAttack();
+            if (SoundPlayer != null) SoundPlayer.PlayAttack();
             ExecAttack();
         }
     }
@@ -287,9 +287,9 @@ public abstract class Player:Entity
             if (footstepTimer <= 0f)
             {
                 if(step1){
-                    if (playerSound != null) playerSound.PlayFootstep1();
+                    if (SoundPlayer != null) SoundPlayer.PlayFootstep1();
                 }else{
-                    if (playerSound != null) playerSound.PlayFootstep2();
+                    if (SoundPlayer != null) SoundPlayer.PlayFootstep2();
                 }
                 step1 = !step1;
                 footstepTimer = footstepInterval;
@@ -327,7 +327,7 @@ public abstract class Player:Entity
             if(CanUseAbility())
             {
                 StartAbilityCooldown();
-                if (playerSound != null) playerSound.PlayAbility();
+                if (SoundPlayer != null) SoundPlayer.PlayAbility();
             }
         }
     }
@@ -393,7 +393,7 @@ public abstract class Player:Entity
             Teleport tp = collision.GetComponent<Teleport>();
             if(tp!=null)
             {
-                if (playerSound != null) playerSound.PlayTP();
+                if (SoundPlayer != null) SoundPlayer.PlayTP();
                 if (!string.IsNullOrEmpty(tp.targetRoomId))
                 {
                     GameManager.Instance.ChangeScene(tp.sceneName, tp.targetRoomId, tp.index);
@@ -469,7 +469,7 @@ public abstract class Player:Entity
     }  
     protected override void OnDeath()  
     {   
-        if(playerSound != null) playerSound.PlayHurt();
+        if(SoundPlayer != null) SoundPlayer.PlayHurt();
         if(GameManager.Instance.DeadScreenCanvas != null){
             Debug.Log("DeadScreen found");
             Destroy(gameObject);

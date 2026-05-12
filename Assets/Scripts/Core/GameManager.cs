@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject magicBookPrefab;
     [SerializeField] private GameObject deadScreenPrefab;
 
+    [Header("Music")]
+    [SerializeField] private AudioClip ambientMusic;
+    [SerializeField] private AudioClip fightMusic;
+    private AudioSource musicSource;
+
     private HUDController hudController;
     private bool hudSpawned = false;
     
@@ -60,7 +65,30 @@ public class GameManager : MonoBehaviour
 
             _ = KeyBindings.Instance;
             _ = InputHandler.Instance;
+
+            // Inicializar VolumeManager si no existe
+            if (VolumeManager.Instance == null)
+            {
+                GameObject volumeGO = new GameObject("VolumeManager");
+                volumeGO.AddComponent<VolumeManager>();
+            }
+
+            // Inicializar AudioSource para música
+            musicSource = gameObject.AddComponent<AudioSource>();
+            musicSource.loop = true;
+            musicSource.playOnAwake = false;
+
+            // Suscribirse al volumen de música
+            if (VolumeManager.Instance != null)
+            {
+                VolumeManager.Instance.OnMusicVolumeChanged += OnMusicVolumeChanged;
+                musicSource.volume = VolumeManager.Instance.MusicVolume;
+            }
+
             SceneManager.sceneLoaded += OnSceneLoaded;
+
+            // Arrancar música para la escena actual (MenuScene al inicio)
+            UpdateMusic(SceneManager.GetActiveScene().name);
         }
         else
         {
@@ -164,6 +192,23 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Escena cargada: " + scene.name);
+
+        // Cambiar música según la escena
+        UpdateMusic(scene.name);
+        if (scene.name == "Boss")
+        {
+            SpawnHUD();
+            if (FindObjectOfType<Player>() == null)
+            {
+                SpawnPlayer();
+            }
+            EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
+            if(spawner != null) spawner.SpawnEnemies();
+            Player player = FindObjectOfType<Player>();
+            if (player != null) player.transform.position = Vector3.zero;
+            return;
+            
+        }
         foreach(MapScene mapS in SceneGestor.mpVisited)
         {
             if(mapS.roomId == SceneGestor.SavedMap.roomId)
@@ -194,20 +239,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        if (scene.name == mapaPrueba)
-        {
-            SpawnHUD();
-            if (FindObjectOfType<Player>() == null)
-            {
-                SpawnPlayer();
-            }
-            EnemieSpawner spawner = FindObjectOfType<EnemieSpawner>();
-            if(spawner != null) spawner.SpawnEnemies();
-            Player player = FindObjectOfType<Player>();
-            if (player != null) player.transform.position = Vector3.zero;
-            
-        }
-        else if (scene.name == baseScene)
+        
+        if (scene.name == baseScene)
         {
             hudSpawned = false;
             Player player = FindObjectOfType<Player>();
@@ -264,6 +297,40 @@ public class GameManager : MonoBehaviour
         SetupCameraFollow(scene);
     }
 
+    private void UpdateMusic(string sceneName)
+    {
+        if (musicSource == null) return;
+
+        AudioClip targetClip = null;
+
+        if (sceneName == menuPrincipal || sceneName == baseScene)
+        {
+            targetClip = ambientMusic;
+        }
+        else
+        {
+            targetClip = fightMusic;
+        }
+
+        if (targetClip != null && musicSource.clip != targetClip)
+        {
+            musicSource.clip = targetClip;
+            musicSource.Play();
+        }
+        else if (targetClip != null && !musicSource.isPlaying)
+        {
+            musicSource.Play();
+        }
+    }
+
+    private void OnMusicVolumeChanged(float volume)
+    {
+        if (musicSource != null)
+        {
+            musicSource.volume = volume;
+        }
+    }
+
     private void SetupCameraFollow(Scene scene)
     {
         if (scene.name == menuPrincipal) return;
@@ -309,8 +376,8 @@ public class GameManager : MonoBehaviour
                 Vector2 offset = SceneGestor.indexToTP switch
                 {
                     0 => new Vector2(1.5f, 0),   // TP izquierdo → empujar a la derecha
-                    2 => new Vector2(-1.5f, 0),   // TP derecho → empujar a la izquierda
-                    1 => new Vector2(0, -1.5f),   // TP arriba → empujar hacia abajo
+                    2 => new Vector2(-3f, 0),   // TP derecho → empujar a la izquierda
+                    1 => new Vector2(0, -6),   // TP arriba → empujar hacia abajo
                     3 => new Vector2(0, 1.5f),    // TP abajo → empujar hacia arriba
                     _ => Vector2.zero
                 };

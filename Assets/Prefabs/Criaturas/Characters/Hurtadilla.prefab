@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 4709254514194624916}
   - component: {fileID: 3801655765103707152}
   - component: {fileID: 2551500970876697148}
-  - component: {fileID: 4352814243877203142}
+  - component: {fileID: 7876593694526380884}
   m_Layer: 6
   m_Name: Square
   m_TagString: Player
@@ -1826,7 +1826,7 @@ MonoBehaviour:
   - {fileID: 512618379300302562, guid: 80168f234603d05419cd9be4acd18d64, type: 3}
   projectileSpeed: 10
   firePoint: {fileID: 0}
-  playerSound: {fileID: 4352814243877203142}
+  SoundPlayer: {fileID: 7876593694526380884}
   footstepInterval: 0.1
   abilitySpeed: 100
 --- !u!50 &6989104551409368340
@@ -2059,7 +2059,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4352814243877203142
+--- !u!114 &7876593694526380884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2068,9 +2068,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7443534884005691761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc2ca6d9c86600143900835650d1b5a2, type: 3}
+  m_Script: {fileID: 11500000, guid: ca8560f57ba9024c6868b6c4f6e1a596, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerSound
+  m_EditorClassIdentifier: Assembly-CSharp::SoundPlayer
   audioSource: {fileID: 2551500970876697148}
   footstep_1: {fileID: 8300000, guid: bad66c4af4e5cd334bc4d45ce50e2394, type: 3}
   footstep_2: {fileID: 8300000, guid: 6e77e0ede4461ff08a7a070a8639e9e7, type: 3}

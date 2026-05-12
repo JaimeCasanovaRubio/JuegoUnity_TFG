@@ -7,7 +7,6 @@ public class RangedEnemy : Enemie
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed = 8f;
-    [SerializeField] private Transform firePoint;
 
     protected override void HandleMovement()
     {
@@ -59,7 +58,7 @@ public class RangedEnemy : Enemie
     {
         if (projectilePrefab != null)
         {
-            Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
+            Vector3 spawnPos = transform.position;
             GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
             
             Vector2 direction = (target.transform.position - spawnPos).normalized;

@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayeableScene/Mapa1/MP5.unity
     guid: 14fc5c7c00a2f58868eab4913e26ee21
+  - enabled: 1
+    path: Assets/Scenes/PlayeableScene/Mapa1/Boss.unity
+    guid: f2237fffb30941755a64a41c577c7082
   - enabled: 0
     path: Assets/Scenes/Menu/DeadScreen.unity
     guid: 1dc91ee3a4b38984aad34227073d7cc5
