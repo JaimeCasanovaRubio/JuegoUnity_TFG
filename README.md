@@ -37,8 +37,8 @@ Videojuego 2D roguelite desarrollado como Trabajo de Fin de Grado del ciclo **DA
 ## Estructura del repositorio
 
 ```
-TFG_MI_FORK/
-└── JuegoUnity_TFG_olga/   ← Proyecto Unity
+
+JuegoUnity_TFG/   ← Proyecto Unity
     ├── Assets/
     │   ├── Scripts/
     │   │   ├── Core/       ← GameManager, InputHandler, SceneGestor...
@@ -71,11 +71,6 @@ TFG_MI_FORK/
 | Arquitectura y sistemas de juego | Jaime Casanova |
 | Arte, UI e integración visual | Olga Marco |
 
----
-
-## Referencias visuales
-
-El estilo artístico del juego está inspirado en títulos como *Hollow Knight*, *Cult of the Lamb* y *Don't Starve*.
 
 ---
 
