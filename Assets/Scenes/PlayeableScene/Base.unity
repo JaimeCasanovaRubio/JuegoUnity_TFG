@@ -6735,8 +6735,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 157.11942, y: 90.421196}
-  m_SizeDelta: {x: 263.2611, y: 135.7819}
+  m_AnchoredPosition: {x: 304, y: 130}
+  m_SizeDelta: {x: 263.2611, y: 189.2441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293380982
 MonoBehaviour:
@@ -7148,7 +7148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.5, y: 0}
+  m_AnchoredPosition: {x: 10, y: 0.000012398}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1422606899
@@ -7171,9 +7171,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hola Hurtadilla! Accede a la zona de combate entrando en el portal. Cambia
-    tu vestuario en el cartel de PELIGRO , los armazones cambian tu estilo de combate
-    y las afinidades generan efectos distintos a los enemigos. '
+  m_text: "Hola Hurtadilla! Accede a la zona de combate entrando en el portal. \n\nCambia
+    tu vestuario en el cartel de PELIGRO :\n\tLos armazones cambian tu estilo de
+    combate y las afinidades generan \t          efectos distintos a los enemigos. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
