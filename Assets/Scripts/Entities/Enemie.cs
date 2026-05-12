@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public abstract class Enemie:Entity
@@ -189,6 +190,14 @@ public abstract class Enemie:Entity
     }
     protected override void OnDeath()
     {
+        if (SceneManager.GetActiveScene().name == "Boss")
+        {
+            if (GameManager.Instance != null && GameManager.Instance.VictoryScreenCanvas != null)
+            {
+                Time.timeScale = 0f;
+                GameManager.Instance.VictoryScreenCanvas.SetActive(true);
+            }
+        }
         Destroy(gameObject);
     }
 }

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameSelectorPrefab;
     [SerializeField] private GameObject magicBookPrefab;
     [SerializeField] private GameObject deadScreenPrefab;
+    [SerializeField] private GameObject victoryScreenPrefab;
 
     [Header("Music")]
     [SerializeField] private AudioClip ambientMusic;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     public GameObject GameSelectorCanvas { get; private set; }
     public GameObject MagicBookCanvas { get; private set; }
     public GameObject DeadScreenCanvas { get; private set; }
+    public GameObject VictoryScreenCanvas { get; private set; }
 
     public bool isPaused = false;
 
@@ -134,6 +136,12 @@ public class GameManager : MonoBehaviour
             DeadScreenCanvas = Instantiate (deadScreenPrefab, transform);
             DeadScreenCanvas.name = "DeadScreenCanvas";
             DeadScreenCanvas.SetActive(false);
+        }
+        if(victoryScreenPrefab != null && VictoryScreenCanvas == null)
+        {
+            VictoryScreenCanvas = Instantiate (victoryScreenPrefab, transform);
+            VictoryScreenCanvas.name = "VictoryScreenCanvas";
+            VictoryScreenCanvas.SetActive(false);
         }
     }
 

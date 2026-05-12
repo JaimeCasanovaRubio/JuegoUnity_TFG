@@ -31,6 +31,7 @@ public class DeadScreen : MonoBehaviour
         }
 
         GameManager.Instance.DeadScreenCanvas.SetActive(false);
+        GameManager.Instance.VictoryScreenCanvas.SetActive(false);
         Time.timeScale = 1f;
         GameManager.Instance.CreateOnPlayerPrefs(GameSelector.gameSelected);
         SceneGestor.ClearMapVisited();
