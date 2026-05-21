@@ -1437,7 +1437,7 @@ GameObject:
   - component: {fileID: 746025271}
   m_Layer: 0
   m_Name: 3_0
-  m_TagString: Armazon2
+  m_TagString: Afinidad2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3495,8 +3495,8 @@ Transform:
   m_GameObject: {fileID: 1831304858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0459, y: 2.8923, z: 0}
-  m_LocalScale: {x: 0.77446854, y: 0.91933113, z: 1}
+  m_LocalPosition: {x: -1.5012, y: 2.8923, z: 0}
+  m_LocalScale: {x: 0.75712043, y: 0.91933113, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3989,7 +3989,7 @@ Transform:
   m_GameObject: {fileID: 1953689999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3, y: -10.5, z: -10}
+  m_LocalPosition: {x: -3.77, y: -0.43, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4513,8 +4513,8 @@ Transform:
   m_GameObject: {fileID: 2138080774}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2083, y: 4.18, z: 0}
-  m_LocalScale: {x: 0.63124174, y: 0.867532, z: 1}
+  m_LocalPosition: {x: -0.2083, y: 2.7068, z: 0}
+  m_LocalScale: {x: 0.63124174, y: 0.8081928, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
