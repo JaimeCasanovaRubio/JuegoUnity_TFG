@@ -383,10 +383,10 @@ public class GameManager : MonoBehaviour
             {   
                 Vector2 offset = SceneGestor.indexToTP switch
                 {
-                    0 => new Vector2(1.5f, 0),   // TP izquierdo → empujar a la derecha
-                    2 => new Vector2(-3f, 0),   // TP derecho → empujar a la izquierda
-                    1 => new Vector2(0, -6),   // TP arriba → empujar hacia abajo
-                    3 => new Vector2(0, 1.5f),    // TP abajo → empujar hacia arriba
+                    0 => new Vector2(2f, -1.5f),   // TP izquierdo → empujar a la derecha
+                    2 => new Vector2(-3f, -3f),   // TP derecho → empujar a la izquierda
+                    1 => new Vector2(0, -1f),   // TP arriba → empujar hacia abajo
+                    3 => new Vector2(0, 0),    // TP abajo → empujar hacia arriba
                     _ => Vector2.zero
                 };
                 player.transform.position = (Vector2)teleport.transform.position + offset;
