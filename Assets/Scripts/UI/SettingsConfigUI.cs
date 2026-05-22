@@ -41,4 +41,18 @@ public class SettingsConfigUI : MonoBehaviour
         GameManager.Instance.SettingsCanvas.SetActive(false);
         GameManager.Instance.TogglePause();
     }
+
+    public void OnQuitClicked()
+    {
+        Debug.Log("[MainMenu] Saliendo del juego...");
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.QuitGame();
+        }
+        else
+        {
+            Debug.LogWarning("[MainMenu] GameManager.Instance es null, cerrando directamente.");
+            Application.Quit();
+        }
+    }
 }

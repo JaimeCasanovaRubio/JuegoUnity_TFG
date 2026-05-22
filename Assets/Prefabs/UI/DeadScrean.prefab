@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7485787672689751185}
         m_TargetAssemblyTypeName: DeadScreen, Assembly-CSharp
-        m_MethodName: OnVolverClicker
+        m_MethodName: OnQuitClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

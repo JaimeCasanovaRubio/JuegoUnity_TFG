@@ -42,4 +42,18 @@ public class DeadScreen : MonoBehaviour
         GameManager.Instance.DeadScreenCanvas.SetActive(false);
         GameManager.Instance.ChangeScene("MenuScene");
     }
+
+    public void OnQuitClicked()
+    {
+        Debug.Log("[MainMenu] Saliendo del juego...");
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.QuitGame();
+        }
+        else
+        {
+            Debug.LogWarning("[MainMenu] GameManager.Instance es null, cerrando directamente.");
+            Application.Quit();
+        }
+    }
 }

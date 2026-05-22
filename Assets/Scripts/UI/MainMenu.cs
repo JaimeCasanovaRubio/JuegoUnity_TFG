@@ -85,6 +85,14 @@ public class MainMenu : MonoBehaviour
     public void OnQuitClicked()
     {
         Debug.Log("[MainMenu] Saliendo del juego...");
-        if (GameManager.Instance != null) GameManager.Instance.QuitGame();
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.QuitGame();
+        }
+        else
+        {
+            Debug.LogWarning("[MainMenu] GameManager.Instance es null, cerrando directamente.");
+            Application.Quit();
+        }
     }
 }
