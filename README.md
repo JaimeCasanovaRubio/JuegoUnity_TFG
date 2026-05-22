@@ -67,11 +67,9 @@ TFG_MI_FORK/
 
 ## Cómo descargar ejecutable
 
-1. Ve a 
-2. 
-3.
-4. 
-
+1. Ve a "releases" en el repositorio.
+2. Descarga para windows o linux
+3. Abre el ejecutable "TFG"
 
 
 ---
